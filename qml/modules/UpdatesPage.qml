@@ -508,82 +508,85 @@ Kirigami.ScrollablePage {
         Kirigami.Card {
             Layout.fillWidth: true
 
-            header: RowLayout {
-                spacing: Kirigami.Units.smallSpacing
+            contentItem: ColumnLayout {
+                spacing: Kirigami.Units.mediumSpacing
 
-                Kirigami.Icon {
-                    source: "utilities-terminal"
-                    implicitWidth: Kirigami.Units.iconSizes.medium
-                    implicitHeight: Kirigami.Units.iconSizes.medium
+                RowLayout {
+                    Layout.fillWidth: true
+                    spacing: Kirigami.Units.smallSpacing
+
+                    Kirigami.Icon {
+                        source: "utilities-terminal"
+                        implicitWidth: Kirigami.Units.iconSizes.medium
+                        implicitHeight: Kirigami.Units.iconSizes.medium
+                    }
+
+                    Kirigami.Heading {
+                        level: 3
+                        text: i18n("Console Output")
+                        Layout.fillWidth: true
+                    }
+
+                    QQC2.Button {
+                        text: i18n("Copy Terminal")
+                        icon.name: "edit-copy"
+                        enabled: updateMgr.logOutput.length > 0
+                        onClicked: {
+                            updateMgr.copyToClipboard(updateMgr.logOutput)
+                            if (typeof applicationWindow !== "undefined" && applicationWindow()) {
+                                applicationWindow().showPassiveNotification(i18n("Console output copied to clipboard."))
+                            }
+                        }
+                    }
+
+                    QQC2.Button {
+                        text: i18n("Clear")
+                        icon.name: "edit-clear"
+                        enabled: updateMgr.logOutput.length > 0
+                        onClicked: updateMgr.clearLogs()
+                    }
                 }
 
-                Kirigami.Heading {
-                    level: 3
-                    text: i18n("Console Output")
+                Kirigami.Separator {
                     Layout.fillWidth: true
                 }
 
-                QQC2.Button {
-                    text: i18n("Copy Terminal")
-                    icon.name: "edit-copy"
-                    enabled: updateMgr.logOutput.length > 0
-                    onClicked: {
-                        updateMgr.copyToClipboard(updateMgr.logOutput)
-                        if (typeof applicationWindow !== "undefined" && applicationWindow()) {
-                            applicationWindow().showPassiveNotification(i18n("Console output copied to clipboard."))
-                        }
-                    }
-                }
-
-                QQC2.Button {
-                    text: i18n("Clear")
-                    icon.name: "edit-clear"
-                    enabled: updateMgr.logOutput.length > 0
-                    onClicked: updateMgr.clearLogs()
-                }
-            }
-
-            contentItem: Rectangle {
-                Layout.fillWidth: true
-                implicitHeight: Kirigami.Units.gridUnit * 18
-                color: "#16191e"
-                radius: 6
-                border.color: "#2e3440"
-                border.width: 1
-                clip: true
-
-                QQC2.ScrollView {
-                    id: logScrollView
-                    anchors.fill: parent
-                    anchors.margins: 4
+                Rectangle {
+                    Layout.fillWidth: true
+                    implicitHeight: Kirigami.Units.gridUnit * 18
+                    Layout.preferredHeight: Kirigami.Units.gridUnit * 18
+                    color: "#16191e"
+                    radius: 6
+                    border.color: "#2e3440"
+                    border.width: 1
                     clip: true
 
-                    QQC2.ScrollBar.vertical: StyledScrollBar {
-                        parent: logScrollView
-                        x: logScrollView.width - width
-                        y: 0
-                        height: logScrollView.height
+                    QQC2.ScrollView {
+                        id: logScrollView
+                        anchors.fill: parent
+                        anchors.margins: 4
+                        clip: true
+
+                        QQC2.TextArea {
+                            id: logTextArea
+                            readOnly: true
+                            text: updateMgr.logOutput.length > 0
+                                  ? updateMgr.logOutput
+                                  : i18n("No operations running. Terminal output will stream here in real time during updates...")
+                            font.family: "monospace"
+                            font.pointSize: Kirigami.Theme.smallFont.pointSize
+                            color: updateMgr.logOutput.length > 0 ? "#d8dee9" : "#616e85"
+                            background: null
+                            wrapMode: TextEdit.Wrap
+                            selectByMouse: true
+                        }
                     }
 
-                    QQC2.TextArea {
-                        id: logTextArea
-                        readOnly: true
-                        text: updateMgr.logOutput.length > 0
-                              ? updateMgr.logOutput
-                              : i18n("No operations running. Terminal output will stream here in real time during updates...")
-                        font.family: "monospace"
-                        font.pointSize: Kirigami.Theme.smallFont.pointSize
-                        color: updateMgr.logOutput.length > 0 ? "#d8dee9" : "#616e85"
-                        background: null
-                        wrapMode: TextEdit.Wrap
-                        selectByMouse: true
-                    }
-                }
-
-                Connections {
-                    target: updateMgr
-                    function onOutputReceived(text) {
-                        logTextArea.cursorPosition = logTextArea.length
+                    Connections {
+                        target: updateMgr
+                        function onOutputReceived(text) {
+                            logTextArea.cursorPosition = logTextArea.length
+                        }
                     }
                 }
             }

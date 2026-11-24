@@ -98,31 +98,36 @@ Kirigami.ScrollablePage {
         Kirigami.Card {
             Layout.fillWidth: true
 
-            header: RowLayout {
-                spacing: Kirigami.Units.smallSpacing
-
-                Kirigami.Icon {
-                    source: "network-wired"
-                    implicitWidth: Kirigami.Units.iconSizes.smallMedium
-                    implicitHeight: Kirigami.Units.iconSizes.smallMedium
-                }
-
-                Kirigami.Heading {
-                    level: 3
-                    text: i18n("Active DNS Configuration")
-                }
-
-                Item { Layout.fillWidth: true }
-
-                QQC2.Button {
-                    icon.name: "view-refresh"
-                    text: i18n("Refresh")
-                    onClicked: dnsMgr.refreshCurrentDns()
-                }
-            }
-
             contentItem: ColumnLayout {
                 spacing: Kirigami.Units.mediumSpacing
+
+                RowLayout {
+                    Layout.fillWidth: true
+                    spacing: Kirigami.Units.smallSpacing
+
+                    Kirigami.Icon {
+                        source: "network-wired"
+                        implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                        implicitHeight: Kirigami.Units.iconSizes.smallMedium
+                    }
+
+                    Kirigami.Heading {
+                        level: 3
+                        text: i18n("Active DNS Configuration")
+                    }
+
+                    Item { Layout.fillWidth: true }
+
+                    QQC2.Button {
+                        icon.name: "view-refresh"
+                        text: i18n("Refresh")
+                        onClicked: dnsMgr.refreshCurrentDns()
+                    }
+                }
+
+                Kirigami.Separator {
+                    Layout.fillWidth: true
+                }
 
                 // Key Status Badges & IP
                 RowLayout {
@@ -266,23 +271,29 @@ Kirigami.ScrollablePage {
         Kirigami.Card {
             Layout.fillWidth: true
 
-            header: RowLayout {
-                spacing: Kirigami.Units.smallSpacing
-
-                Kirigami.Icon {
-                    source: "preferences-system-network"
-                    implicitWidth: Kirigami.Units.iconSizes.smallMedium
-                    implicitHeight: Kirigami.Units.iconSizes.smallMedium
-                }
-
-                Kirigami.Heading {
-                    level: 3
-                    text: i18n("Switch DNS Provider")
-                }
-            }
-
             contentItem: ColumnLayout {
                 spacing: Kirigami.Units.largeSpacing
+
+                RowLayout {
+                    Layout.fillWidth: true
+                    spacing: Kirigami.Units.smallSpacing
+
+                    Kirigami.Icon {
+                        source: "preferences-system-network"
+                        implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                        implicitHeight: Kirigami.Units.iconSizes.smallMedium
+                    }
+
+                    Kirigami.Heading {
+                        level: 3
+                        text: i18n("Switch DNS Provider")
+                        Layout.fillWidth: true
+                    }
+                }
+
+                Kirigami.Separator {
+                    Layout.fillWidth: true
+                }
 
                 QQC2.Label {
                     text: i18n("Choose a DNS provider to enhance browsing speed, bypass ISP restrictions, block advertisements, or protect against phishing attacks:")
@@ -339,10 +350,12 @@ Kirigami.ScrollablePage {
                 Rectangle {
                     Layout.fillWidth: true
                     implicitHeight: providerDetailsCol.implicitHeight + Kirigami.Units.mediumSpacing * 2
+                    Layout.preferredHeight: implicitHeight
                     color: "#252b33"
                     radius: Kirigami.Units.smallSpacing
                     border.color: "#38414a"
                     border.width: 1
+                    clip: true
 
                     ColumnLayout {
                         id: providerDetailsCol
@@ -429,23 +442,29 @@ Kirigami.ScrollablePage {
         Kirigami.Card {
             Layout.fillWidth: true
 
-            header: RowLayout {
-                spacing: Kirigami.Units.smallSpacing
-
-                Kirigami.Icon {
-                    source: "speedometer"
-                    implicitWidth: Kirigami.Units.iconSizes.smallMedium
-                    implicitHeight: Kirigami.Units.iconSizes.smallMedium
-                }
-
-                Kirigami.Heading {
-                    level: 3
-                    text: i18n("DNS Diagnostics & Latency Benchmark")
-                }
-            }
-
             contentItem: ColumnLayout {
                 spacing: Kirigami.Units.largeSpacing
+
+                RowLayout {
+                    Layout.fillWidth: true
+                    spacing: Kirigami.Units.smallSpacing
+
+                    Kirigami.Icon {
+                        source: "speedometer"
+                        implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                        implicitHeight: Kirigami.Units.iconSizes.smallMedium
+                    }
+
+                    Kirigami.Heading {
+                        level: 3
+                        text: i18n("DNS Diagnostics & Latency Benchmark")
+                        Layout.fillWidth: true
+                    }
+                }
+
+                Kirigami.Separator {
+                    Layout.fillWidth: true
+                }
 
                 // Test Domain & Action Buttons
                 RowLayout {

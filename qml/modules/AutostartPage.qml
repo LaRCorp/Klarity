@@ -213,11 +213,14 @@ Kirigami.ScrollablePage {
                         spacing: 2
 
                         RowLayout {
+                            Layout.fillWidth: true
                             spacing: Kirigami.Units.smallSpacing
 
                             Kirigami.Heading {
                                 level: 4
                                 text: modelData.name
+                                Layout.fillWidth: true
+                                elide: Text.ElideRight
                             }
 
                             // Type Chip
@@ -271,6 +274,7 @@ Kirigami.ScrollablePage {
                             font.italic: true
                             font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.85
                             opacity: 0.6
+                            elide: Text.ElideRight
                         }
                     }
 
@@ -281,14 +285,21 @@ Kirigami.ScrollablePage {
                         }
                     }
 
-                    QQC2.ToolButton {
-                        icon.name: "edit-delete"
-                        QQC2.ToolTip.text: i18n("Delete entry")
-                        QQC2.ToolTip.visible: hovered
-                        visible: modelData.scope === "User"
-                        onClicked: {
-                            deleteConfirmDlg.targetId = modelData.id
-                            deleteConfirmDlg.open()
+                    Item {
+                        implicitWidth: deleteBtn.implicitWidth
+                        implicitHeight: deleteBtn.implicitHeight
+
+                        QQC2.ToolButton {
+                            id: deleteBtn
+                            anchors.centerIn: parent
+                            icon.name: "edit-delete"
+                            QQC2.ToolTip.text: i18n("Delete entry")
+                            QQC2.ToolTip.visible: hovered
+                            visible: modelData.scope === "User"
+                            onClicked: {
+                                deleteConfirmDlg.targetId = modelData.id
+                                deleteConfirmDlg.open()
+                            }
                         }
                     }
                 }
