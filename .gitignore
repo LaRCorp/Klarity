@@ -32,3 +32,8 @@ moc_*.cpp
 # Testing & logs
 Testing/
 *.log
+
+# Workspace & internal notes
+LRCC/
+LRCC
+
