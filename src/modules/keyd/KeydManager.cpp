@@ -3,6 +3,7 @@
 #include "core/PkexecRunner.h"
 #include "core/ProcessRunner.h"
 
+#include <KLocalizedString>
 #include <QDateTime>
 #include <QDir>
 #include <QFile>
@@ -47,22 +48,22 @@ QString KeydManager::computeFriendlyDescription(const QString &key, const QStrin
 {
     const QString trimmedAct = action.trimmed();
     if (trimmedAct.startsWith(QStringLiteral("overload("))) {
-        return QStringLiteral("Overload: Dual-role key (modifier on hold, key on tap)");
+        return i18n("Overload: Dual-role key (modifier on hold, key on tap)");
     }
     if (trimmedAct.startsWith(QStringLiteral("macro("))) {
-        return QStringLiteral("Macro: Sequence of keys or actions");
+        return i18n("Macro: Sequence of keys or actions");
     }
     if (trimmedAct.startsWith(QStringLiteral("layer("))) {
-        return QStringLiteral("Layer Switch: Activates secondary key layer");
+        return i18n("Layer Switch: Activates secondary key layer");
     }
     if (trimmedAct.startsWith(QStringLiteral("swap("))) {
-        return QStringLiteral("Swap: Swaps key functionality with modifier");
+        return i18n("Swap: Swaps key functionality with modifier");
     }
     if (key == trimmedAct) {
-        return QStringLiteral("Identity remap / Passthrough protection");
+        return i18n("Identity remap / Passthrough protection");
     }
 
-    return QStringLiteral("Remapped to %1").arg(trimmedAct);
+    return i18n("Remapped to %1", trimmedAct);
 }
 
 void KeydManager::load()

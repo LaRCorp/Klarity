@@ -408,11 +408,11 @@ Kirigami.ScrollablePage {
                 total += auditor.items[i].sizeBytes
             }
         }
-        if (total <= 0) return "0 B"
+        if (total <= 0) return i18n("0 B")
         const b = total
-        if (b < 1024 * 1024) return (b / 1024).toFixed(1) + " KiB"
-        if (b < 1024 * 1024 * 1024) return (b / (1024 * 1024)).toFixed(1) + " MiB"
-        return (b / (1024 * 1024 * 1024)).toFixed(2) + " GiB"
+        if (b < 1024 * 1024) return i18n("%1 KiB", (b / 1024).toFixed(1))
+        if (b < 1024 * 1024 * 1024) return i18n("%1 MiB", (b / (1024 * 1024)).toFixed(1))
+        return i18n("%1 GiB", (b / (1024 * 1024 * 1024)).toFixed(2))
     }
 
     function openConfirmCleanDialog() {

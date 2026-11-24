@@ -2,6 +2,7 @@
 #include "core/ProcessRunner.h"
 #include "core/LogModel.h"
 
+#include <KLocalizedString>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
@@ -222,17 +223,17 @@ QVariantMap AliasManager::validateSyntax(const QString &shell, const QString &ty
     res[QStringLiteral("valid")] = false;
 
     if (name.trimmed().isEmpty()) {
-        res[QStringLiteral("error")] = QStringLiteral("Name cannot be empty.");
+        res[QStringLiteral("error")] = i18n("Name cannot be empty.");
         return res;
     }
 
     if (!name.contains(QRegularExpression(QStringLiteral("^[a-zA-Z0-9_.-]+$")))) {
-        res[QStringLiteral("error")] = QStringLiteral("Name contains invalid characters.");
+        res[QStringLiteral("error")] = i18n("Name contains invalid characters.");
         return res;
     }
 
     if (command.trimmed().isEmpty()) {
-        res[QStringLiteral("error")] = QStringLiteral("Command cannot be empty.");
+        res[QStringLiteral("error")] = i18n("Command cannot be empty.");
         return res;
     }
 
@@ -372,7 +373,7 @@ bool AliasManager::createEntry(const QString &shell, const QString &type, const 
     }
 
     load();
-    emit operationFinished(true, QStringLiteral("Entry created successfully."));
+    emit operationFinished(true, i18n("Entry created successfully."));
     return true;
 }
 
@@ -390,7 +391,7 @@ bool AliasManager::saveEntry(const QString &id, const QString &name, const QStri
     }
 
     if (!found) {
-        emit operationFinished(false, QStringLiteral("Entry not found."));
+        emit operationFinished(false, i18n("Entry not found."));
         return false;
     }
 
@@ -404,7 +405,7 @@ bool AliasManager::saveEntry(const QString &id, const QString &name, const QStri
     if (target.lineNumber == -1) {
         QFile file(target.filePath);
         if (!file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
-            emit operationFinished(false, QStringLiteral("Cannot write to %1").arg(target.filePath));
+            emit operationFinished(false, i18n("Cannot write to %1", target.filePath));
             return false;
         }
 
@@ -421,14 +422,14 @@ bool AliasManager::saveEntry(const QString &id, const QString &name, const QStri
         LogModel::instance()->append(QStringLiteral("Aliases"), QStringLiteral("info"),
                                     QStringLiteral("Updated function in %1").arg(target.filePath));
         load();
-        emit operationFinished(true, QStringLiteral("Function updated successfully."));
+        emit operationFinished(true, i18n("Function updated successfully."));
         return true;
     }
 
     // 2. Line in shared file (.bashrc, .bash_aliases, config.fish, .zshrc)
     QFile file(target.filePath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        emit operationFinished(false, QStringLiteral("Cannot read %1").arg(target.filePath));
+        emit operationFinished(false, i18n("Cannot read %1", target.filePath));
         return false;
     }
 
@@ -463,11 +464,11 @@ bool AliasManager::saveEntry(const QString &id, const QString &name, const QStri
         LogModel::instance()->append(QStringLiteral("Aliases"), QStringLiteral("info"),
                                     QStringLiteral("Updated alias at line %1 in %2").arg(QString::number(target.lineNumber), target.filePath));
         load();
-        emit operationFinished(true, QStringLiteral("Alias updated successfully."));
+        emit operationFinished(true, i18n("Alias updated successfully."));
         return true;
     }
 
-    emit operationFinished(false, QStringLiteral("Line index out of bounds."));
+    emit operationFinished(false, i18n("Line index out of bounds."));
     return false;
 }
 
@@ -484,7 +485,7 @@ bool AliasManager::deleteEntry(const QString &id)
     }
 
     if (!found) {
-        emit operationFinished(false, QStringLiteral("Entry not found."));
+        emit operationFinished(false, i18n("Entry not found."));
         return false;
     }
 
@@ -497,14 +498,14 @@ bool AliasManager::deleteEntry(const QString &id)
             QStringLiteral("Deleted function file: %1").arg(target.filePath)
         );
         load();
-        emit operationFinished(ok, ok ? QStringLiteral("File deleted.") : QStringLiteral("Failed to delete file."));
+        emit operationFinished(ok, ok ? i18n("File deleted.") : i18n("Failed to delete file."));
         return ok;
     }
 
     // Line in file
     QFile file(target.filePath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        emit operationFinished(false, QStringLiteral("Cannot read file."));
+        emit operationFinished(false, i18n("Cannot read file."));
         return false;
     }
 
@@ -520,7 +521,7 @@ bool AliasManager::deleteEntry(const QString &id)
         allLines.removeAt(idx);
 
         if (!file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
-            emit operationFinished(false, QStringLiteral("Cannot write file."));
+            emit operationFinished(false, i18n("Cannot write file."));
             return false;
         }
 
@@ -533,10 +534,10 @@ bool AliasManager::deleteEntry(const QString &id)
         LogModel::instance()->append(QStringLiteral("Aliases"), QStringLiteral("info"),
                                     QStringLiteral("Removed line %1 from %2").arg(QString::number(target.lineNumber), target.filePath));
         load();
-        emit operationFinished(true, QStringLiteral("Entry removed successfully."));
+        emit operationFinished(true, i18n("Entry removed successfully."));
         return true;
     }
 
-    emit operationFinished(false, QStringLiteral("Line not found."));
+    emit operationFinished(false, i18n("Line not found."));
     return false;
 }

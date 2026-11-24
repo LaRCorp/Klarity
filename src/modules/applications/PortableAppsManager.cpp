@@ -18,6 +18,7 @@
 #include <QThread>
 #include <KDesktopFile>
 #include <KConfigGroup>
+#include <KLocalizedString>
 
 bool PortableAppsManager::s_hasStaticCache = false;
 QVector<PortableAppInfo> PortableAppsManager::s_staticApps;
@@ -60,12 +61,12 @@ QVariantList PortableAppsManager::apps() const
 
 QString PortableAppsManager::formatSize(qint64 bytes)
 {
-    if (bytes <= 0) return QStringLiteral("0 B");
+    if (bytes <= 0) return i18n("0 B");
     const double b = static_cast<double>(bytes);
-    if (b < 1024.0) return QStringLiteral("%1 B").arg(bytes);
-    if (b < 1024.0 * 1024.0) return QStringLiteral("%1 KiB").arg(b / 1024.0, 0, 'f', 1);
-    if (b < 1024.0 * 1024.0 * 1024.0) return QStringLiteral("%1 MiB").arg(b / (1024.0 * 1024.0), 0, 'f', 1);
-    return QStringLiteral("%1 GiB").arg(b / (1024.0 * 1024.0 * 1024.0), 0, 'f', 2);
+    if (b < 1024.0) return i18n("%1 B", bytes);
+    if (b < 1024.0 * 1024.0) return i18n("%1 KiB", QString::number(b / 1024.0, 'f', 1));
+    if (b < 1024.0 * 1024.0 * 1024.0) return i18n("%1 MiB", QString::number(b / (1024.0 * 1024.0), 'f', 1));
+    return i18n("%1 GiB", QString::number(b / (1024.0 * 1024.0 * 1024.0), 'f', 2));
 }
 
 bool PortableAppsManager::loadFromDiskCache()
@@ -327,7 +328,7 @@ bool PortableAppsManager::addToMenu(const QString &path, const QString &customNa
     saveToDiskCache();
 
     emit appsChanged();
-    emit operationFinished(true, QStringLiteral("'%1' added to Application Menu.").arg(appName));
+    emit operationFinished(true, i18n("'%1' added to Application Menu.", appName));
     return true;
 }
 
@@ -359,11 +360,11 @@ bool PortableAppsManager::removeFromMenu(const QString &path)
         saveToDiskCache();
 
         emit appsChanged();
-        emit operationFinished(true, QStringLiteral("Removed from Application Menu."));
+        emit operationFinished(true, i18n("Removed from Application Menu."));
         return true;
     }
 
-    emit operationFinished(false, QStringLiteral("No associated menu entry found."));
+    emit operationFinished(false, i18n("No associated menu entry found."));
     return false;
 }
 
@@ -388,11 +389,11 @@ bool PortableAppsManager::deleteApp(const QString &path)
         saveToDiskCache();
 
         emit appsChanged();
-        emit operationFinished(true, QStringLiteral("Application deleted successfully."));
+        emit operationFinished(true, i18n("Application deleted successfully."));
         return true;
     }
 
-    emit operationFinished(false, QStringLiteral("Failed to delete application file."));
+    emit operationFinished(false, i18n("Failed to delete application file."));
     return false;
 }
 
@@ -400,7 +401,7 @@ void PortableAppsManager::launchApp(const QString &path)
 {
     const QFileInfo fi(path);
     if (!fi.exists() || !fi.isExecutable()) {
-        emit operationFinished(false, QStringLiteral("Cannot launch: file not found or not executable."));
+        emit operationFinished(false, i18n("Cannot launch: file not found or not executable."));
         return;
     }
 
@@ -411,9 +412,9 @@ void PortableAppsManager::launchApp(const QString &path)
             QStringLiteral("info"),
             QStringLiteral("Launched application: %1").arg(path)
         );
-        emit operationFinished(true, QStringLiteral("Application launched: %1").arg(fi.fileName()));
+        emit operationFinished(true, i18n("Application launched: %1", fi.fileName()));
     } else {
-        emit operationFinished(false, QStringLiteral("Failed to launch application: %1").arg(path));
+        emit operationFinished(false, i18n("Failed to launch application: %1", path));
     }
 }
 
@@ -421,13 +422,13 @@ bool PortableAppsManager::addManualApp(const QString &path)
 {
     const QFileInfo fi(path);
     if (!fi.exists() || !fi.isExecutable()) {
-        emit operationFinished(false, QStringLiteral("Selected file is not an executable binary or AppImage."));
+        emit operationFinished(false, i18n("Selected file is not an executable binary or AppImage."));
         return false;
     }
 
     for (const auto &app : m_apps) {
         if (app.path == fi.absoluteFilePath()) {
-            emit operationFinished(false, QStringLiteral("Application already present in catalog."));
+            emit operationFinished(false, i18n("Application already present in catalog."));
             return false;
         }
     }

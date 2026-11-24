@@ -10,6 +10,7 @@
 #include <QThread>
 #include <KConfig>
 #include <KConfigGroup>
+#include <KLocalizedString>
 
 static QVector<ShortcutItem> s_cachedShortcuts;
 static int s_cachedConflictCount = 0;
@@ -128,31 +129,31 @@ void ShortcutManager::loadKGlobalShortcuts()
         const QString friendlyName = grp.readEntry("_k_friendly_name", QString());
 
         QString source = QStringLiteral("Global");
-        QString category = QStringLiteral("Global Shortcuts");
+        QString category = i18n("Global Shortcuts");
         QString icon = QStringLiteral("configure");
 
         const QString lowerGroup = groupName.toLower();
         if (lowerGroup == QStringLiteral("kwin")) {
             source = QStringLiteral("KWin");
-            category = QStringLiteral("Window Management");
+            category = i18n("Window Management");
             icon = QStringLiteral("preferences-system-windows");
         } else if (lowerGroup == QStringLiteral("kmix") || lowerGroup == QStringLiteral("mediacontrol") ||
                    lowerGroup.contains(QStringLiteral("player")) || lowerGroup == QStringLiteral("strawberry")) {
             source = QStringLiteral("Media");
-            category = QStringLiteral("Audio & Media");
+            category = i18n("Audio & Media");
             icon = QStringLiteral("audio-volume-high");
         } else if (lowerGroup == QStringLiteral("ksmserver") || lowerGroup == QStringLiteral("org_kde_powerdevil") ||
                    lowerGroup.contains(QStringLiteral("layout switcher"))) {
             source = QStringLiteral("Session");
-            category = QStringLiteral("Session & System");
+            category = i18n("Session & System");
             icon = QStringLiteral("system-lock-screen");
         } else if (lowerGroup.startsWith(QStringLiteral("services")) || lowerGroup.contains(QStringLiteral(".desktop"))) {
             source = QStringLiteral("Applications");
-            category = QStringLiteral("Application Launchers");
+            category = i18n("Application Launchers");
             icon = QStringLiteral("applications-other");
         } else if (lowerGroup == QStringLiteral("plasmashell") || lowerGroup == QStringLiteral("activitymanager")) {
             source = QStringLiteral("Plasma");
-            category = QStringLiteral("Shell & Workspace");
+            category = i18n("Shell & Workspace");
             icon = QStringLiteral("plasma");
         }
 
@@ -219,11 +220,11 @@ void ShortcutManager::loadPlasmaAppletShortcuts()
         ShortcutItem item;
         item.id = QStringLiteral("applet:%1").arg(groupName);
         item.action = QStringLiteral("Applet Activation (%1)").arg(globalKey);
-        item.description = QStringLiteral("Plasma Desktop Widget Shortcut");
+        item.description = i18n("Plasma Desktop Widget Shortcut");
         item.shortcut = globalKey;
         item.defaultShortcut = QStringLiteral("none");
         item.source = QStringLiteral("Plasma");
-        item.category = QStringLiteral("Widgets & Applets");
+        item.category = i18n("Widgets & Applets");
         item.icon = QStringLiteral("plasma");
         item.filePath = filePath;
 
@@ -271,7 +272,7 @@ void ShortcutManager::loadKWinRcShortcuts()
         item.shortcut = val;
         item.defaultShortcut = QStringLiteral("none");
         item.source = QStringLiteral("KWin");
-        item.category = QStringLiteral("Window Management");
+        item.category = i18n("Window Management");
         item.icon = QStringLiteral("preferences-system-windows");
         item.filePath = filePath;
 
@@ -467,7 +468,7 @@ bool ShortcutManager::reassignShortcut(const QString &id, const QString &newShor
         );
 
         load();
-        emit operationFinished(true, QStringLiteral("Shortcut updated successfully."));
+        emit operationFinished(true, i18n("Shortcut updated successfully."));
         return true;
     }
 
@@ -491,7 +492,7 @@ bool ShortcutManager::reassignShortcut(const QString &id, const QString &newShor
         );
 
         load();
-        emit operationFinished(true, QStringLiteral("Shortcut updated successfully."));
+        emit operationFinished(true, i18n("Shortcut updated successfully."));
         return true;
     }
 
@@ -515,11 +516,11 @@ bool ShortcutManager::reassignShortcut(const QString &id, const QString &newShor
         );
 
         load();
-        emit operationFinished(true, QStringLiteral("Shortcut updated successfully."));
+        emit operationFinished(true, i18n("Shortcut updated successfully."));
         return true;
     }
 
-    emit operationFinished(false, QStringLiteral("This shortcut source cannot be modified directly."));
+    emit operationFinished(false, i18n("This shortcut source cannot be modified directly."));
     return false;
 }
 

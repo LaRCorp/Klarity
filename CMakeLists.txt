@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(klarity VERSION 0.1.0 LANGUAGES CXX)
+project(klarity VERSION 1.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -127,6 +127,12 @@ target_link_libraries(klarity PRIVATE
     KF6::I18n
     KF6::I18nQml
 )
+
+target_compile_definitions(klarity PRIVATE
+    KLARITY_LOCALE_DIR="${CMAKE_INSTALL_FULL_LOCALEDIR}"
+)
+
+ki18n_install(po)
 
 install(TARGETS klarity DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES org.kde.klarity.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)

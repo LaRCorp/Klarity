@@ -29,7 +29,7 @@ QVariantList DnsManager::availableProviders() const
             {QStringLiteral("servers"), QStringLiteral("")},
             {QStringLiteral("icon"), QStringLiteral("network-wired")},
             {QStringLiteral("isEncrypted"), false},
-            {QStringLiteral("encryptionType"), QStringLiteral("Standard (Port 53)")}
+            {QStringLiteral("encryptionType"), i18n("Standard (Port 53)")}
         },
         QVariantMap{
             {QStringLiteral("id"), QStringLiteral("cloudflare")},
@@ -74,7 +74,7 @@ QVariantList DnsManager::availableProviders() const
             {QStringLiteral("servers"), QStringLiteral("")},
             {QStringLiteral("icon"), QStringLiteral("edit-entry")},
             {QStringLiteral("isEncrypted"), false},
-            {QStringLiteral("encryptionType"), QStringLiteral("Custom")}
+            {QStringLiteral("encryptionType"), i18n("Custom")}
         }
     };
 }
@@ -235,9 +235,9 @@ void DnsManager::parseResolvectlStatus(const QString &output)
 
     m_isEncrypted = globalDoT || parsedProtocols.contains(QStringLiteral("+DNSOverTLS"));
     if (m_isEncrypted) {
-        m_encryptionStatus = QStringLiteral("DoT (DNS-over-TLS) Active");
+        m_encryptionStatus = i18n("DoT (DNS-over-TLS) Active");
     } else {
-        m_encryptionStatus = QStringLiteral("Standard Unencrypted (Port 53)");
+        m_encryptionStatus = i18n("Standard Unencrypted (Port 53)");
     }
 }
 
@@ -246,24 +246,24 @@ QString DnsManager::detectProvider(const QString &ip, const QStringList &allServ
     const QString combined = (ip + QStringLiteral(" ") + allServers.join(QLatin1Char(' '))).toLower();
 
     if (combined.contains(QStringLiteral("1.1.1.1")) || combined.contains(QStringLiteral("1.0.0.1")) || combined.contains(QStringLiteral("2606:4700:"))) {
-        return QStringLiteral("Cloudflare Public DNS");
+        return i18n("Cloudflare Public DNS");
     }
     if (combined.contains(QStringLiteral("8.8.8.8")) || combined.contains(QStringLiteral("8.8.4.4")) || combined.contains(QStringLiteral("2001:4860:"))) {
-        return QStringLiteral("Google Public DNS");
+        return i18n("Google Public DNS");
     }
     if (combined.contains(QStringLiteral("94.140.14.")) || combined.contains(QStringLiteral("94.140.15.")) || combined.contains(QStringLiteral("2a10:50c0:"))) {
-        return QStringLiteral("AdGuard DNS (Ad-Block)");
+        return i18n("AdGuard DNS (Ad-Block)");
     }
     if (combined.contains(QStringLiteral("9.9.9.9")) || combined.contains(QStringLiteral("149.112.112.")) || combined.contains(QStringLiteral("2620:fe:"))) {
-        return QStringLiteral("Quad9 (Security DNS)");
+        return i18n("Quad9 (Security DNS)");
     }
     if (ip.startsWith(QStringLiteral("192.168.")) || ip.startsWith(QStringLiteral("10.")) || ip.startsWith(QStringLiteral("172.16.")) || ip.startsWith(QStringLiteral("fe80:"))) {
-        return QStringLiteral("Local Router / DHCP");
+        return i18n("Local Router / DHCP");
     }
     if (ip == QStringLiteral("127.0.0.53")) {
-        return QStringLiteral("systemd-resolved (Local Cache)");
+        return i18n("systemd-resolved (Local Cache)");
     }
-    return QStringLiteral("Custom / ISP DNS");
+    return i18n("Custom / ISP DNS");
 }
 
 void DnsManager::setDnsProvider(const QString &providerId, const QString &customServers)

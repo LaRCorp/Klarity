@@ -1,7 +1,9 @@
 [Desktop Entry]
 Name=Klarity
 GenericName=Linux Control Center
+GenericName[ru]=Центр управления и оптимизации Linux
 Comment=Modular GUI-first administration tool for Linux and KDE Plasma 6
+Comment[ru]=Центр системного администрирования, безопасности и глубокой настройки для Linux и KDE Plasma 6
 Exec=klarity
 Icon=preferences-system
 Terminal=false

@@ -18,11 +18,16 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     KLocalizedString::setApplicationDomain("klarity");
+    KLocalizedString::addDomainLocaleDir("klarity", QCoreApplication::applicationDirPath() + QStringLiteral("/locale"));
+    KLocalizedString::addDomainLocaleDir("klarity", QCoreApplication::applicationDirPath() + QStringLiteral("/../locale"));
+#ifdef KLARITY_LOCALE_DIR
+    KLocalizedString::addDomainLocaleDir("klarity", QStringLiteral(KLARITY_LOCALE_DIR));
+#endif
 
     KAboutData aboutData(
         QStringLiteral("klarity"),
         i18n("Klarity"),
-        QStringLiteral("1.0"),
+        QStringLiteral("1.1"),
         i18n("Modular GUI-first administration tool for Linux / KDE Plasma 6"),
         KAboutLicense::GPL_V3,
         i18n("Copyright 2026 LaRCorp")

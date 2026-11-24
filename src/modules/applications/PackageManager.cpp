@@ -18,6 +18,7 @@
 #include <QThread>
 #include <KDesktopFile>
 #include <KConfigGroup>
+#include <KLocalizedString>
 
 bool PackageManager::s_hasStaticCache = false;
 QVector<PackageInfo> PackageManager::s_staticPackages;
@@ -653,12 +654,12 @@ void PackageManager::removePackage(const QString &source, const QString &name)
 
             if (exitCode == 0) {
                 LogModel::instance()->append(QStringLiteral("Packages"), QStringLiteral("info"), QStringLiteral("Removed package: %1").arg(name));
-                emit operationFinished(true, QStringLiteral("Package %1 removed successfully.").arg(name));
+                emit operationFinished(true, i18n("Package %1 removed successfully.", name));
                 loadPackages(true);
             } else if (exitCode == 126 || exitCode == 127) {
-                emit operationFinished(false, QStringLiteral("Package removal cancelled."));
+                emit operationFinished(false, i18n("Package removal cancelled."));
             } else {
-                emit operationFinished(false, QStringLiteral("Failed to remove package: %1").arg(output));
+                emit operationFinished(false, i18n("Failed to remove package: %1", output));
             }
         });
 
@@ -671,10 +672,10 @@ void PackageManager::removePackage(const QString &source, const QString &name)
 
             if (exitCode == 0) {
                 LogModel::instance()->append(QStringLiteral("Packages"), QStringLiteral("info"), QStringLiteral("Uninstalled Flatpak app: %1").arg(name));
-                emit operationFinished(true, QStringLiteral("Flatpak %1 uninstalled successfully.").arg(name));
+                emit operationFinished(true, i18n("Flatpak %1 uninstalled successfully.", name));
                 loadPackages(true);
             } else {
-                emit operationFinished(false, QStringLiteral("Failed to uninstall Flatpak: %1").arg(output));
+                emit operationFinished(false, i18n("Failed to uninstall Flatpak: %1", output));
             }
         });
 
@@ -686,10 +687,10 @@ void PackageManager::removePackage(const QString &source, const QString &name)
             emit isLoadingChanged();
 
             if (exitCode == 0) {
-                emit operationFinished(true, QStringLiteral("Snap %1 removed successfully.").arg(name));
+                emit operationFinished(true, i18n("Snap %1 removed successfully.", name));
                 loadPackages(true);
             } else {
-                emit operationFinished(false, QStringLiteral("Failed to remove Snap: %1").arg(output));
+                emit operationFinished(false, i18n("Failed to remove Snap: %1", output));
             }
         });
 

@@ -33,6 +33,14 @@ moc_*.cpp
 Testing/
 *.log
 
+# Localization binaries
+*.mo
+*.gmo
+
+# Python bytecode
+__pycache__/
+*.pyc
+
 # Workspace & internal notes
 LRCC/
 LRCC

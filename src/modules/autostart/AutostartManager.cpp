@@ -9,6 +9,7 @@
 #include <QStandardPaths>
 #include <KDesktopFile>
 #include <KConfigGroup>
+#include <KLocalizedString>
 
 AutostartManager::AutostartManager(QObject *parent)
     : QObject(parent)
@@ -206,7 +207,7 @@ bool AutostartManager::toggleEntry(const QString &id, bool enable)
                                         QStringLiteral("Desktop entry '%1' %2")
                                             .arg(fi.fileName(), enable ? QStringLiteral("enabled") : QStringLiteral("disabled")));
             load();
-            emit operationFinished(true, QStringLiteral("Desktop entry status updated."));
+            emit operationFinished(true, i18n("Desktop entry status updated."));
             return true;
         } else {
             // System entry: create user override in ~/.config/autostart
@@ -228,7 +229,7 @@ bool AutostartManager::toggleEntry(const QString &id, bool enable)
                                         QStringLiteral("System desktop entry '%1' %2 via user override")
                                             .arg(fi.fileName(), enable ? QStringLiteral("enabled") : QStringLiteral("disabled")));
             load();
-            emit operationFinished(true, QStringLiteral("System entry override updated."));
+            emit operationFinished(true, i18n("System entry override updated."));
             return true;
         }
     } else if (id.startsWith(QStringLiteral("systemd:"))) {
@@ -248,7 +249,7 @@ bool AutostartManager::toggleEntry(const QString &id, bool enable)
         );
 
         load();
-        emit operationFinished(ok, ok ? QStringLiteral("Systemd service updated.") : result.stderrStr);
+        emit operationFinished(ok, ok ? i18n("Systemd service updated.") : result.stderrStr);
         return ok;
     }
 
@@ -258,7 +259,7 @@ bool AutostartManager::toggleEntry(const QString &id, bool enable)
 bool AutostartManager::addDesktopEntry(const QString &name, const QString &command, const QString &icon, const QString &comment)
 {
     if (name.trimmed().isEmpty() || command.trimmed().isEmpty()) {
-        emit operationFinished(false, QStringLiteral("Name and Command are required."));
+        emit operationFinished(false, i18n("Name and Command are required."));
         return false;
     }
 
@@ -293,7 +294,7 @@ bool AutostartManager::addDesktopEntry(const QString &name, const QString &comma
                                 QStringLiteral("Created autostart desktop entry: %1").arg(filePath));
 
     load();
-    emit operationFinished(true, QStringLiteral("Application added to autostart."));
+    emit operationFinished(true, i18n("Application added to autostart."));
     return true;
 }
 
@@ -309,7 +310,7 @@ bool AutostartManager::removeEntry(const QString &id)
                 QStringLiteral("Deleted user autostart entry: %1").arg(path)
             );
             load();
-            emit operationFinished(ok, ok ? QStringLiteral("Entry deleted.") : QStringLiteral("Failed to delete entry."));
+            emit operationFinished(ok, ok ? i18n("Entry deleted.") : i18n("Failed to delete entry."));
             return ok;
         } else {
             // System entry cannot be deleted by user directly; disable it instead

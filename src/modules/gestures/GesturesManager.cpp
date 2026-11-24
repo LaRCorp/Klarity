@@ -2,6 +2,7 @@
 #include "core/LogModel.h"
 #include "core/ProcessRunner.h"
 
+#include <KLocalizedString>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
@@ -35,37 +36,37 @@ QString GesturesManager::computeFriendlyName(const QString &cmd) const
 {
     const QString trimmed = cmd.trimmed();
     if (trimmed.contains(QStringLiteral("previousmedia"))) {
-        return QStringLiteral("Previous Media Track");
+        return i18n("Previous Media Track");
     }
     if (trimmed.contains(QStringLiteral("nextmedia"))) {
-        return QStringLiteral("Next Media Track");
+        return i18n("Next Media Track");
     }
     if (trimmed.contains(QStringLiteral("playpausemedia"))) {
-        return QStringLiteral("Play / Pause Media");
+        return i18n("Play / Pause Media");
     }
     if (trimmed.contains(QStringLiteral("set-sink-volume")) && trimmed.contains(QStringLiteral("+"))) {
-        return QStringLiteral("Increase Volume (+5%)");
+        return i18n("Increase Volume (+5%)");
     }
     if (trimmed.contains(QStringLiteral("set-sink-volume")) && trimmed.contains(QStringLiteral("-"))) {
-        return QStringLiteral("Decrease Volume (-5%)");
+        return i18n("Decrease Volume (-5%)");
     }
     if (trimmed.contains(QStringLiteral("set-sink-mute"))) {
-        return QStringLiteral("Toggle Mute Audio");
+        return i18n("Toggle Mute Audio");
     }
     if (trimmed.contains(QStringLiteral("Switch One Desktop to the Left"))) {
-        return QStringLiteral("Switch Workspace Left");
+        return i18n("Switch Workspace Left");
     }
     if (trimmed.contains(QStringLiteral("Switch One Desktop to the Right"))) {
-        return QStringLiteral("Switch Workspace Right");
+        return i18n("Switch Workspace Right");
     }
     if (trimmed.contains(QStringLiteral("Overview"))) {
-        return QStringLiteral("KWin Overview (Window Grid)");
+        return i18n("KWin Overview (Window Grid)");
     }
     if (trimmed.contains(QStringLiteral("Show Desktop"))) {
-        return QStringLiteral("Show / Toggle Desktop");
+        return i18n("Show / Toggle Desktop");
     }
     if (trimmed.contains(QStringLiteral("spectacle"))) {
-        return QStringLiteral("Take Screenshot (Spectacle)");
+        return i18n("Take Screenshot (Spectacle)");
     }
 
     return trimmed;

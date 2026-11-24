@@ -341,7 +341,7 @@ void PowerManager::onMonitorTick()
         }
     } else {
         m_batteryLevel = 100;
-        m_batteryStatus = QStringLiteral("AC Power");
+        m_batteryStatus = i18n("AC Power");
         m_onBattery = false;
     }
 

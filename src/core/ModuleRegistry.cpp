@@ -1,5 +1,6 @@
 #include "ModuleRegistry.h"
 #include "DependencyChecker.h"
+#include <KLocalizedString>
 
 ModuleRegistry *ModuleRegistry::s_instance = nullptr;
 
@@ -48,7 +49,7 @@ void ModuleRegistry::registerBuiltin()
     // 1. Autostart Module
     ModuleDescriptor autostart;
     autostart.id = QStringLiteral("autostart");
-    autostart.title = QStringLiteral("Autostart");
+    autostart.title = i18n("Autostart");
     autostart.icon = QStringLiteral("preferences-system-autostart");
     autostart.qmlSource = QStringLiteral("qrc:/org/klarity/qml/modules/AutostartPage.qml");
     autostart.category = QStringLiteral("System");
@@ -59,7 +60,7 @@ void ModuleRegistry::registerBuiltin()
     // 2. Shell Aliases & Functions Module
     ModuleDescriptor aliases;
     aliases.id = QStringLiteral("aliases");
-    aliases.title = QStringLiteral("Shell Aliases & Functions");
+    aliases.title = i18n("Shell Aliases & Functions");
     aliases.icon = QStringLiteral("utilities-terminal");
     aliases.qmlSource = QStringLiteral("qrc:/org/klarity/qml/modules/AliasesPage.qml");
     aliases.category = QStringLiteral("Tools");
@@ -70,7 +71,7 @@ void ModuleRegistry::registerBuiltin()
     // 3. Shortcuts & Keybindings Module
     ModuleDescriptor shortcuts;
     shortcuts.id = QStringLiteral("shortcuts");
-    shortcuts.title = QStringLiteral("Shortcuts & Keybindings");
+    shortcuts.title = i18n("Shortcuts & Keybindings");
     shortcuts.icon = QStringLiteral("preferences-desktop-keyboard-shortcuts");
     shortcuts.qmlSource = QStringLiteral("qrc:/org/klarity/qml/modules/ShortcutsPage.qml");
     shortcuts.category = QStringLiteral("System");
@@ -81,7 +82,7 @@ void ModuleRegistry::registerBuiltin()
     // 4. Touchpad Gestures Module (libinput-gestures)
     ModuleDescriptor gestures;
     gestures.id = QStringLiteral("gestures");
-    gestures.title = QStringLiteral("Touchpad Gestures");
+    gestures.title = i18n("Touchpad Gestures");
     gestures.icon = QStringLiteral("input-touchpad");
     gestures.qmlSource = QStringLiteral("qrc:/org/klarity/qml/modules/GesturesPage.qml");
     gestures.category = QStringLiteral("Hardware");
@@ -92,7 +93,7 @@ void ModuleRegistry::registerBuiltin()
     // 5. Keyboard Dispatcher Module (keyd)
     ModuleDescriptor keyd;
     keyd.id = QStringLiteral("keyd");
-    keyd.title = QStringLiteral("Keyboard Dispatcher (keyd)");
+    keyd.title = i18n("Keyboard Dispatcher (keyd)");
     keyd.icon = QStringLiteral("input-keyboard");
     keyd.qmlSource = QStringLiteral("qrc:/org/klarity/qml/modules/KeydPage.qml");
     keyd.category = QStringLiteral("Hardware");
@@ -103,7 +104,7 @@ void ModuleRegistry::registerBuiltin()
     // 6. System Auditor & Cleaner Module
     ModuleDescriptor auditor;
     auditor.id = QStringLiteral("auditor");
-    auditor.title = QStringLiteral("System Auditor & Cleaner");
+    auditor.title = i18n("System Auditor & Cleaner");
     auditor.icon = QStringLiteral("security-high");
     auditor.qmlSource = QStringLiteral("qrc:/org/klarity/qml/modules/AuditorPage.qml");
     auditor.category = QStringLiteral("System");
@@ -114,7 +115,7 @@ void ModuleRegistry::registerBuiltin()
     // 7. Secure Boot Manager (sbctl)
     ModuleDescriptor secureboot;
     secureboot.id = QStringLiteral("secureboot");
-    secureboot.title = QStringLiteral("Secure Boot Manager");
+    secureboot.title = i18n("Secure Boot Manager");
     secureboot.icon = QStringLiteral("security-high");
     secureboot.qmlSource = QStringLiteral("qrc:/org/klarity/qml/modules/SecureBootPage.qml");
     secureboot.category = QStringLiteral("Hardware");
@@ -125,7 +126,7 @@ void ModuleRegistry::registerBuiltin()
     // 8. Applications Catalog & Manager (Pacman, AUR, Flatpak, Snap, Portable Apps)
     ModuleDescriptor applications;
     applications.id = QStringLiteral("applications");
-    applications.title = QStringLiteral("Applications & Packages");
+    applications.title = i18n("Applications & Packages");
     applications.icon = QStringLiteral("applications-other");
     applications.qmlSource = QStringLiteral("qrc:/org/klarity/qml/modules/ApplicationsPage.qml");
     applications.category = QStringLiteral("Tools");
@@ -136,7 +137,7 @@ void ModuleRegistry::registerBuiltin()
     // 9. DNS Center Module
     ModuleDescriptor dns;
     dns.id = QStringLiteral("dns");
-    dns.title = QStringLiteral("DNS Center");
+    dns.title = i18n("DNS Center");
     dns.icon = QStringLiteral("network-wired");
     dns.qmlSource = QStringLiteral("qrc:/org/klarity/qml/modules/DnsPage.qml");
     dns.category = QStringLiteral("Network");
@@ -147,7 +148,7 @@ void ModuleRegistry::registerBuiltin()
     // 10. Global File Search Module
     ModuleDescriptor search;
     search.id = QStringLiteral("search");
-    search.title = QStringLiteral("Global File Search");
+    search.title = i18n("Global File Search");
     search.icon = QStringLiteral("system-search");
     search.qmlSource = QStringLiteral("qrc:/org/klarity/qml/modules/SearchPage.qml");
     search.category = QStringLiteral("Tools");
@@ -158,7 +159,7 @@ void ModuleRegistry::registerBuiltin()
     // 11. System Updates Module
     ModuleDescriptor updates;
     updates.id = QStringLiteral("updates");
-    updates.title = QStringLiteral("System Updates");
+    updates.title = i18n("System Updates");
     updates.icon = QStringLiteral("system-software-update");
     updates.qmlSource = QStringLiteral("qrc:/org/klarity/qml/modules/UpdatesPage.qml");
     updates.category = QStringLiteral("System");
@@ -169,7 +170,7 @@ void ModuleRegistry::registerBuiltin()
     // 12. Power & Performance Module
     ModuleDescriptor power;
     power.id = QStringLiteral("power");
-    power.title = QStringLiteral("Power & Performance");
+    power.title = i18n("Power & Performance");
     power.icon = QStringLiteral("battery-charging");
     power.qmlSource = QStringLiteral("qrc:/org/klarity/qml/modules/PowerPage.qml");
     power.category = QStringLiteral("Hardware");
@@ -180,7 +181,7 @@ void ModuleRegistry::registerBuiltin()
     // 13. Disk Health & S.M.A.R.T. Module
     ModuleDescriptor diskhealth;
     diskhealth.id = QStringLiteral("diskhealth");
-    diskhealth.title = QStringLiteral("Disk Health");
+    diskhealth.title = i18n("Disk Health");
     diskhealth.icon = QStringLiteral("drive-harddisk");
     diskhealth.qmlSource = QStringLiteral("qrc:/org/klarity/qml/modules/DiskHealthPage.qml");
     diskhealth.category = QStringLiteral("Hardware");
@@ -191,7 +192,7 @@ void ModuleRegistry::registerBuiltin()
     // 14. Reference / Diagnostics Template
     ModuleDescriptor placeholder;
     placeholder.id = QStringLiteral("placeholder");
-    placeholder.title = QStringLiteral("Overview & Diagnostics");
+    placeholder.title = i18n("Overview & Diagnostics");
     placeholder.icon = QStringLiteral("system-run");
     placeholder.qmlSource = QStringLiteral("qrc:/org/klarity/qml/modules/PlaceholderPage.qml");
     placeholder.category = QStringLiteral("Core");

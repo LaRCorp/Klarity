@@ -1,232 +1,236 @@
 <div align="center">
   <img src="resources/icons/klarity.svg" width="96" height="96" alt="Klarity Logo" />
-  <h1>⚙️🛡️ Klarity v1.0 — Центр Управления и Оптимизации Linux</h1>
-  <p><strong>Единый нативный центр системного администрирования, безопасности и глубокой настройки для Arch Linux и KDE Plasma 6</strong></p>
+  <h1>⚙️🛡️ Klarity v1.1 — Linux Administration & Optimization Control Center</h1>
+  <p><strong>A unified native center for system administration, security hardening, and deep customization for Arch Linux and KDE Plasma 6</strong></p>
 
   <p>
-    <a href="https://github.com/LaRCorp/Klarity/releases"><img src="https://img.shields.io/badge/version-1.0-6366f1?style=flat-square" alt="Version 1.0" /></a>
+    <strong>English</strong> | <a href="README_RU.md">Русский</a>
+  </p>
+
+  <p>
+    <a href="https://github.com/LaRCorp/Klarity/releases"><img src="https://img.shields.io/badge/version-1.1-6366f1?style=flat-square" alt="Version 1.1" /></a>
     <img src="https://img.shields.io/badge/Platform-Arch%20Linux%20%7C%20CachyOS-0ea5e9?style=flat-square" alt="Arch Linux | CachyOS" />
     <img src="https://img.shields.io/badge/Qt%206.12-KF6%20%7C%20C%2B%2B20-8b5cf6?style=flat-square" alt="Qt 6.12 + KF6 + C++20" />
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-10b981?style=flat-square" alt="GPLv3 License" /></a>
     <img src="https://img.shields.io/badge/Desktop-KDE%20Plasma%206-f59e0b?style=flat-square" alt="KDE Plasma 6" />
     <img src="https://img.shields.io/badge/Security-Polkit%20%7C%20Secure%20Boot-ec4899?style=flat-square" alt="Polkit + Secure Boot" />
+    <img src="https://img.shields.io/badge/i18n-English%20%7C%20Русский-10b981?style=flat-square" alt="Localization" />
   </p>
 </div>
 
-**Klarity** — легковесный, нативный и высокопроизводительный центр администрирования, безопасности и оптимизации операционной системы Linux.
-Автозапуск служб, алиасы и функции шелла, глобальные хоткеи, тачпад-жесты, переназначение клавиш на уровне ядра Linux (`keyd`), комплексный аудит защищённости, ключи доверенной загрузки Secure Boot, пакетные менеджеры (Pacman, Flatpak, Portable Apps), конфигурация DNS-серверов, сверхбыстрый поиск файлов и содержимого, системные обновления, управление профилями питания и телеметрия накопителей S.M.A.R.T. объединены в одном целостном приложении со строгим соблюдением стандартов KDE Plasma 6.
+**Klarity** is a lightweight, native, and high-performance administration, security, and optimization control center for Linux.
+Autostart services, shell aliases & functions, global shortcuts, touchpad gestures, kernel-level keyboard remapping (`keyd`), system security auditing and cleaning, UEFI Secure Boot key enrollment, package management (Pacman, Flatpak, Portable Apps), DNS configuration, lightning-fast file search, system updates, CPU power profiles, and S.M.A.R.T. disk telemetry are unified into a single coherent application adhering strictly to KDE Plasma 6 standards.
 
-> 🛡️ **Безопасная архитектура:** Klarity запускается от непривилегированного пользователя. Системные операции (установка пакетов, изменение сетевых настроек DNS, ключи sbctl, профили питания) изолированно выполняются через стандартный протокол **Polkit (`pkexec`)** с интерактивным журналом и аудитом действий в реальном времени.
+> 🛡️ **Secure Architecture:** Klarity runs strictly as an unprivileged user. Privileged system operations (package installation, DNS configuration, sbctl keys, power profiles) are executed in isolation via standard **Polkit (`pkexec`)** with an interactive real-time audit log.
 
-Приложение создано на **C++20**, **Qt 6.12** и **KDE Frameworks 6 (Kirigami 6)**. Полностью совместимо с Wayland и X11, не имеет сторонних фоновых телеметрий и разработано с прицелом на максимальную скорость отклика без задержек.
-
----
-
-## Возможности
-
-### 🚀 Автозапуск и фоновые службы (Autostart)
-- Управление записями Desktop Autostart (`~/.config/autostart/`) и пользовательскими юнитами Systemd (`~/.config/systemd/user/`).
-- Мгновенное включение, выключение, создание и безопасное удаление записей автозапуска.
-- Фильтрация по типу (Desktop / Systemd) и области (User / System), поиск по названиям и бинарным путям.
-- Адаптивная вёрстка карточек: автоматическое сокращение длинных заголовков (`elide`) и строгое вертикальное выравнивание слайдеров переключения.
-
-### 🐚 Псевдонимы и функции шелла (Shell Aliases & Functions)
-- Чтение, парсинг и редактирование псевдонимов и пользовательских функций для Bash (`~/.bashrc`) и Zsh (`~/.zshrc`).
-- Создание новых и модификация существующих алиасов с синтаксической валидацией имён.
-- Автоматическое создание защитных резервных копий (`.bak`) перед каждой записью в конфигурационные файлы.
-
-### ⌨️ Горячие клавиши (Shortcuts & Keybindings)
-- Интеграция с демоном глобальных сочетаний клавиш `kglobalaccel` (KDE Plasma 6) и службой `kded6`.
-- Определение и разрешение конфликтов между системными комбинациями и сторонними приложениями.
-- Асинхронное сканирование в фоновом потоке `QThread` без микродёрганий и задержек графического интерфейса.
-
-### 👆 Жесты тачпада (Touchpad Gestures)
-- Управление жестами через `libinput-gestures` для 3-х и 4-пальцевых свайпов и масштабирования (pinch).
-- Готовые пресеты: переключение виртуальных рабочих столов, обзор окон (Overview / Present Windows), переходы «Назад/Вперёд» в браузерах.
-- Бережное сохранение кастомных комментариев и нестандартных директив в конфигурационном файле.
-
-### 🖮 Диспетчер клавиатуры уровня ядра (Keyboard Dispatcher / keyd)
-- Глубокая интеграция с низкоуровневым демоном переназначения клавиш `keyd` (уровень ядра evdev/uinput).
-- Популярные пресеты: превращение `CapsLock` в `Escape` при одиночном нажатии и `Control` при удержании, Dual-role модификаторы, слои навигации (Nav Layer).
-- Проверка синтаксиса перед применением (`keyd check`) с мгновенным перезапуском службы через Polkit.
-
-### 🛡️ Аудит безопасности системы (System Auditor)
-- Комплексная проверка 7 векторов безопасности Linux:
-  - Статус и конфигурация службы **Polkit**.
-  - Наличие и активность модулей **AppArmor / SELinux**.
-  - Конфигурация межсетевого экрана (**UFW / Firewalld**).
-  - Статус доверенной загрузки **UEFI Secure Boot**.
-  - Сканирование открытых сетевых сокетов и прослушиваемых портов (`ss`).
-  - Проверка привилегий и директив файла `sudoers`.
-  - Версия ядра и выявление известных системных рисков.
-- Расчёт итогового рейтинга защищённости (**Security Score**).
-- Интерактивная карточка быстрой настройки Secure Boot при обнаружении Setup Mode.
-
-### 🔒 Доверенная загрузка (Secure Boot / sbctl)
-- Полнофункциональный графический интерфейс для утилиты управления ключами `sbctl`.
-- Мониторинг режимов UEFI (Setup Mode, Secure Boot Enrolled, статус цепочки TPM).
-- Сканирование и подпись загрузчиков и ядер (`systemd-boot`, GRUB, UKI, `vmlinuz-*`).
-- Однокнопочная генерация и регистрация собственных пользовательских ключей (Enroll Keys).
-
-### 📦 Приложения и пакетный менеджер (Applications & Packages)
-- Единый центр для установленных пакетов: **Pacman** (официальные репозитории), **Flatpak** и **Portable Apps** (AppImage, распакованные бинарники в `~/.local/bin`, `~/Applications`, `/opt`).
-- Автоматическая категоризация по стандартам Freedesktop: Разработка, Мультимедиа, Утилиты, Сеть, Система, Офис, Игры.
-- Гибкие фильтры: пользовательские приложения с GUI, системные зависимости (Explicit / Dependency), переносные программы.
-- Прямой запуск программ и удаление пакетов в 1 клик с очисткой метаданных.
-
-### 🌐 Сетевой DNS-центр (DNS Center)
-- Мониторинг активного резолвера и шлюза через `resolvectl` (systemd-resolved) и `NetworkManager`.
-- Детекция активного шифрования DNS-over-TLS (DoT) и DNS-over-HTTPS (DoH).
-- Быстрое переключение проверенных провайдеров: **Cloudflare** (1.1.1.1), **Google** (8.8.8.8), **AdGuard** (фильтрация рекламы и трекеров), **Quad9** (кибербезопасность) и пользовательские серверы.
-- Встроенный бенчмарк задержки DNS-серверов и тест на утечки (DNS Leak Detection).
-
-### 🔍 Глобальный и синтаксический поиск файлов (Global File Search)
-- Высокоскоростной поисковый бэкенд на базе `fd` (поиск по путям) и `ripgrep` (поиск по содержимому) с прозрачным fallback на `find/grep`.
-- Поддержка поискового синтаксиса: фильтрация по размеру (`>10M`, `<500K`), расширениям (`*.service`), времени изменения (`<2d`), правам доступа.
-- Интерактивные чипы подсказок и история поисковых запросов с защитой от частых дисковых обращений (дебаунсинг).
-
-### 🔄 Системные обновления (System Updates)
-- Единовременный аудит доступных обновлений: Pacman (официальные репозитории), Flatpak и AUR (`yay` / `paru`).
-- Умное 30-минутное кэширование проверок для экономии сетевого трафика и процессорного времени.
-- Интеграция с новостями **Arch Linux News** для своевременного предупреждения о требуемом ручном вмешательстве перед установкой обновлений.
-- Встроенный терминальный лог с потоковым выводом хода выполнения команд в реальном времени.
-
-### ⚡ Управление питанием и процессором (Power & Performance)
-- Управление системным демоном `auto-cpufreq` (автоматическая оптимизация частоты процессора для ноутбуков и ПК).
-- Мониторинг в реальном времени: частоты каждого ядра, температура CPU Package, активный драйвер масштабирования и статус Turbo Boost.
-- Редактор профилей питания для режима зарядки (AC) и батареи (Battery) с настройкой порогов заряда аккумулятора.
-- Режим прямого управления sysfs для опытных пользователей с интерактивным подтверждением рисков.
-
-### 💾 Здоровье накопителей (Disk Health & S.M.A.R.T.)
-- Глубокая диагностика NVMe и SATA накопителей через утилиту `smartctl`.
-- Индикаторы надёжности: процент износа SSD (Wear Level), количество переназначенных секторов, температура, небезопасные отключения питания.
-- Запуск коротких и полных S.M.A.R.T.-тестов накопителя с возможностью отмены процесса в любой момент.
-- Полная интерактивная таблица атрибутов накопителя с цветовым выделением предупреждающих и критических параметров.
-
-### 🛠️ Обзор и диагностика системы (Overview & Diagnostics)
-- Сводка системного окружения: дистрибутив, версия ядра Linux, сессия Wayland / X11, аппаратная конфигурация CPU/GPU.
-- Сканер системных зависимостей модулей с кнопками для быстрой доустановки недостающих утилит в 1 клик.
-
-### 🖥️ Интерфейс и эргономика
-- **Нативный стиль KDE Plasma 6:** дизайн на базе Kirigami 6 гармонично вписывается в окружение рабочего стола, автоматически подхватывая глобальную цветовую схему и системные шрифты.
-- **Боковая панель навигации:** постоянная док-панель со всеми 14 разделами, мгновенным переключением страниц без задержек и сохранением состояния вкладок.
-- **Адаптивность:** гибкая вёрстка элементов под любые разрешения экрана — от компактных окон до ультрашироких 4K-мониторов.
-- **Боковая панель журналов (Log Drawer):** централизованный журнал выполнения команд с цветовой дифференциацией уровней (info, warning, error) и копированием в буфер обмена.
+Built with **C++20**, **Qt 6.12**, and **KDE Frameworks 6 (Kirigami 6)**. Fully compatible with both Wayland and X11, ships with bilingual localization (English & Russian), contains zero third-party telemetry, and is engineered for instantaneous UI responsiveness.
 
 ---
 
-## Стек технологий
+## Features
 
-| Компонент | Технология |
+### 🚀 Autostart & Background Services
+- Manage Desktop Autostart entries (`~/.config/autostart/`) and user-level Systemd units (`~/.config/systemd/user/`).
+- Instantly enable, disable, create, and safely remove autostart entries.
+- Filter by type (Desktop / Systemd) and scope (User / System), with search by name and executable path.
+- Adaptive card layout: automatic title truncation (`elide`) and strict vertical alignment of toggle switches.
+
+### 🐚 Shell Aliases & Functions
+- Read, parse, and edit aliases and custom shell functions for Bash (`~/.bashrc`), Zsh (`~/.zshrc`), and Fish (`~/.config/fish/`).
+- Create and update aliases with syntax validation.
+- Automatic creation of safety backups (`.bak`) before modifying configuration files.
+
+### ⌨️ Shortcuts & Keybindings
+- Deep integration with `kglobalaccel` (KDE Plasma 6) and the `kded6` daemon.
+- Detect and resolve conflicts between system-wide shortcuts and third-party applications.
+- Asynchronous scanning on a background `QThread` without UI stutter or latency.
+
+### 👆 Touchpad Gestures
+- Gesture management powered by `libinput-gestures` for 3-finger and 4-finger swipes and pinch gestures.
+- Built-in presets: virtual desktop switching, window overview (Overview / Present Windows), browser Back/Forward navigation.
+- Preserves custom comments and directives within configuration files.
+
+### 🖮 Kernel Keyboard Dispatcher (keyd)
+- Integration with the low-level `keyd` remapping daemon (kernel evdev/uinput level).
+- Popular presets: `CapsLock` overloaded as `Escape` on tap and `Control` on hold, Dual-role modifiers, navigation layers (Nav Layer).
+- Pre-flight syntax validation (`keyd check`) and privileged daemon reload via Polkit.
+
+### 🛡️ System Auditor & Cleaner
+- Comprehensive hygiene audit to reclaim disk space:
+  - Broken symlinks in the user home directory.
+  - Orphaned packages (unneeded dependencies via `pacman -Qdtq`).
+  - Obsolete package versions in `/var/cache/pacman/pkg` (`paccache`).
+  - Leftover configuration folders in `~/.config` from uninstalled packages.
+  - Failed systemd user services hanging in a failed state.
+- Safe cleaning workflow with reclaimable space calculation and safety warnings for review items.
+
+### 🔒 Secure Boot Hardening (sbctl)
+- Complete graphical interface for the `sbctl` key management utility.
+- Monitor UEFI modes (Setup Mode, Secure Boot Enrolled, TPM chain status).
+- Scan and sign bootloaders and kernels (`systemd-boot`, GRUB, UKI, `vmlinuz-*`).
+- One-click custom key generation and UEFI NVRAM enrollment (with or without Microsoft OEM certificates).
+
+### 📦 Applications & Package Manager
+- Unified hub for installed packages: **Pacman** (official repositories), **Flatpak**, and **Portable Apps** (AppImages and standalone binaries in `~/.local/bin`, `~/Applications`, `/opt`).
+- Automatic categorization following Freedesktop standards: Development, Multimedia, Utilities, Network, System, Office, Games.
+- Flexible filters: GUI applications, dependencies (Explicit / Dependency), portable applications.
+- Direct launch and one-click uninstall with complete metadata cleanup.
+
+### 🌐 DNS Center
+- Monitor active resolvers and gateways via `resolvectl` (systemd-resolved) and `NetworkManager`.
+- Detect active DNS-over-TLS (DoT) and DNS-over-HTTPS (DoH) encryption.
+- Rapid switching between trusted providers: **Cloudflare** (1.1.1.1), **Google** (8.8.8.8), **AdGuard** (ad & tracker blocking), **Quad9** (malware protection), and custom servers.
+- Built-in DNS latency benchmark and DNS leak detection.
+
+### 🔍 Global File Search
+- High-speed search engine powered by `fd` (path search) and `ripgrep` (content search) with graceful fallback to `find/grep`.
+- Advanced syntax: filter by file size (`>10M`, `<500K`), extensions (`*.service`), modification age (`<2d`), permissions.
+- Interactive suggestion chips and debounced search history to prevent disk saturation.
+
+### 🔄 System Updates
+- Simultaneous update audit: Pacman (official repositories), Flatpak, and AUR (`yay` / `paru`).
+- Smart 30-minute caching to reduce network bandwidth and CPU usage.
+- Integrated **Arch Linux News** feed to alert users of required manual intervention prior to upgrades.
+- Real-time streaming terminal log for update execution.
+
+### ⚡ Power & Performance
+- Manage the `auto-cpufreq` daemon (automatic CPU speed & power optimizer for laptops and desktops).
+- Real-time telemetry: per-core frequencies, CPU Package temperatures, active scaling driver, and Turbo Boost status.
+- Configurable profiles for AC power and battery modes with battery charge threshold controls.
+- Expert direct sysfs frequency scaling mode with safety confirmation.
+
+### 💾 Disk Health & S.M.A.R.T.
+- In-depth drive diagnostics for NVMe and SATA drives via `smartctl`.
+- Critical reliability indicators: SSD Wear Level, reallocated sectors, temperature, unsafe shutdowns.
+- Trigger short and extended S.M.A.R.T. self-tests with abort capability.
+- Full interactive S.M.A.R.T. attribute table with visual highlighting of warning and critical parameters.
+
+### 🛠️ System Overview & Diagnostics
+- Environmental summary: Linux distribution, kernel release, Wayland / X11 session, CPU/GPU hardware.
+- Real-time dependency validator with one-click installation commands for missing tools.
+
+### 🖥️ Native UI & Ergonomics
+- **KDE Plasma 6 Native:** Built on Kirigami 6 to blend seamlessly into your desktop environment, automatically adopting system color palettes and fonts.
+- **Full Localization:** Ships with built-in English and Russian translations using KDE Frameworks KI18n / gettext.
+- **Dock Navigation Drawer:** Persistent sidebar featuring all 14 modules with instantaneous page switching and preserved tab states.
+- **Responsive Layout:** Dynamically adjusts to any display resolution, from compact laptop screens to ultrawide 4K monitors.
+- **Slide-out Log Drawer:** Centralized execution log with colored log levels (info, warning, error) and clipboard export.
+
+---
+
+## Tech Stack
+
+| Component | Technology |
 | --- | --- |
-| Язык ядра и бэкенда | C++20 |
-| Графический фреймворк | Qt 6.12, Qt Quick, QML |
-| Системные библиотеки | KDE Frameworks 6 (Kirigami 6, KConfig, KI18n, KCoreAddons) |
-| Система сборки | CMake 3.22+, Ninja, Automoc |
-| Архитектура привилегий | Polkit (`pkexec`) |
-| Поисковые движки | `fd`, `ripgrep` (fallback: `find`, `grep`) |
-| Сеть и резолверы | `systemd-resolved`, `NetworkManager`, `dig`, `nslookup` |
-| Управление питанием | `auto-cpufreq`, Linux sysfs cpufreq/intel_pstate/amd-pstate |
-| Диагностика дисков | `smartmontools` (`smartctl`) |
-| Тестирование | `QtTest` (37 модульных тестов логики и оффскрин QML-рендеринга) |
-| Линтинг | `qmllint` (строгий контроль синтаксиса и типизации) |
+| Core Language | C++20 |
+| GUI Framework | Qt 6.12, Qt Quick, QML |
+| System Libraries | KDE Frameworks 6 (Kirigami 6, KConfig, KI18n, KCoreAddons) |
+| Localization (i18n) | GNU Gettext / KI18n (ru, en) |
+| Build System | CMake 3.22+, Ninja, Automoc |
+| Privilege Architecture | Polkit (`pkexec`) |
+| Search Backends | `fd`, `ripgrep` (fallback: `find`, `grep`) |
+| Network & Resolvers | `systemd-resolved`, `NetworkManager`, `dig`, `nslookup` |
+| Power Management | `auto-cpufreq`, Linux sysfs cpufreq/intel_pstate/amd-pstate |
+| Drive Diagnostics | `smartmontools` (`smartctl`) |
+| Test Suite | `QtTest` (37 unit & offscreen QML rendering tests) |
+| Linter | `qmllint` (strict syntax and type verification) |
 
 ---
 
-## 📥 Быстрый запуск (Готовые бинарники)
+## 📥 Quick Start (Prebuilt Binaries)
 
-Сборка из исходников не требуется — вы можете сразу скачать готовый исполняемый файл или архив со страницы **[Релизов](https://github.com/LaRCorp/Klarity/releases/tag/v1.0)**:
+No source compilation required — prebuilt binaries and archives are available directly on the **[Releases](https://github.com/LaRCorp/Klarity/releases/tag/v1.1)** page:
 
-### Вариант 1: Запуск готового бинарного файла
-Скачайте исполняемый файл `klarity`, сделайте его исполняемым и запустите:
+### Option 1: Standalone Binary
+Download the `klarity` executable, mark it executable, and launch:
 ```bash
 chmod +x klarity
 ./klarity
 ```
 
-### Вариант 2: Установка в систему (с ярлыком и иконкой)
-Скачайте архив `klarity-v1.0-linux-x86_64.tar.gz` и запустите скрипт быстрой установки:
+### Option 2: Full System Installation (Desktop Entry & Icons)
+Download `klarity-v1.1-linux-x86_64.tar.gz` and run the installer:
 ```bash
-tar -xzf klarity-v1.0-linux-x86_64.tar.gz
-cd klarity-v1.0-linux-x86_64
+tar -xzf klarity-v1.1-linux-x86_64.tar.gz
+cd klarity-v1.1-linux-x86_64
 ./install.sh
 ```
-*Скрипт установит бинарник в `~/.local/bin/klarity`, ярлык в меню приложений KDE Plasma / GNOME и векторную иконку. Root-права не требуются.*
+*Installs the binary to `~/.local/bin/klarity`, desktop entry into KDE Plasma / GNOME application menus, and vector icon. No root privileges required.*
 
 ---
 
-## 🛠️ Сборка из исходников (Разработка)
+## 🛠️ Building from Source (Development)
 
-### Системные требования
-- **Arch Linux**, **CachyOS**, **Manjaro** или любой дистрибутив на базе Arch.
-- **KDE Plasma 6** (Wayland или X11).
-- Компилятор C++ с поддержкой C++20 (GCC 13+ или Clang 16+).
+### Prerequisites
+- **Arch Linux**, **CachyOS**, **Manjaro**, or any Arch-based distribution.
+- **KDE Plasma 6** (Wayland or X11).
+- C++20 compliant compiler (GCC 13+ or Clang 16+).
 
-### Установка зависимостей сборки
+### Install Build Dependencies
 ```bash
 sudo pacman -S --needed \
-    base-devel cmake ninja git \
+    base-devel cmake ninja git gettext \
     qt6-base qt6-declarative \
     kirigami kconfig ki18n kcoreaddons \
     polkit
 ```
 
-### Рекомендуемые системные утилиты для работы модулей
+### Recommended Runtime Tools
 ```bash
 sudo pacman -S --needed \
     fd ripgrep bind smartmontools \
     libinput-gestures sbctl auto-cpufreq
 ```
 
-### Клонирование и запуск в режиме разработки
+### Clone & Build
 ```bash
 git clone https://github.com/LaRCorp/Klarity.git
 cd Klarity
 
-# Конфигурация и сборка проекта
+# Configure and compile
 cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j$(nproc)
 
-# Запуск приложения
+# Launch
 ./build/klarity
 ```
 
 ---
 
-## Проверка качества и тесты
+## Testing & Quality Assurance
 
-Проект покрыт автоматизированными модульными тестами, проверяющими валидацию конфигураций, кольцевые буферы логов, парсинг окружения и корректность offscreen-рендеринга всех страниц модулей:
+Klarity includes an automated test suite verifying configuration parsers, ring-buffer logging, environment detection, and offscreen QML rendering across all pages:
 
 ```bash
-# Запуск полного набора модульных тестов (37 тестов)
+# Run full unit test suite (37 tests)
 ./build/klarity_tests
 
-# Проверка синтаксиса QML без предупреждений
+# QML syntax and type validation
 qmllint qml/Main.qml qml/modules/*.qml qml/components/*.qml
 ```
 
 ---
 
-## 🤝 Благодарности и сторонние компоненты (Credits & Acknowledgements)
+## 🤝 Credits & Acknowledgements
 
-Klarity выступает в роли графического центра управления и интегратора над проверенными консольными утилитами и компонентами экосистемы Linux. Мы выражаем искреннюю благодарность авторам и сообществам следующих проектов:
+Klarity acts as a native graphical control center and orchestrator over battle-tested Linux tools and components. We express our gratitude to the authors and maintainers of:
 
-- **[sbctl](https://github.com/Foxboron/sbctl)** (MIT) — автор Morten Linderud (*Foxboron*). Управление ключами и подпись компонентов Secure Boot.
-- **[keyd](https://github.com/rvaiya/keyd)** (MIT) — автор Rahul Rajan (*rvaiya*). Низкоуровневый перехватчик и диспетчер клавиатуры на уровне ядра Linux.
-- **[auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)** (LGPL-3.0) — автор Adnan Hodzic. Автоматический оптимизатор частот процессора и энергопотребления.
-- **[libinput-gestures](https://github.com/bulletmark/libinput-gestures)** (GPL-3.0) — автор Mark Blakeney (*bulletmark*). Служба трансляции тачпад-жестов в действия рабочего стола.
-- **[smartmontools](https://www.smartmontools.org/)** (GPL-2.0+) — Smartmontools Team. Утилита `smartctl` для мониторинга и тестирования S.M.A.R.T. накопителей.
-- **[ripgrep](https://github.com/BurntSushi/ripgrep)** (MIT / Unlicense) — автор Andrew Gallant (*BurntSushi*). Высокопроизводительный поиск по содержимому файлов.
-- **[fd](https://github.com/sharkdp/fd)** (MIT / Apache-2.0) — автор David Peter (*sharkdp*). Быстрый и удобный поиск файлов по путям.
-- **[KDE Community](https://kde.org/) & [Kirigami](https://develop.kde.org/frameworks/kirigami/)** (LGPL-2.0+) — за графический фреймворк и компоненты рабочего стола KDE Plasma 6.
-- **[Qt Project](https://www.qt.io/)** (LGPL-3.0 / GPL-3.0) — за C++ фреймворк Qt Quick и QML.
+- **[sbctl](https://github.com/Foxboron/sbctl)** (MIT) — by Morten Linderud (*Foxboron*). Secure Boot key manager.
+- **[keyd](https://github.com/rvaiya/keyd)** (MIT) — by Rahul Rajan (*rvaiya*). Kernel-level keyboard remapping daemon.
+- **[auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)** (LGPL-3.0) — by Adnan Hodzic. Automatic CPU speed & power optimizer.
+- **[libinput-gestures](https://github.com/bulletmark/libinput-gestures)** (GPL-3.0) — by Mark Blakeney (*bulletmark*). Touchpad gestures translation utility.
+- **[smartmontools](https://www.smartmontools.org/)** (GPL-2.0+) — Smartmontools Team. S.M.A.R.T. monitoring utilities (`smartctl`).
+- **[ripgrep](https://github.com/BurntSushi/ripgrep)** (MIT / Unlicense) — by Andrew Gallant (*BurntSushi*). High-performance content search.
+- **[fd](https://github.com/sharkdp/fd)** (MIT / Apache-2.0) — by David Peter (*sharkdp*). Fast and user-friendly path search.
+- **[KDE Community](https://kde.org/) & [Kirigami](https://develop.kde.org/frameworks/kirigami/)** (LGPL-2.0+) — For the desktop components and Kirigami 6 framework.
+- **[Qt Project](https://www.qt.io/)** (LGPL-3.0 / GPL-3.0) — For Qt Quick and QML.
 
 ---
 
-## Лицензия
+## License
 
-Проект распространяется под свободной лицензией **GNU General Public License v3.0** (GPLv3). Подробности в файле [LICENSE](LICENSE).
+Released under the **GNU General Public License v3.0** (GPLv3). See [LICENSE](LICENSE) for details.
 
 Copyright (c) 2026 LaRevole (LaRCorp).
 
-Сделано с уважением к Linux, свободе настроек и экосистеме KDE.
+Crafted with respect for Linux, customizability, and the KDE ecosystem.

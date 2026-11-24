@@ -3,6 +3,7 @@
 #include "core/PkexecRunner.h"
 #include "core/ProcessRunner.h"
 
+#include <KLocalizedString>
 #include <QDateTime>
 #include <QDir>
 #include <QDirIterator>
@@ -110,12 +111,12 @@ int SystemAuditor::selectedCount() const
 
 QString SystemAuditor::formatSize(qint64 bytes)
 {
-    if (bytes <= 0) return QStringLiteral("0 B");
+    if (bytes <= 0) return i18n("0 B");
     const double b = static_cast<double>(bytes);
-    if (b < 1024.0) return QStringLiteral("%1 B").arg(bytes);
-    if (b < 1024.0 * 1024.0) return QStringLiteral("%1 KiB").arg(b / 1024.0, 0, 'f', 1);
-    if (b < 1024.0 * 1024.0 * 1024.0) return QStringLiteral("%1 MiB").arg(b / (1024.0 * 1024.0), 0, 'f', 1);
-    return QStringLiteral("%1 GiB").arg(b / (1024.0 * 1024.0 * 1024.0), 0, 'f', 2);
+    if (b < 1024.0) return i18n("%1 B", bytes);
+    if (b < 1024.0 * 1024.0) return i18n("%1 KiB", QString::number(b / 1024.0, 'f', 1));
+    if (b < 1024.0 * 1024.0 * 1024.0) return i18n("%1 MiB", QString::number(b / (1024.0 * 1024.0), 'f', 1));
+    return i18n("%1 GiB", QString::number(b / (1024.0 * 1024.0 * 1024.0), 'f', 2));
 }
 
 QString SystemAuditor::totalReclaimableFormatted() const
@@ -276,10 +277,10 @@ void SystemAuditor::scanBrokenSymlinks()
                 item.id = QStringLiteral("symlink_%1").arg(index++);
                 item.category = QStringLiteral("symlinks");
                 item.title = fi.fileName();
-                item.subtitle = QStringLiteral("Points to missing: %1").arg(fi.symLinkTarget());
+                item.subtitle = i18n("Points to missing: %1", fi.symLinkTarget());
                 item.path = fi.absoluteFilePath();
                 item.sizeBytes = 0;
-                item.formattedSize = QStringLiteral("0 B");
+                item.formattedSize = i18n("0 B");
                 item.riskLevel = QStringLiteral("safe");
                 item.selected = true;
 
@@ -350,7 +351,7 @@ void SystemAuditor::scanOrphanedPackages()
         item.id = QStringLiteral("orphan_%1").arg(index++);
         item.category = QStringLiteral("orphans");
         item.title = name;
-        item.subtitle = desc.isEmpty() ? QStringLiteral("Orphaned dependency package") : desc;
+        item.subtitle = desc.isEmpty() ? i18n("Orphaned dependency package") : desc;
         item.path = name;
         item.sizeBytes = sizeBytes;
         item.formattedSize = formatSize(sizeBytes);
@@ -393,8 +394,8 @@ void SystemAuditor::scanPackageCache()
                 AuditItem item;
                 item.id = QStringLiteral("cache_paccache");
                 item.category = QStringLiteral("cache");
-                item.title = QStringLiteral("Pacman Package Cache (old package versions)");
-                item.subtitle = QStringLiteral("%1 candidate archives in /var/cache/pacman/pkg (keeping last 2 versions)").arg(candidates);
+                item.title = i18n("Pacman Package Cache (old package versions)");
+                item.subtitle = i18n("%1 candidate archives in /var/cache/pacman/pkg (keeping last 2 versions)", candidates);
                 item.path = QStringLiteral("/var/cache/pacman/pkg");
                 item.sizeBytes = sizeBytes;
                 item.formattedSize = savedStr;
@@ -446,7 +447,7 @@ void SystemAuditor::scanOrphanedConfigs()
         item.id = QStringLiteral("config_%1").arg(index++);
         item.category = QStringLiteral("configs");
         item.title = dirName;
-        item.subtitle = QStringLiteral("Directory in ~/.config with no active matching package");
+        item.subtitle = i18n("Directory in ~/.config with no active matching package");
         item.path = fi.absoluteFilePath();
         item.sizeBytes = size;
         item.formattedSize = formatSize(size);
@@ -486,10 +487,10 @@ void SystemAuditor::scanForgottenServices()
                 item.id = QStringLiteral("service_%1").arg(index++);
                 item.category = QStringLiteral("services");
                 item.title = srvName;
-                item.subtitle = QStringLiteral("Failed user service hanging in systemd state");
+                item.subtitle = i18n("Failed user service hanging in systemd state");
                 item.path = srvName;
                 item.sizeBytes = 0;
-                item.formattedSize = QStringLiteral("0 B");
+                item.formattedSize = i18n("0 B");
                 item.riskLevel = QStringLiteral("review");
                 item.selected = false;
 
@@ -582,11 +583,11 @@ void SystemAuditor::cleanSelected()
 
             if (exitCode == 0) {
                 LogModel::instance()->append(QStringLiteral("Auditor"), QStringLiteral("info"), QStringLiteral("Removed orphaned packages successfully"));
-                emit operationFinished(true, QStringLiteral("Cleaned selected items successfully."));
+                emit operationFinished(true, i18n("Cleaned selected items successfully."));
             } else if (exitCode == 126 || exitCode == 127) {
-                emit operationFinished(false, QStringLiteral("Package removal cancelled by user."));
+                emit operationFinished(false, i18n("Package removal cancelled by user."));
             } else {
-                emit operationFinished(false, QStringLiteral("Failed to remove packages: %1").arg(output));
+                emit operationFinished(false, i18n("Failed to remove packages: %1", output));
             }
             startScan();
         });
@@ -599,6 +600,6 @@ void SystemAuditor::cleanSelected()
 
     m_isCleaning = false;
     emit isCleaningChanged();
-    emit operationFinished(true, QStringLiteral("Cleanup completed successfully."));
+    emit operationFinished(true, i18n("Cleanup completed successfully."));
     startScan();
 }

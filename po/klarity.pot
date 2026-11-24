@@ -1,0 +1,4243 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-24 21:35+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: qml/components/ConfirmDialog.qml:15
+#, kde-format
+msgid "Continue"
+msgstr ""
+
+#: qml/components/ConfirmDialog.qml:16 qml/components/ScanProgress.qml:31
+#: qml/modules/AliasesPage.qml:168 qml/modules/AutostartPage.qml:113
+#: qml/modules/GesturesPage.qml:400 qml/modules/KeydPage.qml:445
+#: qml/modules/ShortcutsPage.qml:531
+#, kde-format
+msgid "Cancel"
+msgstr ""
+
+#: qml/components/ConfirmDialog.qml:21
+#, kde-format
+msgid "Dangerous Action Confirmation"
+msgstr ""
+
+#: qml/components/ConfirmDialog.qml:21
+#, kde-format
+msgid "Confirmation"
+msgstr ""
+
+#: qml/components/ConfirmDialog.qml:33
+#, kde-format
+msgid "This action might affect system stability. Please proceed with caution."
+msgstr ""
+
+#: qml/components/ConfirmDialog.qml:47
+#, kde-format
+msgid "I understand the risks"
+msgstr ""
+
+#: qml/components/LogPanel.qml:26 qml/modules/AliasesPage.qml:46
+#: qml/modules/AuditorPage.qml:41 qml/modules/AutostartPage.qml:38
+#: qml/modules/DiskHealthPage.qml:62 qml/modules/DnsPage.qml:53
+#: qml/modules/GesturesPage.qml:40 qml/modules/KeydPage.qml:40
+#: qml/modules/PlaceholderPage.qml:15 qml/modules/PowerPage.qml:40
+#: qml/modules/SecureBootPage.qml:39 qml/modules/ShortcutsPage.qml:45
+#: qml/modules/UpdatesPage.qml:49
+#, kde-format
+msgid "Execution Logs"
+msgstr ""
+
+#: qml/components/LogPanel.qml:31 qml/modules/DiskHealthPage.qml:733
+#: qml/modules/PowerPage.qml:801 qml/modules/SearchPage.qml:88
+#: qml/modules/ShortcutsPage.qml:331 qml/modules/UpdatesPage.qml:583
+#, kde-format
+msgid "Clear"
+msgstr ""
+
+#: qml/components/LogPanel.qml:37
+#, kde-format
+msgid "Copy All"
+msgstr ""
+
+#: qml/components/LogPanel.qml:114
+#, kde-format
+msgid "No log entries yet"
+msgstr ""
+
+#: qml/components/MissingDependencyCard.qml:16
+#, kde-format
+msgid "Missing Required Tool: %1"
+msgstr ""
+
+#: qml/components/MissingDependencyCard.qml:47
+#, kde-format
+msgid "The module '%1' requires '%2' to function properly."
+msgstr ""
+
+#: qml/components/MissingDependencyCard.qml:54
+#, kde-format
+msgid "Recommended package install command:"
+msgstr ""
+
+#: qml/components/MissingDependencyCard.qml:78
+#, kde-format
+msgid ""
+"This package is in the AUR. Please build or install it manually using your "
+"AUR helper (e.g., yay or paru)."
+msgstr ""
+
+#: qml/components/MissingDependencyCard.qml:94
+#, kde-format
+msgid "Install with pacman"
+msgstr ""
+
+#: qml/components/MissingDependencyCard.qml:104
+#, kde-format
+msgid "Re-check"
+msgstr ""
+
+#: qml/components/ScanProgress.qml:9
+#, kde-format
+msgid "Operation in progress..."
+msgstr ""
+
+#: qml/Main.qml:11
+#, kde-format
+msgid "Klarity - Linux Control Center"
+msgstr ""
+
+#: qml/Main.qml:29 src/main.cpp:29
+#, kde-format
+msgid "Klarity"
+msgstr ""
+
+#: qml/Main.qml:37 src/core/ModuleRegistry.cpp:52
+#, kde-format
+msgid "Autostart"
+msgstr ""
+
+#: qml/Main.qml:43 qml/modules/AliasesPage.qml:12
+#: src/core/ModuleRegistry.cpp:63
+#, kde-format
+msgid "Shell Aliases & Functions"
+msgstr ""
+
+#: qml/Main.qml:49 qml/modules/ShortcutsPage.qml:12
+#: src/core/ModuleRegistry.cpp:74
+#, kde-format
+msgid "Shortcuts & Keybindings"
+msgstr ""
+
+#: qml/Main.qml:55 qml/modules/GesturesPage.qml:12
+#: src/core/ModuleRegistry.cpp:85
+#, kde-format
+msgid "Touchpad Gestures"
+msgstr ""
+
+#: qml/Main.qml:61
+#, kde-format
+msgid "Keyboard Dispatcher"
+msgstr ""
+
+#: qml/Main.qml:67 qml/modules/AuditorPage.qml:11
+#, kde-format
+msgid "System Auditor"
+msgstr ""
+
+#: qml/Main.qml:73 qml/modules/SecureBootPage.qml:285
+#, kde-format
+msgid "Secure Boot"
+msgstr ""
+
+#: qml/Main.qml:79 qml/modules/ApplicationsPage.qml:12
+#: src/core/ModuleRegistry.cpp:129
+#, kde-format
+msgid "Applications & Packages"
+msgstr ""
+
+#: qml/Main.qml:85 qml/modules/DnsPage.qml:12 src/core/ModuleRegistry.cpp:140
+#, kde-format
+msgid "DNS Center"
+msgstr ""
+
+#: qml/Main.qml:91 qml/modules/SearchPage.qml:11
+#: src/core/ModuleRegistry.cpp:151
+#, kde-format
+msgid "Global File Search"
+msgstr ""
+
+#: qml/Main.qml:97 qml/modules/UpdatesPage.qml:12
+#: src/core/ModuleRegistry.cpp:162
+#, kde-format
+msgid "System Updates"
+msgstr ""
+
+#: qml/Main.qml:103 qml/modules/PowerPage.qml:12
+#: src/core/ModuleRegistry.cpp:173
+#, kde-format
+msgid "Power & Performance"
+msgstr ""
+
+#: qml/Main.qml:109 src/core/ModuleRegistry.cpp:184
+#, kde-format
+msgid "Disk Health"
+msgstr ""
+
+#: qml/Main.qml:115 src/core/ModuleRegistry.cpp:195
+#, kde-format
+msgid "Overview & Diagnostics"
+msgstr ""
+
+#: qml/Main.qml:132
+#, kde-format
+msgid "Distro: %1 (%2)"
+msgstr ""
+
+#: qml/Main.qml:138
+#, kde-format
+msgid "Session: %1"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:26
+#, kde-format
+msgid "Add Entry"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:28
+#, kde-format
+msgid "Add new alias or function"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:40 qml/modules/AutostartPage.qml:32
+#: qml/modules/DiskHealthPage.qml:278 qml/modules/DnsPage.qml:29
+#: qml/modules/DnsPage.qml:123 qml/modules/ShortcutsPage.qml:28
+#, kde-format
+msgid "Refresh"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:42
+#, kde-format
+msgid "Reload shell aliases and functions"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:48 qml/modules/AuditorPage.qml:43
+#: qml/modules/AutostartPage.qml:40 qml/modules/DnsPage.qml:55
+#: qml/modules/GesturesPage.qml:42 qml/modules/KeydPage.qml:42
+#: qml/modules/PlaceholderPage.qml:17 qml/modules/SecureBootPage.qml:41
+#: qml/modules/ShortcutsPage.qml:47
+#, kde-format
+msgid "Open execution logs"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:60
+#, kde-format
+msgid "Are you sure you want to delete this shell entry?"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:77
+#, kde-format
+msgid "Create Shell Entry"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:77
+#, kde-format
+msgid "Edit Shell Entry: %1"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:89
+#, kde-format
+msgid "Shell:"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:100 qml/modules/SearchPage.qml:192
+#, kde-format
+msgid "Type:"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:112
+#, kde-format
+msgid "Identifier / Name:"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:118
+#, kde-format
+msgid "e.g. ll or my_backup_function"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:122
+#, kde-format
+msgid "Command or Function Body:"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:134
+#, kde-format
+msgid ""
+"echo 'Executing...'\n"
+"rsync -avz /src /dest"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:135
+#, kde-format
+msgid "ls -la --color=auto"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:144
+#, kde-format
+msgid "Test Syntax"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:149
+#, kde-format
+msgid "✓ Syntax is valid!"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:152
+#, kde-format
+msgid "✗ Error: %1"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:173
+#, kde-format
+msgid "Create"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:173
+#, kde-format
+msgid "Save"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:206
+#, kde-format
+msgid "Filter aliases and functions..."
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:211
+#, kde-format
+msgid "All Shells"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:217 qml/modules/ApplicationsPage.qml:215
+#: qml/modules/AutostartPage.qml:156 qml/modules/SearchPage.qml:32
+#, kde-format
+msgid "All Types"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:315
+#, kde-format
+msgid "Edit entry"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:330 qml/modules/AutostartPage.qml:296
+#, kde-format
+msgid "Delete entry"
+msgstr ""
+
+#: qml/modules/AliasesPage.qml:374
+#, kde-format
+msgid "No shell aliases or functions found"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:56
+#, kde-format
+msgid "Applications (%1)"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:61
+#, kde-format
+msgid "Portable Apps (%1)"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:66
+#, kde-format
+msgid "System Packages (%1)"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:84
+#, kde-format
+msgid "Search applications by name or description..."
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:90 qml/modules/AuditorPage.qml:179
+#, kde-format
+msgid "All Categories"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:91
+#, kde-format
+msgid "Internet"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:92
+#, kde-format
+msgid "Development"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:93
+#, kde-format
+msgid "Graphics"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:94
+#, kde-format
+msgid "Multimedia"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:95
+#, kde-format
+msgid "Office"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:96
+#, kde-format
+msgid "Games"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:97 qml/modules/AutostartPage.qml:162
+#, kde-format
+msgid "System"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:98
+#, kde-format
+msgid "Utilities"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:106
+#, kde-format
+msgid "User Installed (Explicit)"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:107
+#, kde-format
+msgid "All GUI Applications"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:108
+#, kde-format
+msgid "System / Desktop Components"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:115 qml/modules/ApplicationsPage.qml:308
+#: qml/modules/ApplicationsPage.qml:434 qml/modules/ApplicationsPage.qml:456
+#: qml/modules/ApplicationsPage.qml:527 qml/modules/ShortcutsPage.qml:132
+#, kde-format
+msgid "All Sources"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:121 qml/modules/ApplicationsPage.qml:321
+#, kde-format
+msgid "Reload"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:124
+#, kde-format
+msgid "Force refresh applications cache"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:146
+#, kde-format
+msgid "User Apps: %1"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:163
+#, kde-format
+msgid "Flatpak: %1"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:180
+#, kde-format
+msgid "Portable: %1"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:190
+#, kde-format
+msgid "Showing %1 application(s)"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:210
+#, kde-format
+msgid "Search portable apps by name or path..."
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:215
+#, kde-format
+msgid "ELF Binaries"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:221
+#, kde-format
+msgid "All Status"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:221
+#, kde-format
+msgid "In Desktop Menu"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:221 qml/modules/ApplicationsPage.qml:795
+#, kde-format
+msgid "Not in Menu"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:227
+#, kde-format
+msgid "All Locations"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:227
+#, kde-format
+msgid "~/Applications"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:227
+#, kde-format
+msgid "~/.local/bin"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:232
+#, kde-format
+msgid "Add File..."
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:239
+#, kde-format
+msgid "Scan"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:243
+#, kde-format
+msgid "Rescan filesystem for portable AppImages and binaries"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:262
+#, kde-format
+msgid "Portable Apps: %1"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:272
+#, kde-format
+msgid "Showing %1 portable app(s)"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:292
+#, kde-format
+msgid "Search all packages, libraries and tools..."
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:298
+#, kde-format
+msgid "Explicitly Installed (pacman -Qe)"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:299
+#, kde-format
+msgid "Dependencies & Libraries (pacman -Qd)"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:300
+#, kde-format
+msgid "All System Packages"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:313 qml/modules/UpdatesPage.qml:30
+#, kde-format
+msgid "Check Updates"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:341
+#, kde-format
+msgid "Total Packages: %1"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:357
+#, kde-format
+msgid "Explicit: %1"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:374
+#, kde-format
+msgid "Dependencies: %1"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:392
+#, kde-format
+msgid "Updates: %1"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:402
+#, kde-format
+msgid "Showing %1 package(s)"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:434 qml/modules/ApplicationsPage.qml:456
+#, kde-format
+msgid "All"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:559
+#, kde-format
+msgid "Refreshing packages database..."
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:559
+#, kde-format
+msgid "Scanning filesystem for portable apps..."
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:622
+#, kde-format
+msgid "User Application"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:672
+#, kde-format
+msgid "Launch"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:676
+#, kde-format
+msgid "Launch %1"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:687 qml/modules/ApplicationsPage.qml:993
+#, kde-format
+msgid "Details"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:691 qml/modules/ApplicationsPage.qml:997
+#, kde-format
+msgid "Package metadata & details"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:703
+#, kde-format
+msgid "Uninstall application %1"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:707
+#, kde-format
+msgid "Are you sure you want to permanently delete the file '%1'?"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:712 qml/modules/ApplicationsPage.qml:1012
+#, kde-format
+msgid "Are you sure you want to remove '%1' (%2)?"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:795
+#, kde-format
+msgid "In KDE Menu"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:815
+#, kde-format
+msgid "Size: %1"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:820
+#, kde-format
+msgid "Modified: %1"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:829
+#, kde-format
+msgid "Run"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:833
+#, kde-format
+msgid "Run portable executable"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:838
+#, kde-format
+msgid "Remove from Menu"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:838
+#, kde-format
+msgid "Add to Menu"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:842
+#, kde-format
+msgid "Remove from KDE Application Menu"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:842
+#, kde-format
+msgid "Add to KDE Application Menu"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:856
+#, kde-format
+msgid "Delete file from filesystem"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:859
+#, kde-format
+msgid "Are you sure you want to permanently delete '%1'?"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:927
+#, kde-format
+msgid "User package"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:927
+#, kde-format
+msgid "System library / dependency"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:969
+#, kde-format
+msgid "Explicit"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:969
+#, kde-format
+msgid "Dependency"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:1008
+#, kde-format
+msgid "Remove package %1"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:1026
+#, kde-format
+msgid "Package Details"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:1036
+#, kde-format
+msgid "Source:"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:1046
+#, kde-format
+msgid "Version:"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:1059
+#, kde-format
+msgid "Installed Size:"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:1069
+#, kde-format
+msgid "License:"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:1080
+#, kde-format
+msgid "Description:"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:1100
+#, kde-format
+msgid "No description provided"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:1111
+#, kde-format
+msgid "Dependencies:"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:1129
+#, kde-format
+msgid "Upstream URL:"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:1142
+#, kde-format
+msgid "Close"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:1153
+#, kde-format
+msgid "Uninstall"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:1163
+#, kde-format
+msgid "Delete Permanently"
+msgstr ""
+
+#: qml/modules/ApplicationsPage.qml:1172
+#, kde-format
+msgid "Select Portable Application Executable"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:25
+#, kde-format
+msgid "Scanning..."
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:25
+#, kde-format
+msgid "Start Audit"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:28
+#, kde-format
+msgid ""
+"Scan system for broken links, orphan packages, cache, and leftover configs"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:33
+#, kde-format
+msgid "Clean Selected (%1)"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:34
+#, kde-format
+msgid "Clean Selected"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:37
+#, kde-format
+msgid "Delete selected garbage and reclaim disk space"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:83
+#, kde-format
+msgid "System Cleanup & Hygiene Audit"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:87
+#, kde-format
+msgid ""
+"Scan for obsolete package archives, orphan packages, dead symlinks, and "
+"leftover application data."
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:118
+#, kde-format
+msgid "Reclaimable"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:126
+#, kde-format
+msgid "Start Scan"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:173
+#, kde-format
+msgid "Filter audit items..."
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:180
+#, kde-format
+msgid "Broken Symlinks"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:181
+#, kde-format
+msgid "Orphan Packages"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:182
+#, kde-format
+msgid "Package Cache"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:183
+#, kde-format
+msgid "Orphaned Configs"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:184
+#, kde-format
+msgid "Failed Services"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:192
+#, kde-format
+msgid "All Risk Levels"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:193
+#, kde-format
+msgid "Safe to Remove"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:194
+#, kde-format
+msgid "Review Before Removing"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:200
+#, kde-format
+msgid "Select Safe"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:206
+#, kde-format
+msgid "Deselect All"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:295
+#, kde-format
+msgid "Safe"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:295
+#, kde-format
+msgid "Review"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:355
+#, kde-format
+msgid "Click 'Start Scan' to analyze your system for reclaimable space"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:356
+#, kde-format
+msgid "No items match the current filter"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:364
+#, kde-format
+msgid "Clean Selected Items?"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:366
+#, kde-format
+msgid ""
+"You are about to remove %1 item(s). This will reclaim approximately %2 of "
+"disk space."
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:370
+#, kde-format
+msgid ""
+"Warning: Some selected items require review (e.g. leftover configuration "
+"folders). Please ensure you have backups."
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:387 src/modules/search/SearchManager.cpp:337
+#, kde-format
+msgid "Symlink"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:388
+#, kde-format
+msgid "Orphan Package"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:389
+#, kde-format
+msgid "Cache"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:390
+#, kde-format
+msgid "Config Folder"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:391
+#, kde-format
+msgid "Service"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:411
+#: src/modules/applications/PortableAppsManager.cpp:64
+#: src/modules/auditor/SystemAuditor.cpp:114
+#: src/modules/auditor/SystemAuditor.cpp:283
+#: src/modules/auditor/SystemAuditor.cpp:493
+#, kde-format
+msgid "0 B"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:413
+#: src/modules/applications/PortableAppsManager.cpp:67
+#: src/modules/auditor/SystemAuditor.cpp:117
+#, kde-format
+msgid "%1 KiB"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:414
+#: src/modules/applications/PortableAppsManager.cpp:68
+#: src/modules/auditor/SystemAuditor.cpp:118
+#, kde-format
+msgid "%1 MiB"
+msgstr ""
+
+#: qml/modules/AuditorPage.qml:415
+#: src/modules/applications/PortableAppsManager.cpp:69
+#: src/modules/auditor/SystemAuditor.cpp:119
+#, kde-format
+msgid "%1 GiB"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:12
+#, kde-format
+msgid "Autostart Management"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:26
+#, kde-format
+msgid "Add Application"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:28
+#, kde-format
+msgid "Add custom application to autostart"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:34
+#, kde-format
+msgid "Reload autostart entries"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:52
+#, kde-format
+msgid "Are you sure you want to remove this autostart entry?"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:62
+#, kde-format
+msgid "Add Autostart Application"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:70
+#, kde-format
+msgid "Application Name:"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:76
+#, kde-format
+msgid "e.g. My Script or Web App"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:80
+#, kde-format
+msgid "Command or Exec Path:"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:86
+#, kde-format
+msgid "e.g. /usr/bin/my-app --minimized"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:90
+#, kde-format
+msgid "Icon Name (optional):"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:97
+#, kde-format
+msgid "system-run"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:101
+#, kde-format
+msgid "Description / Comment (optional):"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:107
+#, kde-format
+msgid "Starts service at login"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:118
+#, kde-format
+msgid "Add to Autostart"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:151
+#, kde-format
+msgid "Filter by name or command..."
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:156
+#, kde-format
+msgid "Desktop"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:156
+#, kde-format
+msgid "Systemd"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:162
+#, kde-format
+msgid "All Scopes"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:162
+#, kde-format
+msgid "User"
+msgstr ""
+
+#: qml/modules/AutostartPage.qml:314
+#, kde-format
+msgid "No autostart entries found"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:15
+#, kde-format
+msgid "Disk Details: %1"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:16
+#, kde-format
+msgid "Disk Health & S.M.A.R.T."
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:31
+#, kde-format
+msgid "Back to Disks"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:33
+#, kde-format
+msgid "Return to all detected storage drives"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:37
+#, kde-format
+msgid "Scan Disks"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:39
+#, kde-format
+msgid "Scan system drives and reload S.M.A.R.T. telemetry"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:50
+#, kde-format
+msgid "smartd: Active"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:50
+#, kde-format
+msgid "smartd: Inactive"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:52
+#, kde-format
+msgid "Toggle automatic background drive health monitoring daemon (smartd)"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:56 qml/modules/PowerPage.qml:34
+#, kde-format
+msgid "Clear Logs"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:58
+#, kde-format
+msgid "Clear diagnostic terminal log"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:64 qml/modules/PowerPage.qml:42
+#: qml/modules/UpdatesPage.qml:51
+#, kde-format
+msgid "Open system execution logs drawer"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:80
+#, kde-format
+msgid "Scanning storage controllers and querying S.M.A.R.T. telemetry..."
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:104
+#, kde-format
+msgid "Background SMART Monitoring (smartd)"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:109
+#, kde-format
+msgid ""
+"smartd service is active and will alert you upon disk attribute degradation."
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:110
+#, kde-format
+msgid ""
+"smartd daemon is inactive. Enable it to get early warnings for drive "
+"failures."
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:127
+#, kde-format
+msgid "MONITORING ACTIVE"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:127
+#, kde-format
+msgid "DISABLED"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:133
+#, kde-format
+msgid "Stop smartd"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:133
+#, kde-format
+msgid "Enable Background Monitor"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:151
+#, kde-format
+msgid "Detected Physical Storage Drives (%1)"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:214
+#, kde-format
+msgid "Device:"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:224
+#, kde-format
+msgid "Serial Number:"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:233
+#, kde-format
+msgid "Capacity:"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:242
+#, kde-format
+msgid "Temperature:"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:252
+#, kde-format
+msgid "SMART Status:"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:269
+#, kde-format
+msgid "Details & S.M.A.R.T."
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:304
+#, kde-format
+msgid "← Back to All Disks"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:312
+#, kde-format
+msgid "Refresh SMART"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:342
+#, kde-format
+msgid "Device: %1 | Firmware: %2 | Type: %3"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:375
+#, kde-format
+msgid "Capacity"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:381
+#, kde-format
+msgid "Temperature"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:392
+#: src/modules/diskhealth/DiskHealthManager.cpp:308
+#, kde-format
+msgid "Power On Hours"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:393
+#, kde-format
+msgid "%1 hrs"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:398
+#: src/modules/diskhealth/DiskHealthManager.cpp:309
+#, kde-format
+msgid "Power Cycles"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:407
+#, kde-format
+msgid "Critical Reliability Indicators"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:431
+#, kde-format
+msgid "Media / Sector Errors"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:459
+#: src/modules/diskhealth/DiskHealthManager.cpp:310
+#, kde-format
+msgid "Unsafe Shutdowns"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:486
+#, kde-format
+msgid "SSD Wear Level"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:491 qml/modules/PowerPage.qml:295
+#: qml/modules/UpdatesPage.qml:150 qml/modules/UpdatesPage.qml:151
+#: src/modules/dns/DnsManager.cpp:605
+#, kde-format
+msgid "N/A"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:514
+#, kde-format
+msgid "Critical Warning Code"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:547
+#, kde-format
+msgid "Self-Test Execution & Diagnostics"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:561
+#: src/modules/diskhealth/DiskHealthManager.cpp:216
+#, kde-format
+msgid "Idle"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:561
+#, kde-format
+msgid "Status: %1"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:579
+#, kde-format
+msgid "Run Short Test (-t short)"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:586
+#, kde-format
+msgid "Run Extended Test (-t long)"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:593
+#, kde-format
+msgid "Abort Test (-X)"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:611
+#, kde-format
+msgid "Full S.M.A.R.T. Attribute Table"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:631
+#, kde-format
+msgid "ID"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:632
+#, kde-format
+msgid "Attribute Name"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:633
+#, kde-format
+msgid "Current"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:634
+#, kde-format
+msgid "Worst"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:635
+#, kde-format
+msgid "Thresh"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:636
+#, kde-format
+msgid "Raw Value"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:722 qml/modules/PowerPage.qml:790
+#: qml/modules/UpdatesPage.qml:529
+#, kde-format
+msgid "Executing: %1"
+msgstr ""
+
+#: qml/modules/DiskHealthPage.qml:722
+#, kde-format
+msgid "smartctl Log Output"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:31
+#, kde-format
+msgid ""
+"Reload current DNS configuration from systemd-resolved and NetworkManager"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:35 qml/modules/DnsPage.qml:487
+#, kde-format
+msgid "Check DNS"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:37
+#, kde-format
+msgid "Test active DNS resolution availability and latency"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:41 qml/modules/DnsPage.qml:494
+#, kde-format
+msgid "Compare Providers"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:43
+#, kde-format
+msgid "Benchmark latency across Cloudflare, Google, AdGuard, and Quad9"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:47
+#, kde-format
+msgid "Leak Test"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:49
+#, kde-format
+msgid "Check if DNS queries are leaking or intercepted by your ISP"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:66
+#, kde-format
+msgid "Confirm DNS Change"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:90
+#, kde-format
+msgid "Benchmarking DNS providers latency..."
+msgstr ""
+
+#: qml/modules/DnsPage.qml:91
+#, kde-format
+msgid "Testing DNS leaks and detecting visible resolver..."
+msgstr ""
+
+#: qml/modules/DnsPage.qml:92
+#, kde-format
+msgid "Querying network interfaces and DNS servers..."
+msgstr ""
+
+#: qml/modules/DnsPage.qml:116
+#, kde-format
+msgid "Active DNS Configuration"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:140
+#, kde-format
+msgid "Primary DNS Server"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:145
+#, kde-format
+msgid "Detecting..."
+msgstr ""
+
+#: qml/modules/DnsPage.qml:156
+#, kde-format
+msgid "Identified Provider"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:184
+#, kde-format
+msgid "Active Interface"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:196 qml/modules/ShortcutsPage.qml:304
+#, kde-format
+msgid "None"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:205
+#, kde-format
+msgid "Connection"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:210
+#, kde-format
+msgid "Direct"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:219
+#, kde-format
+msgid "Encryption (DoT/DoH)"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:252
+#, kde-format
+msgid "Configured DNS Servers:"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:260
+#, kde-format
+msgid "Using default local resolver"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:289
+#, kde-format
+msgid "Switch DNS Provider"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:299
+#, kde-format
+msgid ""
+"Choose a DNS provider to enhance browsing speed, bypass ISP restrictions, "
+"block advertisements, or protect against phishing attacks:"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:311
+#, kde-format
+msgid "Select Provider:"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:324
+#, kde-format
+msgid "Apply DNS"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:331
+#, kde-format
+msgid "Please specify at least one valid DNS server IP address."
+msgstr ""
+
+#: qml/modules/DnsPage.qml:335 src/modules/dns/DnsManager.cpp:72
+#, kde-format
+msgid "Custom DNS"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:337
+#, kde-format
+msgid ""
+"Are you sure you want to set custom DNS servers '%1' on connection '%2'?"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:342
+#, kde-format
+msgid "DHCP"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:342
+#, kde-format
+msgid "Are you sure you want to switch DNS on connection '%1' to %2 (%3)?"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:403
+#, kde-format
+msgid "Server Addresses:"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:428
+#, kde-format
+msgid "Custom DNS IP Addresses (space-separated, IPv4 or IPv6):"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:460
+#, kde-format
+msgid "DNS Diagnostics & Latency Benchmark"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:475
+#, kde-format
+msgid "Benchmark Target:"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:501
+#, kde-format
+msgid "Test DNS Leaks"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:508
+#, kde-format
+msgid "Open dnsleaktest.com"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:511
+#, kde-format
+msgid "Open full browser test suite at dnsleaktest.com"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:542
+#, kde-format
+msgid "DNS Resolution Working Properly"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:542
+#, kde-format
+msgid "DNS Resolution Failed"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:547
+#, kde-format
+msgid "Domain '%1' resolved to %2 via server %3"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:561 qml/modules/DnsPage.qml:710
+#, kde-format
+msgid "%1 ms"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:595
+#, kde-format
+msgid "Potential DNS Leak Detected!"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:595
+#, kde-format
+msgid "DNS Leak Test Passed"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:611
+#, kde-format
+msgid "Visible Resolver:"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:632
+#, kde-format
+msgid "Benchmark Results for '%1':"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:691
+#, kde-format
+msgid "FASTEST"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:710
+#, kde-format
+msgid "Timed out"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:718
+#, kde-format
+msgid "Switch"
+msgstr ""
+
+#: qml/modules/DnsPage.qml:725
+#, kde-format
+msgid "Switch DNS configuration to '%1' (%2)?"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:28 qml/modules/GesturesPage.qml:116
+#: qml/modules/GesturesPage.qml:406
+#, kde-format
+msgid "Add Gesture"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:30
+#, kde-format
+msgid "Create a new touchpad swipe or pinch gesture"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:34
+#, kde-format
+msgid "Service Running"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:34
+#, kde-format
+msgid "Restart Service"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:36
+#, kde-format
+msgid "Restart libinput-gestures daemon"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:82
+#, kde-format
+msgid "libinput-gestures Configuration"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:94 qml/modules/KeydPage.qml:94
+#, kde-format
+msgid "Active"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:94 qml/modules/KeydPage.qml:94
+#, kde-format
+msgid "Inactive"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:110 qml/modules/PowerPage.qml:186
+#, kde-format
+msgid "Restart Daemon"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:228 qml/modules/KeydPage.qml:273
+#: qml/modules/ShortcutsPage.qml:319
+#, kde-format
+msgid "Edit"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:231
+#, kde-format
+msgid "Edit gesture"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:238 qml/modules/KeydPage.qml:282
+#, kde-format
+msgid "Delete"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:241
+#, kde-format
+msgid "Delete gesture"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:257
+#, kde-format
+msgid "No touchpad gestures configured yet"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:265
+#, kde-format
+msgid "Edit Touchpad Gesture"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:265
+#, kde-format
+msgid "Add Touchpad Gesture"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:285
+#, kde-format
+msgid "Gesture Type:"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:289 qml/modules/GesturesPage.qml:441
+#, kde-format
+msgid "Swipe"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:289 qml/modules/GesturesPage.qml:441
+#, kde-format
+msgid "Pinch"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:297
+#, kde-format
+msgid "Direction:"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:302
+#, kde-format
+msgid "Left"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:303
+#, kde-format
+msgid "Right"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:304
+#, kde-format
+msgid "Up"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:305
+#, kde-format
+msgid "Down"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:306
+#, kde-format
+msgid "In (Pinch in)"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:307
+#, kde-format
+msgid "Out (Pinch out)"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:316
+#, kde-format
+msgid "Fingers:"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:336
+#, kde-format
+msgid "Assigned Action:"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:345
+#, kde-format
+msgid "Predefined KDE Action"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:351
+#, kde-format
+msgid "Custom Command"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:380
+#, kde-format
+msgid "Command to execute:"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:387
+#, kde-format
+msgid "e.g. pactl set-sink-volume @DEFAULT_SINK@ +5%"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:406
+#, kde-format
+msgid "Save Changes"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:433
+#, kde-format
+msgid "Delete Gesture?"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:434
+#, kde-format
+msgid "Are you sure you want to remove the gesture '%1'?"
+msgstr ""
+
+#: qml/modules/GesturesPage.qml:442
+#, kde-format
+msgid "%1 Fingers: %2 %3"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:12 src/core/ModuleRegistry.cpp:96
+#, kde-format
+msgid "Keyboard Dispatcher (keyd)"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:28 qml/modules/KeydPage.qml:116
+#, kde-format
+msgid "Add Remapping"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:30
+#, kde-format
+msgid "Create a new key remapping or macro"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:34
+#, kde-format
+msgid "Daemon Active"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:34
+#, kde-format
+msgid "Reload keyd"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:36
+#, kde-format
+msgid "Save and reload keyd system daemon"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:82
+#, kde-format
+msgid "keyd Hardware Remapper"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:103
+#, kde-format
+msgid "Config: %1 (Requires elevated privileges to apply)"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:110
+#, kde-format
+msgid "Reload Daemon"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:132
+#, kde-format
+msgid "Search keys, actions, layers, macros..."
+msgstr ""
+
+#: qml/modules/KeydPage.qml:137
+#, kde-format
+msgid "All Layers"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:143
+#, kde-format
+msgid "Only Macros"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:276
+#, kde-format
+msgid "Edit key mapping"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:285
+#, kde-format
+msgid "Delete key mapping"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:301
+#, kde-format
+msgid "No key remappings configured yet"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:309
+#, kde-format
+msgid "Edit Key Remapping"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:309
+#, kde-format
+msgid "Add Key Remapping"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:329
+#, kde-format
+msgid "Layer:"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:342
+#, kde-format
+msgid "Key to Intercept:"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:346
+#, kde-format
+msgid "e.g. capslock, space, f24, rightshift"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:361
+#, kde-format
+msgid "Action / Behavior:"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:368
+#, kde-format
+msgid "Presets (Overload / Swap)"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:374
+#, kde-format
+msgid "Custom Action / Macro"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:404
+#, kde-format
+msgid "Target Action Expression:"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:411
+#, kde-format
+msgid "e.g. overload(control, esc), rightcontrol, macro(...)"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:429
+#, kde-format
+msgid "Result: [%1] %2 = %3"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:451
+#, kde-format
+msgid "Save & Apply"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:451
+#, kde-format
+msgid "Add & Apply"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:476
+#, kde-format
+msgid "Delete Key Remapping?"
+msgstr ""
+
+#: qml/modules/KeydPage.qml:477
+#, kde-format
+msgid "Are you sure you want to remove the rule '%1'?"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:11
+#, kde-format
+msgid "System Overview & Reference Template"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:38
+#, kde-format
+msgid "Process reported warning: %1"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:46
+#, kde-format
+msgid "Process failed with exit code %1"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:54
+#, kde-format
+msgid "This is a demonstration of the standard ConfirmDialog component."
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:66
+#, kde-format
+msgid ""
+"DANGER: This action cannot be easily undone and requires manual confirmation."
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:67
+#, kde-format
+msgid "Are you sure you want to proceed with this destructive action?"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:89
+#, kde-format
+msgid "Klarity Core Architecture Template"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:95
+#, kde-format
+msgid ""
+"This module serves as the golden standard for all future Klarity modules. It "
+"demonstrates asynchronous command execution, dependency validation, standard "
+"dialogs, and logging."
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:106
+#, kde-format
+msgid "Async Process Execution & Progress"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:114
+#, kde-format
+msgid "Run Quick Check ('uname -a')"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:119
+#, kde-format
+msgid "Running uname check..."
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:126
+#, kde-format
+msgid "Run Long Async Task ('sleep 3')"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:131
+#, kde-format
+msgid "Simulating background task (3s)..."
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:138
+#, kde-format
+msgid "Simulate Error Process"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:143
+#, kde-format
+msgid "Triggering failing command..."
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:175
+#, kde-format
+msgid "Interactive Module Cards"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:182
+#, kde-format
+msgid "Safe Action Demonstration"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:184
+#, kde-format
+msgid "Tests the standard non-destructive confirmation flow."
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:187
+#, kde-format
+msgid "Trigger Dialog"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:195
+#, kde-format
+msgid "Dangerous Action Demonstration"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:197
+#, kde-format
+msgid "Tests the destructive flow with required risk acknowledgment."
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:200
+#, kde-format
+msgid "Trigger Dangerous Flow"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:208
+#, kde-format
+msgid "Dependency Validation"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:211 qml/modules/PlaceholderPage.qml:212
+#, kde-format
+msgid "installed"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:211 qml/modules/PlaceholderPage.qml:212
+#, kde-format
+msgid "missing"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:210
+#, kde-format
+msgid "Status: 'fd' is %1, 'smartctl' is %2"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:215
+#, kde-format
+msgid "Re-check Tools"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:228
+#, kde-format
+msgid "Dependency Checker Cards"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:242
+#, kde-format
+msgid "Placeholder / System Core"
+msgstr ""
+
+#: qml/modules/PlaceholderPage.qml:252
+#, kde-format
+msgid ""
+"All required utilities for this module ('fd', 'smartctl') are installed."
+msgstr ""
+
+#: qml/modules/PowerPage.qml:28
+#, kde-format
+msgid "Refresh Telemetry"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:30
+#, kde-format
+msgid "Update CPU telemetry, frequencies, and governor status"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:36
+#, kde-format
+msgid "Clear privileged operation logs"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:54
+#, kde-format
+msgid "Expert Hardware Disclaimer"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:57
+#, kde-format
+msgid "I Understand the Risks"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:58
+#, kde-format
+msgid "Return to Auto Mode"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:59
+#, kde-format
+msgid ""
+"Direct processor frequency and power management may cause severe thermal "
+"throttling, hardware overheating, or system crashes."
+msgstr ""
+
+#: qml/modules/PowerPage.qml:60
+#, kde-format
+msgid ""
+"Direct sysfs controls bypass automatic daemon safeguards. Apply changes only "
+"if you understand your hardware capabilities and cooling profile."
+msgstr ""
+
+#: qml/modules/PowerPage.qml:88
+#, kde-format
+msgid "Automatic (auto-cpufreq)"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:93
+#, kde-format
+msgid "Expert (Direct Sysfs)"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:125
+#, kde-format
+msgid "auto-cpufreq Service Status"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:143
+#, kde-format
+msgid "Not Installed"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:144
+#, kde-format
+msgid "Active & Optimizing"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:144
+#, kde-format
+msgid "Stopped / Inactive"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:160
+#, kde-format
+msgid ""
+"The auto-cpufreq daemon is not installed on this system. You can install it "
+"via pacman to automatically balance battery life and CPU performance without "
+"manual intervention."
+msgstr ""
+
+#: qml/modules/PowerPage.qml:161
+#, kde-format
+msgid ""
+"auto-cpufreq is an automatic CPU speed & power optimizer for Linux. It "
+"continuously monitors laptop battery status, system load, and temperatures."
+msgstr ""
+
+#: qml/modules/PowerPage.qml:170
+#, kde-format
+msgid "Install auto-cpufreq"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:178
+#, kde-format
+msgid "Stop Daemon"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:178
+#, kde-format
+msgid "Start & Enable Daemon"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:214
+#, kde-format
+msgid "Active System Decisions & Metrics"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:235
+#, kde-format
+msgid "Active Governor"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:252
+#, kde-format
+msgid "Turbo Boost"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:258
+#, kde-format
+msgid "Unsupported"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:259
+#, kde-format
+msgid "Enabled / Auto"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:259 qml/modules/SecureBootPage.qml:300
+#, kde-format
+msgid "Disabled"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:271
+#, kde-format
+msgid "Power Supply State"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:277
+#, kde-format
+msgid "Battery (%1%)"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:278
+#, kde-format
+msgid "AC Mains (%1)"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:290
+#, kde-format
+msgid "CPU Package Temp"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:307
+#, kde-format
+msgid "Average Frequency"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:323
+#, kde-format
+msgid "Kernel Driver"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:356
+#, kde-format
+msgid "Daemon Profile Configuration (/etc/auto-cpufreq.conf)"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:377
+#, kde-format
+msgid "🔌 Charger (AC Connected)"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:385 qml/modules/PowerPage.qml:423
+#, kde-format
+msgid "Scaling Governor:"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:397 qml/modules/PowerPage.qml:435
+#, kde-format
+msgid "Turbo Boost Policy:"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:415
+#, kde-format
+msgid "🔋 Battery Power"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:458
+#, kde-format
+msgid "Battery Charging Thresholds"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:476
+#, kde-format
+msgid "Start charging threshold: %1%"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:493
+#, kde-format
+msgid "Stop charging threshold: %1%"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:513
+#, kde-format
+msgid "Save & Restart Daemon"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:546
+#, kde-format
+msgid "Kernel CPUFreq & Turbo Control"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:559
+#, kde-format
+msgid ""
+"Changes made here are directly written to /sys/devices/system/cpu and affect "
+"all CPU cores."
+msgstr ""
+
+#: qml/modules/PowerPage.qml:572
+#, kde-format
+msgid "CPU Scaling Governor (All Cores)"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:576
+#, kde-format
+msgid "Driver: %1 | Active: %2"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:590
+#, kde-format
+msgid "Apply Governor"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:609
+#, kde-format
+msgid "CPU Turbo Boost (no_turbo / cpufreq boost)"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:614
+#, kde-format
+msgid "Toggle hardware thermal/frequency boost capability."
+msgstr ""
+
+#: qml/modules/PowerPage.qml:615
+#, kde-format
+msgid "Hardware turbo boost is not supported by current CPU or driver."
+msgstr ""
+
+#: qml/modules/PowerPage.qml:637
+#, kde-format
+msgid "Frequency Range Limits (Min: %1 MHz, Max: %2 MHz)"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:646
+#, kde-format
+msgid "Min Freq:"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:671
+#, kde-format
+msgid "Max Freq:"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:695
+#, kde-format
+msgid "Apply Frequency Limits"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:720
+#, kde-format
+msgid "Live Multi-Core Frequency Telemetry"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:750
+#, kde-format
+msgid "Core %1"
+msgstr ""
+
+#: qml/modules/PowerPage.qml:790
+#, kde-format
+msgid "Command Log"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:24
+#, kde-format
+msgid "Home Directory (~)"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:25
+#, kde-format
+msgid "Configuration (/etc, ~/.config)"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:26
+#, kde-format
+msgid "Entire System (/)"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:27
+#, kde-format
+msgid "Application Desktops (/usr/share/applications)"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:28
+#, kde-format
+msgid "System Logs (/var/log)"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:33
+#, kde-format
+msgid "Regular Files"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:34
+#, kde-format
+msgid "Directories"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:35
+#, kde-format
+msgid "Symbolic Links"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:36
+#, kde-format
+msgid "Executables & Scripts"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:61
+#, kde-format
+msgid "Search files or syntax (e.g. *.service, >10M, type:dir)..."
+msgstr ""
+
+#: qml/modules/SearchPage.qml:70
+#, kde-format
+msgid "Stop"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:70
+#, kde-format
+msgid "Search"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:108
+#, kde-format
+msgid "History:"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:108
+#, kde-format
+msgid "Suggestions:"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:166
+#, kde-format
+msgid "Clear search history"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:177
+#, kde-format
+msgid "Location:"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:206
+#, kde-format
+msgid "Max Depth:"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:216
+#, kde-format
+msgid "4 Levels"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:217
+#, kde-format
+msgid "6 Levels (Default)"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:218
+#, kde-format
+msgid "10 Levels"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:219
+#, kde-format
+msgid "Unlimited"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:233
+#, kde-format
+msgid "Hidden Files"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:239
+#, kde-format
+msgid "Search in Content (rg)"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:243
+#, kde-format
+msgid "ripgrep (rg) is required for content search"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:259
+#, kde-format
+msgid "Ready to search."
+msgstr ""
+
+#: qml/modules/SearchPage.qml:297
+#, kde-format
+msgid "%1 items"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:327
+#, kde-format
+msgid "Quick System-Wide File Search"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:328
+#, kde-format
+msgid ""
+"Search anywhere on your system with blazing speed using fd and ripgrep.\n"
+"\n"
+"Tips:\n"
+"• *.service — find systemd service units\n"
+"• > 100M — find large files over 100 megabytes\n"
+"• type:dir — search for directories only\n"
+"• Toggle 'Search in Content' to find text inside files"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:421
+#, kde-format
+msgid "Hidden"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:444
+#, kde-format
+msgid "Open"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:448
+#, kde-format
+msgid "Open file with default system application"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:453
+#, kde-format
+msgid "In Dolphin"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:457
+#, kde-format
+msgid "Open containing folder and select file in Dolphin"
+msgstr ""
+
+#: qml/modules/SearchPage.qml:464
+#, kde-format
+msgid "Copy full path to clipboard"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:11 qml/modules/SecureBootPage.qml:63
+#: src/core/ModuleRegistry.cpp:118
+#, kde-format
+msgid "Secure Boot Manager"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:25
+#, kde-format
+msgid "Working..."
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:25
+#, kde-format
+msgid "Verify EFI Files"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:28
+#, kde-format
+msgid "Verify all EFI binaries on /boot to detect unsigned files"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:32
+#, kde-format
+msgid "Refresh Status"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:35
+#, kde-format
+msgid "Query UEFI Secure Boot status"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:84
+#, kde-format
+msgid "Guided Workflow & Actions"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:100
+#, kde-format
+msgid "%1 Unsigned Files Found"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:101
+#, kde-format
+msgid "Protected & Enforced"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:101
+#, kde-format
+msgid "Ready to Sign / Enroll"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:113
+#, kde-format
+msgid ""
+"Workflow: 1. Scan and find all unsigned kernels/EFI files → 2. Sign all "
+"detected boot files with your custom key → 3. Enroll keys and turn on Secure "
+"Boot in UEFI."
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:121
+#, kde-format
+msgid "1. Find Unsigned Files"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:128
+#, kde-format
+msgid "2. Sign All Files"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:136
+#, kde-format
+msgid "3. Generate / Enroll Keys"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:142
+#, kde-format
+msgid "Create new Secure Boot keys in /etc/sbctl/keys?"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:147
+#, kde-format
+msgid ""
+"Enroll custom keys into UEFI firmware NVRAM with Microsoft certificates?"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:183
+#, kde-format
+msgid "Custom Keys"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:198
+#, kde-format
+msgid "✓ Installed"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:198
+#, kde-format
+msgid "Not Created"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:205
+#, kde-format
+msgid "GUID: %1"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:205
+#, kde-format
+msgid "No custom key database"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:233
+#, kde-format
+msgid "Setup Mode"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:248
+#, kde-format
+msgid "Enabled (Ready)"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:248
+#, kde-format
+msgid "Disabled (Locked)"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:256
+#, kde-format
+msgid "UEFI is open for custom key enrollment"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:257
+#, kde-format
+msgid "UEFI enrollment is locked. Clear keys in BIOS to enroll"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:300
+#, kde-format
+msgid "✓ Enforced"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:308
+#, kde-format
+msgid "Hardware signature validation is active"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:309
+#, kde-format
+msgid "Secure Boot is turned off in UEFI settings"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:342
+#, kde-format
+msgid "Bootloader & Kernel Signing (sbctl verify)"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:346
+#, kde-format
+msgid ""
+"All kernel images, initramfs, and EFI bootloaders must be signed with your "
+"custom key before Secure Boot can boot them."
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:355
+#, kde-format
+msgid "Verify Files"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:362
+#, kde-format
+msgid "Sign All (sbctl sign-all)"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:399
+#, kde-format
+msgid ""
+"WARNING: Detected %1 unsigned EFI binary/binaries! If you enforce Secure "
+"Boot, these will fail to boot."
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:405
+#, kde-format
+msgid "Sign All Files Now"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:437
+#, kde-format
+msgid "Unsigned"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:453
+#, kde-format
+msgid "Sign File"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:476
+#, kde-format
+msgid "Verified Signed Files (%1):"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:535
+#, kde-format
+msgid "Key Management & UEFI Enrollment (Danger Zone)"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:562
+#, kde-format
+msgid ""
+"Enrolling custom keys will write your cryptographic certificates directly to "
+"UEFI NVRAM. Always keep a bootable Linux Live USB handy before changing "
+"Secure Boot keys. Key enrollment requires UEFI Setup Mode to be enabled."
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:574
+#, kde-format
+msgid "Create Custom Keys (sbctl create-keys)"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:579
+#, kde-format
+msgid "Create Custom Keys?"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:580
+#, kde-format
+msgid ""
+"This will generate a new set of PK, KEK, and DB keys under /usr/share/"
+"secureboot/keys."
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:581
+#, kde-format
+msgid "Command: pkexec sbctl create-keys"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:588
+#, kde-format
+msgid "Enroll Keys + Microsoft (Recommended)"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:594
+#, kde-format
+msgid "Enroll Keys with Microsoft Support?"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:595
+#, kde-format
+msgid ""
+"This will write your custom keys along with Microsoft OEM certificates into "
+"UEFI NVRAM. This ensures dual-boot Windows and GPU option ROMs continue "
+"working."
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:596
+#, kde-format
+msgid ""
+"Command: pkexec sbctl enroll-keys --microsoft\n"
+"Ensure you have a rescue Live USB ready!"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:603
+#, kde-format
+msgid "Enroll Keys Only (No Microsoft)"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:608
+#, kde-format
+msgid "Enroll Custom Keys Only?"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:609
+#, kde-format
+msgid ""
+"This will write ONLY your custom keys into UEFI NVRAM without Microsoft "
+"certificates. Warning: Windows and hardware option ROMs will NOT boot."
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:610
+#, kde-format
+msgid ""
+"Command: pkexec sbctl enroll-keys\n"
+"Extreme caution: Make sure you have a rescue Live USB!"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:633
+#, kde-format
+msgid "Last Command Output"
+msgstr ""
+
+#: qml/modules/SecureBootPage.qml:639
+#, kde-format
+msgid "Clear Output"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:30
+#, kde-format
+msgid "Reload all shortcuts from configuration files"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:35
+#, kde-format
+msgid "Conflicts (%1)"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:36
+#, kde-format
+msgid "No Conflicts"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:93
+#, kde-format
+msgid "Detected %1 Shortcut Conflict(s)!"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:100
+#, kde-format
+msgid ""
+"Multiple system or desktop actions share identical key combinations. Use the "
+"'Reassign' or 'Unbind' buttons on the cards below to resolve collisions."
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:109
+#, kde-format
+msgid "Show All"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:109
+#, kde-format
+msgid "View Conflicts Only"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:126
+#, kde-format
+msgid "Search action, description, or key combo (e.g. Meta+L, Volume, Lock)..."
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:145
+#, kde-format
+msgid "Only Conflicts"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:151
+#, kde-format
+msgid "Hide Unset"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:273
+#, kde-format
+msgid "Identifier: %1"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:323
+#, kde-format
+msgid "Reassign shortcut"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:335
+#, kde-format
+msgid "Unbind shortcut"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:369
+#, kde-format
+msgid "CONFLICTING KEY COMBINATION: «%1»"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:379
+#, kde-format
+msgid "Clashes with: %1"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:388
+#, kde-format
+msgid "Reassign This Shortcut"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:397
+#, kde-format
+msgid "Unbind (Clear) Shortcut"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:412
+#, kde-format
+msgid "No shortcuts match the current filter"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:421
+#, kde-format
+msgid "Edit Keyboard Shortcut"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:444
+#, kde-format
+msgid "Source: %1"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:459
+#, kde-format
+msgid "Key Combination (e.g. Meta+T, Ctrl+Alt+F, Super+Left):"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:470
+#, kde-format
+msgid "Enter combination or 'none'"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:476
+#, kde-format
+msgid "Clear (None)"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:516
+#, kde-format
+msgid "Warning: Combination is already in use by: %1"
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:517
+#, kde-format
+msgid "Combination is available."
+msgstr ""
+
+#: qml/modules/ShortcutsPage.qml:537
+#, kde-format
+msgid "Save Shortcut"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:20
+#, kde-format
+msgid "Update completed successfully."
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:22
+#, kde-format
+msgid "Update finished with errors (exit code: %1)."
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:32
+#, kde-format
+msgid "Scan repositories for available package, Flatpak, and AUR updates"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:37 qml/modules/UpdatesPage.qml:107
+#, kde-format
+msgid "Arch News"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:39
+#, kde-format
+msgid "Open official Arch Linux news announcements in default web browser"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:43
+#, kde-format
+msgid "Clear Console"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:45
+#, kde-format
+msgid "Clear current console log output"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:62
+#, kde-format
+msgid "Confirm Full System Upgrade"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:64
+#, kde-format
+msgid "Proceed Upgrade"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:65
+#, kde-format
+msgid ""
+"A full system upgrade (pacman -Syu) updates all core packages. Before "
+"proceeding, make sure you have checked Arch Linux news announcements for any "
+"manual intervention requirements."
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:66
+#, kde-format
+msgid ""
+"Unattended upgrades without reading Arch News may cause configuration issues "
+"or broken dependencies."
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:80
+#, kde-format
+msgid "Checking for package updates (Pacman, Flatpak, AUR)..."
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:102
+#, kde-format
+msgid "Update Status Overview"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:113
+#, kde-format
+msgid "Check Now"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:140
+#, kde-format
+msgid "%1 updates available"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:141
+#, kde-format
+msgid "System is fully up to date"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:148
+#, kde-format
+msgid "Official Pacman: %1  |  Flatpak: %2  |  AUR: %3  •  Checked: %4"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:162
+#, kde-format
+msgid ""
+"Tip: Always check Arch News before a full system upgrade. For official "
+"packages, authentication via Polkit (pkexec) is used for security."
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:170
+#, kde-format
+msgid "Update Actions"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:203
+#, kde-format
+msgid "System Upgrade"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:225 qml/modules/UpdatesPage.qml:311
+#: qml/modules/UpdatesPage.qml:392 qml/modules/UpdatesPage.qml:473
+#, kde-format
+msgid "%1 pending"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:225 qml/modules/UpdatesPage.qml:311
+#: qml/modules/UpdatesPage.qml:392 qml/modules/UpdatesPage.qml:473
+#, kde-format
+msgid "Up to date"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:238
+#, kde-format
+msgid ""
+"Perform a complete synchronization and upgrade of core distribution packages "
+"and official repositories via Polkit."
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:250
+#, kde-format
+msgid "Upgrade All"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:257
+#, kde-format
+msgid "Check News"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:289
+#, kde-format
+msgid "Package Update"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:324
+#, kde-format
+msgid ""
+"Upgrade outdated repository packages while skipping already up-to-date "
+"dependencies."
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:335
+#, kde-format
+msgid "Update Packages"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:368
+#, kde-format
+msgid "Flatpak Applications"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:391
+#, kde-format
+msgid "Not installed"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:405
+#, kde-format
+msgid ""
+"Update installed Flatpak applications and shared runtime runtimes without "
+"requiring root privileges."
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:416
+#, kde-format
+msgid "Update Flatpak"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:449
+#, kde-format
+msgid "AUR Packages"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:453
+#, kde-format
+msgid "yay/paru not detected"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:472
+#, kde-format
+msgid "No helper"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:487
+#, kde-format
+msgid "Update packages installed from Arch User Repository using '%1' helper."
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:488
+#, kde-format
+msgid ""
+"No supported AUR helper found (yay or paru). Install yay or paru to manage "
+"AUR packages."
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:499
+#, kde-format
+msgid "Update AUR"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:533
+#, kde-format
+msgid "Process is actively streaming output below. You can cancel at any time."
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:540
+#, kde-format
+msgid "Cancel Operation"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:566
+#, kde-format
+msgid "Console Output"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:571
+#, kde-format
+msgid "Copy Terminal"
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:577
+#, kde-format
+msgid "Console output copied to clipboard."
+msgstr ""
+
+#: qml/modules/UpdatesPage.qml:615
+#, kde-format
+msgid ""
+"No operations running. Terminal output will stream here in real time during "
+"updates..."
+msgstr ""
+
+#: src/core/ModuleRegistry.cpp:107
+#, kde-format
+msgid "System Auditor & Cleaner"
+msgstr ""
+
+#: src/main.cpp:31
+#, kde-format
+msgid "Modular GUI-first administration tool for Linux / KDE Plasma 6"
+msgstr ""
+
+#: src/main.cpp:33
+#, kde-format
+msgid "Copyright 2026 LaRCorp"
+msgstr ""
+
+#: src/main.cpp:35
+#, kde-format
+msgid "LaRCorp"
+msgstr ""
+
+#: src/main.cpp:35
+#, kde-format
+msgid "Developer"
+msgstr ""
+
+#: src/main.cpp:36
+#, kde-format
+msgid "Morten Linderud"
+msgstr ""
+
+#: src/main.cpp:36
+#, kde-format
+msgid "Author of sbctl (Secure Boot Key Manager)"
+msgstr ""
+
+#: src/main.cpp:37
+#, kde-format
+msgid "Rahul Rajan"
+msgstr ""
+
+#: src/main.cpp:37
+#, kde-format
+msgid "Author of keyd (Keyboard remapping daemon)"
+msgstr ""
+
+#: src/main.cpp:38
+#, kde-format
+msgid "Adnan Hodzic"
+msgstr ""
+
+#: src/main.cpp:38
+#, kde-format
+msgid "Author of auto-cpufreq (CPU speed & power optimizer)"
+msgstr ""
+
+#: src/main.cpp:39
+#, kde-format
+msgid "Mark Blakeney"
+msgstr ""
+
+#: src/main.cpp:39
+#, kde-format
+msgid "Author of libinput-gestures"
+msgstr ""
+
+#: src/main.cpp:40
+#, kde-format
+msgid "Smartmontools Team"
+msgstr ""
+
+#: src/main.cpp:40
+#, kde-format
+msgid "S.M.A.R.T. disk monitoring utilities (smartctl)"
+msgstr ""
+
+#: src/main.cpp:41
+#, kde-format
+msgid "Andrew Gallant (BurntSushi)"
+msgstr ""
+
+#: src/main.cpp:41
+#, kde-format
+msgid "Author of ripgrep"
+msgstr ""
+
+#: src/main.cpp:42
+#, kde-format
+msgid "David Peter (sharkdp)"
+msgstr ""
+
+#: src/main.cpp:42
+#, kde-format
+msgid "Author of fd"
+msgstr ""
+
+#: src/modules/aliases/AliasManager.cpp:226
+#, kde-format
+msgid "Name cannot be empty."
+msgstr ""
+
+#: src/modules/aliases/AliasManager.cpp:231
+#, kde-format
+msgid "Name contains invalid characters."
+msgstr ""
+
+#: src/modules/aliases/AliasManager.cpp:236
+#, kde-format
+msgid "Command cannot be empty."
+msgstr ""
+
+#: src/modules/aliases/AliasManager.cpp:376
+#, kde-format
+msgid "Entry created successfully."
+msgstr ""
+
+#: src/modules/aliases/AliasManager.cpp:394
+#: src/modules/aliases/AliasManager.cpp:488
+#, kde-format
+msgid "Entry not found."
+msgstr ""
+
+#: src/modules/aliases/AliasManager.cpp:408
+#, kde-format
+msgid "Cannot write to %1"
+msgstr ""
+
+#: src/modules/aliases/AliasManager.cpp:425
+#, kde-format
+msgid "Function updated successfully."
+msgstr ""
+
+#: src/modules/aliases/AliasManager.cpp:432
+#, kde-format
+msgid "Cannot read %1"
+msgstr ""
+
+#: src/modules/aliases/AliasManager.cpp:467
+#, kde-format
+msgid "Alias updated successfully."
+msgstr ""
+
+#: src/modules/aliases/AliasManager.cpp:471
+#, kde-format
+msgid "Line index out of bounds."
+msgstr ""
+
+#: src/modules/aliases/AliasManager.cpp:501
+#, kde-format
+msgid "File deleted."
+msgstr ""
+
+#: src/modules/aliases/AliasManager.cpp:501
+#, kde-format
+msgid "Failed to delete file."
+msgstr ""
+
+#: src/modules/aliases/AliasManager.cpp:508
+#, kde-format
+msgid "Cannot read file."
+msgstr ""
+
+#: src/modules/aliases/AliasManager.cpp:524
+#, kde-format
+msgid "Cannot write file."
+msgstr ""
+
+#: src/modules/aliases/AliasManager.cpp:537
+#, kde-format
+msgid "Entry removed successfully."
+msgstr ""
+
+#: src/modules/aliases/AliasManager.cpp:541
+#, kde-format
+msgid "Line not found."
+msgstr ""
+
+#: src/modules/applications/PackageManager.cpp:657
+#, kde-format
+msgid "Package %1 removed successfully."
+msgstr ""
+
+#: src/modules/applications/PackageManager.cpp:660
+#, kde-format
+msgid "Package removal cancelled."
+msgstr ""
+
+#: src/modules/applications/PackageManager.cpp:662
+#, kde-format
+msgid "Failed to remove package: %1"
+msgstr ""
+
+#: src/modules/applications/PackageManager.cpp:675
+#, kde-format
+msgid "Flatpak %1 uninstalled successfully."
+msgstr ""
+
+#: src/modules/applications/PackageManager.cpp:678
+#, kde-format
+msgid "Failed to uninstall Flatpak: %1"
+msgstr ""
+
+#: src/modules/applications/PackageManager.cpp:690
+#, kde-format
+msgid "Snap %1 removed successfully."
+msgstr ""
+
+#: src/modules/applications/PackageManager.cpp:693
+#, kde-format
+msgid "Failed to remove Snap: %1"
+msgstr ""
+
+#: src/modules/applications/PortableAppsManager.cpp:66
+#: src/modules/auditor/SystemAuditor.cpp:116
+#, kde-format
+msgid "%1 B"
+msgstr ""
+
+#: src/modules/applications/PortableAppsManager.cpp:331
+#, kde-format
+msgid "'%1' added to Application Menu."
+msgstr ""
+
+#: src/modules/applications/PortableAppsManager.cpp:363
+#, kde-format
+msgid "Removed from Application Menu."
+msgstr ""
+
+#: src/modules/applications/PortableAppsManager.cpp:367
+#, kde-format
+msgid "No associated menu entry found."
+msgstr ""
+
+#: src/modules/applications/PortableAppsManager.cpp:392
+#, kde-format
+msgid "Application deleted successfully."
+msgstr ""
+
+#: src/modules/applications/PortableAppsManager.cpp:396
+#, kde-format
+msgid "Failed to delete application file."
+msgstr ""
+
+#: src/modules/applications/PortableAppsManager.cpp:404
+#, kde-format
+msgid "Cannot launch: file not found or not executable."
+msgstr ""
+
+#: src/modules/applications/PortableAppsManager.cpp:415
+#, kde-format
+msgid "Application launched: %1"
+msgstr ""
+
+#: src/modules/applications/PortableAppsManager.cpp:417
+#, kde-format
+msgid "Failed to launch application: %1"
+msgstr ""
+
+#: src/modules/applications/PortableAppsManager.cpp:425
+#, kde-format
+msgid "Selected file is not an executable binary or AppImage."
+msgstr ""
+
+#: src/modules/applications/PortableAppsManager.cpp:431
+#, kde-format
+msgid "Application already present in catalog."
+msgstr ""
+
+#: src/modules/auditor/SystemAuditor.cpp:280
+#, kde-format
+msgid "Points to missing: %1"
+msgstr ""
+
+#: src/modules/auditor/SystemAuditor.cpp:354
+#, kde-format
+msgid "Orphaned dependency package"
+msgstr ""
+
+#: src/modules/auditor/SystemAuditor.cpp:397
+#, kde-format
+msgid "Pacman Package Cache (old package versions)"
+msgstr ""
+
+#: src/modules/auditor/SystemAuditor.cpp:398
+#, kde-format
+msgid ""
+"%1 candidate archives in /var/cache/pacman/pkg (keeping last 2 versions)"
+msgstr ""
+
+#: src/modules/auditor/SystemAuditor.cpp:450
+#, kde-format
+msgid "Directory in ~/.config with no active matching package"
+msgstr ""
+
+#: src/modules/auditor/SystemAuditor.cpp:490
+#, kde-format
+msgid "Failed user service hanging in systemd state"
+msgstr ""
+
+#: src/modules/auditor/SystemAuditor.cpp:586
+#, kde-format
+msgid "Cleaned selected items successfully."
+msgstr ""
+
+#: src/modules/auditor/SystemAuditor.cpp:588
+#, kde-format
+msgid "Package removal cancelled by user."
+msgstr ""
+
+#: src/modules/auditor/SystemAuditor.cpp:590
+#, kde-format
+msgid "Failed to remove packages: %1"
+msgstr ""
+
+#: src/modules/auditor/SystemAuditor.cpp:603
+#, kde-format
+msgid "Cleanup completed successfully."
+msgstr ""
+
+#: src/modules/autostart/AutostartManager.cpp:210
+#, kde-format
+msgid "Desktop entry status updated."
+msgstr ""
+
+#: src/modules/autostart/AutostartManager.cpp:232
+#, kde-format
+msgid "System entry override updated."
+msgstr ""
+
+#: src/modules/autostart/AutostartManager.cpp:252
+#, kde-format
+msgid "Systemd service updated."
+msgstr ""
+
+#: src/modules/autostart/AutostartManager.cpp:262
+#, kde-format
+msgid "Name and Command are required."
+msgstr ""
+
+#: src/modules/autostart/AutostartManager.cpp:297
+#, kde-format
+msgid "Application added to autostart."
+msgstr ""
+
+#: src/modules/autostart/AutostartManager.cpp:313
+#, kde-format
+msgid "Entry deleted."
+msgstr ""
+
+#: src/modules/autostart/AutostartManager.cpp:313
+#, kde-format
+msgid "Failed to delete entry."
+msgstr ""
+
+#: src/modules/diskhealth/DiskHealthManager.cpp:175
+#, kde-format
+msgid "Root privileges via Polkit are required for detailed SMART attributes."
+msgstr ""
+
+#: src/modules/diskhealth/DiskHealthManager.cpp:179
+#, kde-format
+msgid ">>> Scan completed. Found %1 disk(s).\n"
+msgstr ""
+
+#: src/modules/diskhealth/DiskHealthManager.cpp:303
+#, kde-format
+msgid "Critical Warning"
+msgstr ""
+
+#: src/modules/diskhealth/DiskHealthManager.cpp:304
+#, kde-format
+msgid "Composite Temperature"
+msgstr ""
+
+#: src/modules/diskhealth/DiskHealthManager.cpp:305
+#, kde-format
+msgid "Available Spare"
+msgstr ""
+
+#: src/modules/diskhealth/DiskHealthManager.cpp:306
+#, kde-format
+msgid "Percentage Used (Wear)"
+msgstr ""
+
+#: src/modules/diskhealth/DiskHealthManager.cpp:307
+#, kde-format
+msgid "Media and Data Integrity Errors"
+msgstr ""
+
+#: src/modules/diskhealth/DiskHealthManager.cpp:308
+#, kde-format
+msgid "%1 hours"
+msgstr ""
+
+#: src/modules/diskhealth/DiskHealthManager.cpp:462
+#, kde-format
+msgid ">>> SMART data refreshed for %1.\n"
+msgstr ""
+
+#: src/modules/diskhealth/DiskHealthManager.cpp:475
+#, kde-format
+msgid "Running %1 S.M.A.R.T. self-test on %2"
+msgstr ""
+
+#: src/modules/diskhealth/DiskHealthManager.cpp:497
+#, kde-format
+msgid "S.M.A.R.T. self-test routine initiated on %1."
+msgstr ""
+
+#: src/modules/diskhealth/DiskHealthManager.cpp:498
+#, kde-format
+msgid "Failed to launch self-test on %1 (exit code: %2)."
+msgstr ""
+
+#: src/modules/diskhealth/DiskHealthManager.cpp:519
+#, kde-format
+msgid "Self-test aborted on %1."
+msgstr ""
+
+#: src/modules/diskhealth/DiskHealthManager.cpp:520
+#, kde-format
+msgid "Failed to abort self-test on %1."
+msgstr ""
+
+#: src/modules/diskhealth/DiskHealthManager.cpp:539
+#, kde-format
+msgid "smartd background monitoring enabled and started."
+msgstr ""
+
+#: src/modules/diskhealth/DiskHealthManager.cpp:539
+#, kde-format
+msgid "smartd background monitoring disabled."
+msgstr ""
+
+#: src/modules/diskhealth/DiskHealthManager.cpp:540
+#, kde-format
+msgid "Failed to change smartd service status (exit code %1)."
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:27
+#, kde-format
+msgid "Automatic (DHCP / Router)"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:28
+#, kde-format
+msgid "Default DNS assigned automatically by your local router or DHCP network"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:32
+#, kde-format
+msgid "Standard (Port 53)"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:37
+#, kde-format
+msgid "Ultra-fast, privacy-oriented public DNS with DNS-over-TLS/HTTPS support"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:46
+#, kde-format
+msgid "Global Anycast DNS infrastructure with 8.8.8.8 and 8.8.4.4"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:55
+#, kde-format
+msgid ""
+"Blocks banner ads, tracking scripts, telemetry, and phishing domains system-"
+"wide"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:64
+#, kde-format
+msgid ""
+"Non-profit security DNS blocking malicious domains, bots, and phishing with "
+"9.9.9.9"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:73
+#, kde-format
+msgid ""
+"Manually specify primary and secondary DNS server IPv4 or IPv6 addresses"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:77
+#, kde-format
+msgid "Custom"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:238
+#, kde-format
+msgid "DoT (DNS-over-TLS) Active"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:240
+#, kde-format
+msgid "Standard Unencrypted (Port 53)"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:249
+#, kde-format
+msgid "Cloudflare Public DNS"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:252
+#, kde-format
+msgid "Google Public DNS"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:255
+#, kde-format
+msgid "AdGuard DNS (Ad-Block)"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:258
+#, kde-format
+msgid "Quad9 (Security DNS)"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:261
+#, kde-format
+msgid "Local Router / DHCP"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:264
+#, kde-format
+msgid "systemd-resolved (Local Cache)"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:266
+#, kde-format
+msgid "Custom / ISP DNS"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:276
+#, kde-format
+msgid "No active network connection found to apply DNS settings."
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:299
+#, kde-format
+msgid "Custom DNS address cannot be empty."
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:367
+#, kde-format
+msgid "DNS provider '%1' successfully applied to '%2'!"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:373
+#, kde-format
+msgid "Failed to configure DNS settings for connection '%1'."
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:438
+#, kde-format
+msgid "Unreachable"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:490
+#, kde-format
+msgid "Current (%1)"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:604
+#, kde-format
+msgid "Unknown / Request Timed Out"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:608
+#, kde-format
+msgid ""
+"DNS Leak Detected: Your requests are handled by '%1' rather than your "
+"configured encrypted provider!"
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:609
+#, kde-format
+msgid "No DNS Leaks: Resolver '%1' matches your configured provider."
+msgstr ""
+
+#: src/modules/dns/DnsManager.cpp:610
+#, kde-format
+msgid "Failed to reach leak test service. Check your internet connection."
+msgstr ""
+
+#: src/modules/gestures/GesturesManager.cpp:39
+#, kde-format
+msgid "Previous Media Track"
+msgstr ""
+
+#: src/modules/gestures/GesturesManager.cpp:42
+#, kde-format
+msgid "Next Media Track"
+msgstr ""
+
+#: src/modules/gestures/GesturesManager.cpp:45
+#, kde-format
+msgid "Play / Pause Media"
+msgstr ""
+
+#: src/modules/gestures/GesturesManager.cpp:48
+#, kde-format
+msgid "Increase Volume (+5%)"
+msgstr ""
+
+#: src/modules/gestures/GesturesManager.cpp:51
+#, kde-format
+msgid "Decrease Volume (-5%)"
+msgstr ""
+
+#: src/modules/gestures/GesturesManager.cpp:54
+#, kde-format
+msgid "Toggle Mute Audio"
+msgstr ""
+
+#: src/modules/gestures/GesturesManager.cpp:57
+#, kde-format
+msgid "Switch Workspace Left"
+msgstr ""
+
+#: src/modules/gestures/GesturesManager.cpp:60
+#, kde-format
+msgid "Switch Workspace Right"
+msgstr ""
+
+#: src/modules/gestures/GesturesManager.cpp:63
+#, kde-format
+msgid "KWin Overview (Window Grid)"
+msgstr ""
+
+#: src/modules/gestures/GesturesManager.cpp:66
+#, kde-format
+msgid "Show / Toggle Desktop"
+msgstr ""
+
+#: src/modules/gestures/GesturesManager.cpp:69
+#, kde-format
+msgid "Take Screenshot (Spectacle)"
+msgstr ""
+
+#: src/modules/keyd/KeydManager.cpp:51
+#, kde-format
+msgid "Overload: Dual-role key (modifier on hold, key on tap)"
+msgstr ""
+
+#: src/modules/keyd/KeydManager.cpp:54
+#, kde-format
+msgid "Macro: Sequence of keys or actions"
+msgstr ""
+
+#: src/modules/keyd/KeydManager.cpp:57
+#, kde-format
+msgid "Layer Switch: Activates secondary key layer"
+msgstr ""
+
+#: src/modules/keyd/KeydManager.cpp:60
+#, kde-format
+msgid "Swap: Swaps key functionality with modifier"
+msgstr ""
+
+#: src/modules/keyd/KeydManager.cpp:63
+#, kde-format
+msgid "Identity remap / Passthrough protection"
+msgstr ""
+
+#: src/modules/keyd/KeydManager.cpp:66
+#, kde-format
+msgid "Remapped to %1"
+msgstr ""
+
+#: src/modules/power/PowerManager.cpp:344
+#, kde-format
+msgid "AC Power"
+msgstr ""
+
+#: src/modules/power/PowerManager.cpp:419
+#, kde-format
+msgid ""
+"\n"
+">>> Operation '%1' completed SUCCESSFULLY (exit code 0).\n"
+msgstr ""
+
+#: src/modules/power/PowerManager.cpp:420
+#, kde-format
+msgid ""
+"\n"
+">>> Operation '%1' FAILED with exit code %2.\n"
+msgstr ""
+
+#: src/modules/power/PowerManager.cpp:438
+#, kde-format
+msgid "Install auto-cpufreq daemon"
+msgstr ""
+
+#: src/modules/power/PowerManager.cpp:450
+#, kde-format
+msgid "Enable and Start auto-cpufreq"
+msgstr ""
+
+#: src/modules/power/PowerManager.cpp:450
+#, kde-format
+msgid "Stop and Disable auto-cpufreq"
+msgstr ""
+
+#: src/modules/power/PowerManager.cpp:460
+#, kde-format
+msgid "Error: Could not write temporary configuration file.\n"
+msgstr ""
+
+#: src/modules/power/PowerManager.cpp:482
+#, kde-format
+msgid "Save auto-cpufreq Profile & Restart Daemon"
+msgstr ""
+
+#: src/modules/power/PowerManager.cpp:490
+#, kde-format
+msgid "Apply CPU Governor (%1)"
+msgstr ""
+
+#: src/modules/power/PowerManager.cpp:506
+#, kde-format
+msgid "Enable CPU Turbo Boost"
+msgstr ""
+
+#: src/modules/power/PowerManager.cpp:506
+#, kde-format
+msgid "Disable CPU Turbo Boost"
+msgstr ""
+
+#: src/modules/power/PowerManager.cpp:525
+#, kde-format
+msgid "Set Frequency Limits (%1 - %2 MHz)"
+msgstr ""
+
+#: src/modules/search/SearchManager.cpp:59
+#, kde-format
+msgid "Enter a search term or file pattern..."
+msgstr ""
+
+#: src/modules/search/SearchManager.cpp:100
+#, kde-format
+msgid "Search stopped. Found %1 item(s)."
+msgstr ""
+
+#: src/modules/search/SearchManager.cpp:267
+#, kde-format
+msgid "Searching..."
+msgstr ""
+
+#: src/modules/search/SearchManager.cpp:308
+#, kde-format
+msgid "Search reached maximum limit (%1 results)."
+msgstr ""
+
+#: src/modules/search/SearchManager.cpp:337
+#, kde-format
+msgid "Directory"
+msgstr ""
+
+#: src/modules/search/SearchManager.cpp:337
+#, kde-format
+msgid "Executable"
+msgstr ""
+
+#: src/modules/search/SearchManager.cpp:337
+#, kde-format
+msgid "File"
+msgstr ""
+
+#: src/modules/search/SearchManager.cpp:366
+#, kde-format
+msgid "Searching... Found %1 item(s)"
+msgstr ""
+
+#: src/modules/search/SearchManager.cpp:396
+#, kde-format
+msgid "Search completed. Found %1 item(s)."
+msgstr ""
+
+#: src/modules/search/SearchManager.cpp:443
+#, kde-format
+msgid "Path copied to clipboard: %1"
+msgstr ""
+
+#: src/modules/secureboot/SbctlWrapper.cpp:191
+#, kde-format
+msgid "Files verification completed."
+msgstr ""
+
+#: src/modules/secureboot/SbctlWrapper.cpp:193
+#, kde-format
+msgid "Verification cancelled by user."
+msgstr ""
+
+#: src/modules/secureboot/SbctlWrapper.cpp:195
+#, kde-format
+msgid "Verification failed: %1"
+msgstr ""
+
+#: src/modules/secureboot/SbctlWrapper.cpp:205
+#: src/modules/secureboot/SbctlWrapper.cpp:278
+#: src/modules/secureboot/SbctlWrapper.cpp:315
+#, kde-format
+msgid "sbctl executable not found."
+msgstr ""
+
+#: src/modules/secureboot/SbctlWrapper.cpp:227
+#, kde-format
+msgid "All files signed successfully."
+msgstr ""
+
+#: src/modules/secureboot/SbctlWrapper.cpp:230
+#, kde-format
+msgid "Signing cancelled by user."
+msgstr ""
+
+#: src/modules/secureboot/SbctlWrapper.cpp:232
+#, kde-format
+msgid "Failed to sign files: %1"
+msgstr ""
+
+#: src/modules/secureboot/SbctlWrapper.cpp:263
+#, kde-format
+msgid "Signed %1 successfully."
+msgstr ""
+
+#: src/modules/secureboot/SbctlWrapper.cpp:266
+#, kde-format
+msgid "Signing cancelled."
+msgstr ""
+
+#: src/modules/secureboot/SbctlWrapper.cpp:268
+#, kde-format
+msgid "Signing failed: %1"
+msgstr ""
+
+#: src/modules/secureboot/SbctlWrapper.cpp:300
+#, kde-format
+msgid "Custom Secure Boot keys created."
+msgstr ""
+
+#: src/modules/secureboot/SbctlWrapper.cpp:303
+#, kde-format
+msgid "Key creation cancelled."
+msgstr ""
+
+#: src/modules/secureboot/SbctlWrapper.cpp:305
+#, kde-format
+msgid "Key creation failed: %1"
+msgstr ""
+
+#: src/modules/secureboot/SbctlWrapper.cpp:320
+#, kde-format
+msgid ""
+"Cannot enroll keys: UEFI firmware is not in Setup Mode. Enable Setup Mode in "
+"your BIOS/UEFI settings first."
+msgstr ""
+
+#: src/modules/secureboot/SbctlWrapper.cpp:347
+#, kde-format
+msgid "Keys enrolled into UEFI firmware successfully."
+msgstr ""
+
+#: src/modules/secureboot/SbctlWrapper.cpp:350
+#, kde-format
+msgid "Enrollment cancelled."
+msgstr ""
+
+#: src/modules/secureboot/SbctlWrapper.cpp:352
+#, kde-format
+msgid "Key enrollment failed: %1"
+msgstr ""
+
+#: src/modules/shortcuts/ShortcutManager.cpp:132
+#, kde-format
+msgid "Global Shortcuts"
+msgstr ""
+
+#: src/modules/shortcuts/ShortcutManager.cpp:138
+#: src/modules/shortcuts/ShortcutManager.cpp:275
+#, kde-format
+msgid "Window Management"
+msgstr ""
+
+#: src/modules/shortcuts/ShortcutManager.cpp:143
+#, kde-format
+msgid "Audio & Media"
+msgstr ""
+
+#: src/modules/shortcuts/ShortcutManager.cpp:148
+#, kde-format
+msgid "Session & System"
+msgstr ""
+
+#: src/modules/shortcuts/ShortcutManager.cpp:152
+#, kde-format
+msgid "Application Launchers"
+msgstr ""
+
+#: src/modules/shortcuts/ShortcutManager.cpp:156
+#, kde-format
+msgid "Shell & Workspace"
+msgstr ""
+
+#: src/modules/shortcuts/ShortcutManager.cpp:223
+#, kde-format
+msgid "Plasma Desktop Widget Shortcut"
+msgstr ""
+
+#: src/modules/shortcuts/ShortcutManager.cpp:227
+#, kde-format
+msgid "Widgets & Applets"
+msgstr ""
+
+#: src/modules/shortcuts/ShortcutManager.cpp:471
+#: src/modules/shortcuts/ShortcutManager.cpp:495
+#: src/modules/shortcuts/ShortcutManager.cpp:519
+#, kde-format
+msgid "Shortcut updated successfully."
+msgstr ""
+
+#: src/modules/shortcuts/ShortcutManager.cpp:523
+#, kde-format
+msgid "This shortcut source cannot be modified directly."
+msgstr ""
+
+#: src/modules/updates/UpdateManager.cpp:179
+#, kde-format
+msgid "Full System Upgrade (pacman -Syu)"
+msgstr ""
+
+#: src/modules/updates/UpdateManager.cpp:188
+#, kde-format
+msgid "Package Update (pacman -Syu --needed)"
+msgstr ""
+
+#: src/modules/updates/UpdateManager.cpp:197
+#, kde-format
+msgid "Error: Flatpak is not installed on this system.\n"
+msgstr ""
+
+#: src/modules/updates/UpdateManager.cpp:202
+#, kde-format
+msgid "Flatpak Applications Update"
+msgstr ""
+
+#: src/modules/updates/UpdateManager.cpp:211
+#, kde-format
+msgid ""
+"Error: Neither 'yay' nor 'paru' AUR helpers are installed on this system.\n"
+msgstr ""
+
+#: src/modules/updates/UpdateManager.cpp:216
+#, kde-format
+msgid "AUR Packages Update (%1 -Sua)"
+msgstr ""
+
+#: src/modules/updates/UpdateManager.cpp:226
+#, kde-format
+msgid ""
+"\n"
+">>> Operation cancelled by user. Terminating process...\n"
+msgstr ""
+
+#: src/modules/updates/UpdateManager.cpp:272
+#, kde-format
+msgid ""
+"\n"
+">>> Operation completed SUCCESSFULLY (exit code 0).\n"
+msgstr ""
+
+#: src/modules/updates/UpdateManager.cpp:273
+#, kde-format
+msgid ""
+"\n"
+">>> Operation FAILED with exit code %1.\n"
+msgstr ""
+
+#: src/modules/updates/UpdateManager.cpp:294
+#, kde-format
+msgid "Never"
+msgstr ""
+
+#: src/modules/updates/UpdateManager.cpp:298
+#, kde-format
+msgid "Just now"
+msgstr ""
+
+#: src/modules/updates/UpdateManager.cpp:300
+#, kde-format
+msgid "%1 min ago"
+msgstr ""

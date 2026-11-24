@@ -3,6 +3,7 @@
 #include "core/PkexecRunner.h"
 #include "core/ProcessRunner.h"
 
+#include <KLocalizedString>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
@@ -187,11 +188,11 @@ void SbctlWrapper::verifyFiles()
 
         if (exitCode == 0 || exitCode == 1) { // sbctl returns 1 if some files are unsigned
             parseVerifyOutput(output);
-            emit operationFinished(true, QStringLiteral("Files verification completed."));
+            emit operationFinished(true, i18n("Files verification completed."));
         } else if (exitCode == 126 || exitCode == 127) {
-            emit operationFinished(false, QStringLiteral("Verification cancelled by user."));
+            emit operationFinished(false, i18n("Verification cancelled by user."));
         } else {
-            emit operationFinished(false, QStringLiteral("Verification failed: %1").arg(output));
+            emit operationFinished(false, i18n("Verification failed: %1", output));
         }
     });
 
@@ -201,7 +202,7 @@ void SbctlWrapper::verifyFiles()
 void SbctlWrapper::signAll()
 {
     if (!hasSbctl()) {
-        emit operationFinished(false, QStringLiteral("sbctl executable not found."));
+        emit operationFinished(false, i18n("sbctl executable not found."));
         return;
     }
 
@@ -223,12 +224,12 @@ void SbctlWrapper::signAll()
 
         if (exitCode == 0) {
             LogModel::instance()->append(QStringLiteral("SecureBoot"), QStringLiteral("info"), QStringLiteral("All EFI files signed successfully"));
-            emit operationFinished(true, QStringLiteral("All files signed successfully."));
+            emit operationFinished(true, i18n("All files signed successfully."));
             verifyFiles();
         } else if (exitCode == 126 || exitCode == 127) {
-            emit operationFinished(false, QStringLiteral("Signing cancelled by user."));
+            emit operationFinished(false, i18n("Signing cancelled by user."));
         } else {
-            emit operationFinished(false, QStringLiteral("Failed to sign files: %1").arg(output));
+            emit operationFinished(false, i18n("Failed to sign files: %1", output));
         }
     });
 
@@ -259,12 +260,12 @@ void SbctlWrapper::signFile(const QString &filePath)
 
         if (exitCode == 0) {
             LogModel::instance()->append(QStringLiteral("SecureBoot"), QStringLiteral("info"), QStringLiteral("Signed: %1").arg(filePath));
-            emit operationFinished(true, QStringLiteral("Signed %1 successfully.").arg(QFileInfo(filePath).fileName()));
+            emit operationFinished(true, i18n("Signed %1 successfully.", QFileInfo(filePath).fileName()));
             verifyFiles();
         } else if (exitCode == 126 || exitCode == 127) {
-            emit operationFinished(false, QStringLiteral("Signing cancelled."));
+            emit operationFinished(false, i18n("Signing cancelled."));
         } else {
-            emit operationFinished(false, QStringLiteral("Signing failed: %1").arg(output));
+            emit operationFinished(false, i18n("Signing failed: %1", output));
         }
     });
 
@@ -274,7 +275,7 @@ void SbctlWrapper::signFile(const QString &filePath)
 void SbctlWrapper::createKeys()
 {
     if (!hasSbctl()) {
-        emit operationFinished(false, QStringLiteral("sbctl executable not found."));
+        emit operationFinished(false, i18n("sbctl executable not found."));
         return;
     }
 
@@ -296,12 +297,12 @@ void SbctlWrapper::createKeys()
 
         if (exitCode == 0) {
             LogModel::instance()->append(QStringLiteral("SecureBoot"), QStringLiteral("info"), QStringLiteral("Custom Secure Boot keys created successfully"));
-            emit operationFinished(true, QStringLiteral("Custom Secure Boot keys created."));
+            emit operationFinished(true, i18n("Custom Secure Boot keys created."));
             refreshStatus();
         } else if (exitCode == 126 || exitCode == 127) {
-            emit operationFinished(false, QStringLiteral("Key creation cancelled."));
+            emit operationFinished(false, i18n("Key creation cancelled."));
         } else {
-            emit operationFinished(false, QStringLiteral("Key creation failed: %1").arg(output));
+            emit operationFinished(false, i18n("Key creation failed: %1", output));
         }
     });
 
@@ -311,12 +312,12 @@ void SbctlWrapper::createKeys()
 void SbctlWrapper::enrollKeys(bool withMicrosoft)
 {
     if (!hasSbctl()) {
-        emit operationFinished(false, QStringLiteral("sbctl executable not found."));
+        emit operationFinished(false, i18n("sbctl executable not found."));
         return;
     }
 
     if (!m_setupMode) {
-        emit operationFinished(false, QStringLiteral("Cannot enroll keys: UEFI firmware is not in Setup Mode. Enable Setup Mode in your BIOS/UEFI settings first."));
+        emit operationFinished(false, i18n("Cannot enroll keys: UEFI firmware is not in Setup Mode. Enable Setup Mode in your BIOS/UEFI settings first."));
         return;
     }
 
@@ -343,12 +344,12 @@ void SbctlWrapper::enrollKeys(bool withMicrosoft)
 
         if (exitCode == 0) {
             LogModel::instance()->append(QStringLiteral("SecureBoot"), QStringLiteral("info"), QStringLiteral("Keys enrolled into UEFI successfully"));
-            emit operationFinished(true, QStringLiteral("Keys enrolled into UEFI firmware successfully."));
+            emit operationFinished(true, i18n("Keys enrolled into UEFI firmware successfully."));
             refreshStatus();
         } else if (exitCode == 126 || exitCode == 127) {
-            emit operationFinished(false, QStringLiteral("Enrollment cancelled."));
+            emit operationFinished(false, i18n("Enrollment cancelled."));
         } else {
-            emit operationFinished(false, QStringLiteral("Key enrollment failed: %1").arg(output));
+            emit operationFinished(false, i18n("Key enrollment failed: %1", output));
         }
     });
 
