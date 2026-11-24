@@ -217,7 +217,7 @@ Klarity acts as a native graphical control center and orchestrator over battle-t
 
 - **[sbctl](https://github.com/Foxboron/sbctl)** (MIT) — by Morten Linderud (*Foxboron*). Secure Boot key manager.
 - **[keyd](https://github.com/rvaiya/keyd)** (MIT) — by Rahul Rajan (*rvaiya*). Kernel-level keyboard remapping daemon.
-- **[auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)** (LGPL-3.0) — by Adnan Hodzic. Automatic CPU speed & power optimizer.
+- **[auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)** (GPL-3.0) — by Adnan Hodzic. Automatic CPU speed & power optimizer.
 - **[libinput-gestures](https://github.com/bulletmark/libinput-gestures)** (GPL-3.0) — by Mark Blakeney (*bulletmark*). Touchpad gestures translation utility.
 - **[smartmontools](https://www.smartmontools.org/)** (GPL-2.0+) — Smartmontools Team. S.M.A.R.T. monitoring utilities (`smartctl`).
 - **[ripgrep](https://github.com/BurntSushi/ripgrep)** (MIT / Unlicense) — by Andrew Gallant (*BurntSushi*). High-performance content search.
