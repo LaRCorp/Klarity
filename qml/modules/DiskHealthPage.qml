@@ -529,24 +529,29 @@ Kirigami.ScrollablePage {
             Kirigami.Card {
                 Layout.fillWidth: true
 
-                header: RowLayout {
-                    spacing: Kirigami.Units.smallSpacing
-
-                    Kirigami.Icon {
-                        source: "system-run"
-                        implicitWidth: Kirigami.Units.iconSizes.medium
-                        implicitHeight: Kirigami.Units.iconSizes.medium
-                    }
-
-                    Kirigami.Heading {
-                        level: 3
-                        text: i18n("Self-Test Execution & Diagnostics")
-                        Layout.fillWidth: true
-                    }
-                }
-
                 contentItem: ColumnLayout {
                     spacing: Kirigami.Units.mediumSpacing
+
+                    RowLayout {
+                        Layout.fillWidth: true
+                        spacing: Kirigami.Units.smallSpacing
+
+                        Kirigami.Icon {
+                            source: "system-run"
+                            implicitWidth: Kirigami.Units.iconSizes.medium
+                            implicitHeight: Kirigami.Units.iconSizes.medium
+                        }
+
+                        Kirigami.Heading {
+                            level: 3
+                            text: i18n("Self-Test Execution & Diagnostics")
+                            Layout.fillWidth: true
+                        }
+                    }
+
+                    Kirigami.Separator {
+                        Layout.fillWidth: true
+                    }
 
                     RowLayout {
                         Layout.fillWidth: true
@@ -699,70 +704,73 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             visible: diskMgr.isBusy || diskMgr.logOutput.length > 0
 
-            header: RowLayout {
-                spacing: Kirigami.Units.smallSpacing
+            contentItem: ColumnLayout {
+                spacing: Kirigami.Units.mediumSpacing
 
-                Kirigami.Icon {
-                    source: "utilities-terminal"
-                    implicitWidth: Kirigami.Units.iconSizes.medium
-                    implicitHeight: Kirigami.Units.iconSizes.medium
+                RowLayout {
+                    Layout.fillWidth: true
+                    spacing: Kirigami.Units.smallSpacing
+
+                    Kirigami.Icon {
+                        source: "utilities-terminal"
+                        implicitWidth: Kirigami.Units.iconSizes.medium
+                        implicitHeight: Kirigami.Units.iconSizes.medium
+                    }
+
+                    Kirigami.Heading {
+                        level: 4
+                        text: diskMgr.isBusy ? i18n("Executing: %1", diskMgr.operationStatus) : i18n("smartctl Log Output")
+                        Layout.fillWidth: true
+                    }
+
+                    QQC2.BusyIndicator {
+                        running: diskMgr.isBusy
+                        implicitWidth: 20
+                        implicitHeight: 20
+                    }
+
+                    QQC2.Button {
+                        text: i18n("Clear")
+                        icon.name: "edit-clear"
+                        enabled: diskMgr.logOutput.length > 0
+                        onClicked: diskMgr.clearLogs()
+                    }
                 }
 
-                Kirigami.Heading {
-                    level: 4
-                    text: diskMgr.isBusy ? i18n("Executing: %1", diskMgr.operationStatus) : i18n("smartctl Log Output")
+                Kirigami.Separator {
                     Layout.fillWidth: true
                 }
 
-                QQC2.BusyIndicator {
-                    running: diskMgr.isBusy
-                    implicitWidth: 20
-                    implicitHeight: 20
-                }
-
-                QQC2.Button {
-                    text: i18n("Clear")
-                    icon.name: "edit-clear"
-                    enabled: diskMgr.logOutput.length > 0
-                    onClicked: diskMgr.clearLogs()
-                }
-            }
-
-            contentItem: Rectangle {
-                Layout.fillWidth: true
-                implicitHeight: Kirigami.Units.gridUnit * 12
-                color: "#16191e"
-                radius: 6
-                border.color: "#2e3440"
-                border.width: 1
-                clip: true
-
-                QQC2.ScrollView {
-                    id: diskLogScrollView
-                    anchors.fill: parent
-                    anchors.margins: 4
+                Rectangle {
+                    Layout.fillWidth: true
+                    implicitHeight: Kirigami.Units.gridUnit * 14
+                    Layout.preferredHeight: Kirigami.Units.gridUnit * 14
+                    color: "#16191e"
+                    radius: 6
+                    border.color: "#2e3440"
+                    border.width: 1
                     clip: true
 
-                    QQC2.ScrollBar.vertical: StyledScrollBar {
-                        parent: diskLogScrollView
-                        x: diskLogScrollView.width - width
-                        y: 0
-                        height: diskLogScrollView.height
-                    }
+                    QQC2.ScrollView {
+                        id: diskLogScrollView
+                        anchors.fill: parent
+                        anchors.margins: 4
+                        clip: true
 
-                    QQC2.TextArea {
-                        id: diskLogArea
-                        readOnly: true
-                        text: diskMgr.logOutput
-                        font.family: "monospace"
-                        font.pointSize: Kirigami.Theme.smallFont.pointSize
-                        color: "#d8dee9"
-                        background: null
-                        wrapMode: TextEdit.Wrap
-                        selectByMouse: true
+                        QQC2.TextArea {
+                            id: diskLogArea
+                            readOnly: true
+                            text: diskMgr.logOutput
+                            font.family: "monospace"
+                            font.pointSize: Kirigami.Theme.smallFont.pointSize
+                            color: "#d8dee9"
+                            background: null
+                            wrapMode: TextEdit.Wrap
+                            selectByMouse: true
 
-                        onTextChanged: {
-                            cursorPosition = length
+                            onTextChanged: {
+                                cursorPosition = length
+                            }
                         }
                     }
                 }

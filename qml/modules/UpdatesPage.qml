@@ -179,57 +179,67 @@ Kirigami.ScrollablePage {
             // Card 1: System Upgrade
             Kirigami.Card {
                 Layout.fillWidth: true
-
-                header: RowLayout {
-                    spacing: Kirigami.Units.smallSpacing
-
-                    Kirigami.Icon {
-                        source: "system-software-update"
-                        implicitWidth: Kirigami.Units.iconSizes.medium
-                        implicitHeight: Kirigami.Units.iconSizes.medium
-                    }
-
-                    ColumnLayout {
-                        Layout.fillWidth: true
-                        spacing: 1
-
-                        Kirigami.Heading {
-                            level: 4
-                            text: i18n("System Upgrade")
-                        }
-
-                        QQC2.Label {
-                            text: "pacman -Syu --noconfirm"
-                            font.family: "monospace"
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.9
-                            opacity: 0.65
-                        }
-                    }
-
-                    Rectangle {
-                        implicitWidth: pacCountLabel.implicitWidth + 12
-                        implicitHeight: pacCountLabel.implicitHeight + 4
-                        radius: 4
-                        color: updateMgr.pacmanUpdatesCount > 0 ? "#2d4a68" : "#243229"
-
-                        QQC2.Label {
-                            id: pacCountLabel
-                            anchors.centerIn: parent
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.85
-                            font.bold: true
-                            text: updateMgr.pacmanUpdatesCount > 0 ? i18n("%1 pending", updateMgr.pacmanUpdatesCount) : i18n("Up to date")
-                            color: updateMgr.pacmanUpdatesCount > 0 ? "#70b9ff" : "#5af78e"
-                        }
-                    }
-                }
+                Layout.fillHeight: true
 
                 contentItem: ColumnLayout {
                     spacing: Kirigami.Units.smallSpacing
+
+                    RowLayout {
+                        Layout.fillWidth: true
+                        spacing: Kirigami.Units.smallSpacing
+
+                        Kirigami.Icon {
+                            source: "system-software-update"
+                            implicitWidth: Kirigami.Units.iconSizes.medium
+                            implicitHeight: Kirigami.Units.iconSizes.medium
+                        }
+
+                        ColumnLayout {
+                            Layout.fillWidth: true
+                            spacing: 1
+
+                            Kirigami.Heading {
+                                level: 4
+                                text: i18n("System Upgrade")
+                            }
+
+                            QQC2.Label {
+                                text: "pacman -Syu --noconfirm"
+                                font.family: "monospace"
+                                font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.9
+                                opacity: 0.65
+                            }
+                        }
+
+                        Rectangle {
+                            implicitWidth: pacCountLabel.implicitWidth + 12
+                            implicitHeight: pacCountLabel.implicitHeight + 4
+                            radius: 4
+                            color: updateMgr.pacmanUpdatesCount > 0 ? "#2d4a68" : "#243229"
+
+                            QQC2.Label {
+                                id: pacCountLabel
+                                anchors.centerIn: parent
+                                font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.85
+                                font.bold: true
+                                text: updateMgr.pacmanUpdatesCount > 0 ? i18n("%1 pending", updateMgr.pacmanUpdatesCount) : i18n("Up to date")
+                                color: updateMgr.pacmanUpdatesCount > 0 ? "#70b9ff" : "#5af78e"
+                            }
+                        }
+                    }
+
+                    Kirigami.Separator {
+                        Layout.fillWidth: true
+                    }
 
                     QQC2.Label {
                         Layout.fillWidth: true
                         wrapMode: Text.WordWrap
                         text: i18n("Perform a complete synchronization and upgrade of core distribution packages and official repositories via Polkit.")
+                    }
+
+                    Item {
+                        Layout.fillHeight: true
                     }
 
                     RowLayout {
@@ -255,57 +265,67 @@ Kirigami.ScrollablePage {
             // Card 2: Package Update
             Kirigami.Card {
                 Layout.fillWidth: true
-
-                header: RowLayout {
-                    spacing: Kirigami.Units.smallSpacing
-
-                    Kirigami.Icon {
-                        source: "package-upgrade"
-                        implicitWidth: Kirigami.Units.iconSizes.medium
-                        implicitHeight: Kirigami.Units.iconSizes.medium
-                    }
-
-                    ColumnLayout {
-                        Layout.fillWidth: true
-                        spacing: 1
-
-                        Kirigami.Heading {
-                            level: 4
-                            text: i18n("Package Update")
-                        }
-
-                        QQC2.Label {
-                            text: "pacman -Syu --needed --noconfirm"
-                            font.family: "monospace"
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.9
-                            opacity: 0.65
-                        }
-                    }
-
-                    Rectangle {
-                        implicitWidth: pacCountLabel2.implicitWidth + 12
-                        implicitHeight: pacCountLabel2.implicitHeight + 4
-                        radius: 4
-                        color: updateMgr.pacmanUpdatesCount > 0 ? "#2d4a68" : "#243229"
-
-                        QQC2.Label {
-                            id: pacCountLabel2
-                            anchors.centerIn: parent
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.85
-                            font.bold: true
-                            text: updateMgr.pacmanUpdatesCount > 0 ? i18n("%1 pending", updateMgr.pacmanUpdatesCount) : i18n("Up to date")
-                            color: updateMgr.pacmanUpdatesCount > 0 ? "#70b9ff" : "#5af78e"
-                        }
-                    }
-                }
+                Layout.fillHeight: true
 
                 contentItem: ColumnLayout {
                     spacing: Kirigami.Units.smallSpacing
+
+                    RowLayout {
+                        Layout.fillWidth: true
+                        spacing: Kirigami.Units.smallSpacing
+
+                        Kirigami.Icon {
+                            source: "package-upgrade"
+                            implicitWidth: Kirigami.Units.iconSizes.medium
+                            implicitHeight: Kirigami.Units.iconSizes.medium
+                        }
+
+                        ColumnLayout {
+                            Layout.fillWidth: true
+                            spacing: 1
+
+                            Kirigami.Heading {
+                                level: 4
+                                text: i18n("Package Update")
+                            }
+
+                            QQC2.Label {
+                                text: "pacman -Syu --needed --noconfirm"
+                                font.family: "monospace"
+                                font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.9
+                                opacity: 0.65
+                            }
+                        }
+
+                        Rectangle {
+                            implicitWidth: pacCountLabel2.implicitWidth + 12
+                            implicitHeight: pacCountLabel2.implicitHeight + 4
+                            radius: 4
+                            color: updateMgr.pacmanUpdatesCount > 0 ? "#2d4a68" : "#243229"
+
+                            QQC2.Label {
+                                id: pacCountLabel2
+                                anchors.centerIn: parent
+                                font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.85
+                                font.bold: true
+                                text: updateMgr.pacmanUpdatesCount > 0 ? i18n("%1 pending", updateMgr.pacmanUpdatesCount) : i18n("Up to date")
+                                color: updateMgr.pacmanUpdatesCount > 0 ? "#70b9ff" : "#5af78e"
+                            }
+                        }
+                    }
+
+                    Kirigami.Separator {
+                        Layout.fillWidth: true
+                    }
 
                     QQC2.Label {
                         Layout.fillWidth: true
                         wrapMode: Text.WordWrap
                         text: i18n("Upgrade outdated repository packages while skipping already up-to-date dependencies.")
+                    }
+
+                    Item {
+                        Layout.fillHeight: true
                     }
 
                     RowLayout {
@@ -324,59 +344,69 @@ Kirigami.ScrollablePage {
             // Card 3: Flatpak Update
             Kirigami.Card {
                 Layout.fillWidth: true
-
-                header: RowLayout {
-                    spacing: Kirigami.Units.smallSpacing
-
-                    Kirigami.Icon {
-                        source: "flatpak-discover"
-                        implicitWidth: Kirigami.Units.iconSizes.medium
-                        implicitHeight: Kirigami.Units.iconSizes.medium
-                    }
-
-                    ColumnLayout {
-                        Layout.fillWidth: true
-                        spacing: 1
-
-                        Kirigami.Heading {
-                            level: 4
-                            text: i18n("Flatpak Applications")
-                        }
-
-                        QQC2.Label {
-                            text: "flatpak update -y"
-                            font.family: "monospace"
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.9
-                            opacity: 0.65
-                        }
-                    }
-
-                    Rectangle {
-                        implicitWidth: fpCountLabel.implicitWidth + 12
-                        implicitHeight: fpCountLabel.implicitHeight + 4
-                        radius: 4
-                        color: !updateMgr.hasFlatpak ? "#3a2424" : (updateMgr.flatpakUpdatesCount > 0 ? "#2d4a68" : "#243229")
-
-                        QQC2.Label {
-                            id: fpCountLabel
-                            anchors.centerIn: parent
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.85
-                            font.bold: true
-                            text: !updateMgr.hasFlatpak
-                                  ? i18n("Not installed")
-                                  : (updateMgr.flatpakUpdatesCount > 0 ? i18n("%1 pending", updateMgr.flatpakUpdatesCount) : i18n("Up to date"))
-                            color: !updateMgr.hasFlatpak ? "#ff8585" : (updateMgr.flatpakUpdatesCount > 0 ? "#70b9ff" : "#5af78e")
-                        }
-                    }
-                }
+                Layout.fillHeight: true
 
                 contentItem: ColumnLayout {
                     spacing: Kirigami.Units.smallSpacing
+
+                    RowLayout {
+                        Layout.fillWidth: true
+                        spacing: Kirigami.Units.smallSpacing
+
+                        Kirigami.Icon {
+                            source: "flatpak-discover"
+                            implicitWidth: Kirigami.Units.iconSizes.medium
+                            implicitHeight: Kirigami.Units.iconSizes.medium
+                        }
+
+                        ColumnLayout {
+                            Layout.fillWidth: true
+                            spacing: 1
+
+                            Kirigami.Heading {
+                                level: 4
+                                text: i18n("Flatpak Applications")
+                            }
+
+                            QQC2.Label {
+                                text: "flatpak update -y"
+                                font.family: "monospace"
+                                font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.9
+                                opacity: 0.65
+                            }
+                        }
+
+                        Rectangle {
+                            implicitWidth: fpCountLabel.implicitWidth + 12
+                            implicitHeight: fpCountLabel.implicitHeight + 4
+                            radius: 4
+                            color: !updateMgr.hasFlatpak ? "#3a2424" : (updateMgr.flatpakUpdatesCount > 0 ? "#2d4a68" : "#243229")
+
+                            QQC2.Label {
+                                id: fpCountLabel
+                                anchors.centerIn: parent
+                                font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.85
+                                font.bold: true
+                                text: !updateMgr.hasFlatpak
+                                      ? i18n("Not installed")
+                                      : (updateMgr.flatpakUpdatesCount > 0 ? i18n("%1 pending", updateMgr.flatpakUpdatesCount) : i18n("Up to date"))
+                                color: !updateMgr.hasFlatpak ? "#ff8585" : (updateMgr.flatpakUpdatesCount > 0 ? "#70b9ff" : "#5af78e")
+                            }
+                        }
+                    }
+
+                    Kirigami.Separator {
+                        Layout.fillWidth: true
+                    }
 
                     QQC2.Label {
                         Layout.fillWidth: true
                         wrapMode: Text.WordWrap
                         text: i18n("Update installed Flatpak applications and shared runtime runtimes without requiring root privileges.")
+                    }
+
+                    Item {
+                        Layout.fillHeight: true
                     }
 
                     RowLayout {
@@ -395,54 +425,60 @@ Kirigami.ScrollablePage {
             // Card 4: AUR Update
             Kirigami.Card {
                 Layout.fillWidth: true
-
-                header: RowLayout {
-                    spacing: Kirigami.Units.smallSpacing
-
-                    Kirigami.Icon {
-                        source: "software-properties"
-                        implicitWidth: Kirigami.Units.iconSizes.medium
-                        implicitHeight: Kirigami.Units.iconSizes.medium
-                    }
-
-                    ColumnLayout {
-                        Layout.fillWidth: true
-                        spacing: 1
-
-                        Kirigami.Heading {
-                            level: 4
-                            text: i18n("AUR Packages")
-                        }
-
-                        QQC2.Label {
-                            text: updateMgr.aurHelper.length > 0 ? (updateMgr.aurHelper + " -Sua --noconfirm") : i18n("yay/paru not detected")
-                            font.family: "monospace"
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.9
-                            opacity: 0.65
-                        }
-                    }
-
-                    Rectangle {
-                        implicitWidth: aurCountLabel.implicitWidth + 12
-                        implicitHeight: aurCountLabel.implicitHeight + 4
-                        radius: 4
-                        color: updateMgr.aurHelper.length === 0 ? "#3a2424" : (updateMgr.aurUpdatesCount > 0 ? "#2d4a68" : "#243229")
-
-                        QQC2.Label {
-                            id: aurCountLabel
-                            anchors.centerIn: parent
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.85
-                            font.bold: true
-                            text: updateMgr.aurHelper.length === 0
-                                  ? i18n("No helper")
-                                  : (updateMgr.aurUpdatesCount > 0 ? i18n("%1 pending", updateMgr.aurUpdatesCount) : i18n("Up to date"))
-                            color: updateMgr.aurHelper.length === 0 ? "#ff8585" : (updateMgr.aurUpdatesCount > 0 ? "#70b9ff" : "#5af78e")
-                        }
-                    }
-                }
+                Layout.fillHeight: true
 
                 contentItem: ColumnLayout {
                     spacing: Kirigami.Units.smallSpacing
+
+                    RowLayout {
+                        Layout.fillWidth: true
+                        spacing: Kirigami.Units.smallSpacing
+
+                        Kirigami.Icon {
+                            source: "software-properties"
+                            implicitWidth: Kirigami.Units.iconSizes.medium
+                            implicitHeight: Kirigami.Units.iconSizes.medium
+                        }
+
+                        ColumnLayout {
+                            Layout.fillWidth: true
+                            spacing: 1
+
+                            Kirigami.Heading {
+                                level: 4
+                                text: i18n("AUR Packages")
+                            }
+
+                            QQC2.Label {
+                                text: updateMgr.aurHelper.length > 0 ? (updateMgr.aurHelper + " -Sua --noconfirm") : i18n("yay/paru not detected")
+                                font.family: "monospace"
+                                font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.9
+                                opacity: 0.65
+                            }
+                        }
+
+                        Rectangle {
+                            implicitWidth: aurCountLabel.implicitWidth + 12
+                            implicitHeight: aurCountLabel.implicitHeight + 4
+                            radius: 4
+                            color: updateMgr.aurHelper.length === 0 ? "#3a2424" : (updateMgr.aurUpdatesCount > 0 ? "#2d4a68" : "#243229")
+
+                            QQC2.Label {
+                                id: aurCountLabel
+                                anchors.centerIn: parent
+                                font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.85
+                                font.bold: true
+                                text: updateMgr.aurHelper.length === 0
+                                      ? i18n("No helper")
+                                      : (updateMgr.aurUpdatesCount > 0 ? i18n("%1 pending", updateMgr.aurUpdatesCount) : i18n("Up to date"))
+                                color: updateMgr.aurHelper.length === 0 ? "#ff8585" : (updateMgr.aurUpdatesCount > 0 ? "#70b9ff" : "#5af78e")
+                            }
+                        }
+                    }
+
+                    Kirigami.Separator {
+                        Layout.fillWidth: true
+                    }
 
                     QQC2.Label {
                         Layout.fillWidth: true
@@ -450,6 +486,10 @@ Kirigami.ScrollablePage {
                         text: updateMgr.aurHelper.length > 0
                               ? i18n("Update packages installed from Arch User Repository using '%1' helper.", updateMgr.aurHelper)
                               : i18n("No supported AUR helper found (yay or paru). Install yay or paru to manage AUR packages.")
+                    }
+
+                    Item {
+                        Layout.fillHeight: true
                     }
 
                     RowLayout {
@@ -471,7 +511,7 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             visible: updateMgr.isRunning
 
-            header: RowLayout {
+            contentItem: RowLayout {
                 spacing: Kirigami.Units.mediumSpacing
 
                 QQC2.BusyIndicator {

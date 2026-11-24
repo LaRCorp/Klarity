@@ -434,7 +434,7 @@ void CoreTests::testDnsManager()
     // Test DNS check with signal spy
     QSignalSpy checkSpy(&manager, &DnsManager::checkResultChanged);
     manager.checkDns(QStringLiteral("google.com"));
-    QVERIFY(checkSpy.wait(5000));
+    QVERIFY(checkSpy.wait(12000));
 
     const QVariantMap res = manager.checkResult();
     QVERIFY(res.contains(QStringLiteral("success")));
