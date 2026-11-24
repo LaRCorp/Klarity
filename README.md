@@ -207,6 +207,22 @@ qmllint qml/Main.qml qml/modules/*.qml qml/components/*.qml
 
 ---
 
+## 🤝 Благодарности и сторонние компоненты (Credits & Acknowledgements)
+
+Klarity выступает в роли графического центра управления и интегратора над проверенными консольными утилитами и компонентами экосистемы Linux. Мы выражаем искреннюю благодарность авторам и сообществам следующих проектов:
+
+- **[sbctl](https://github.com/Foxboron/sbctl)** (MIT) — автор Morten Linderud (*Foxboron*). Управление ключами и подпись компонентов Secure Boot.
+- **[keyd](https://github.com/rvaiya/keyd)** (MIT) — автор Rahul Rajan (*rvaiya*). Низкоуровневый перехватчик и диспетчер клавиатуры на уровне ядра Linux.
+- **[auto-cpufreq](https://github.com/AdnanHodzic/auto-cpufreq)** (LGPL-3.0) — автор Adnan Hodzic. Автоматический оптимизатор частот процессора и энергопотребления.
+- **[libinput-gestures](https://github.com/bulletmark/libinput-gestures)** (GPL-3.0) — автор Mark Blakeney (*bulletmark*). Служба трансляции тачпад-жестов в действия рабочего стола.
+- **[smartmontools](https://www.smartmontools.org/)** (GPL-2.0+) — Smartmontools Team. Утилита `smartctl` для мониторинга и тестирования S.M.A.R.T. накопителей.
+- **[ripgrep](https://github.com/BurntSushi/ripgrep)** (MIT / Unlicense) — автор Andrew Gallant (*BurntSushi*). Высокопроизводительный поиск по содержимому файлов.
+- **[fd](https://github.com/sharkdp/fd)** (MIT / Apache-2.0) — автор David Peter (*sharkdp*). Быстрый и удобный поиск файлов по путям.
+- **[KDE Community](https://kde.org/) & [Kirigami](https://develop.kde.org/frameworks/kirigami/)** (LGPL-2.0+) — за графический фреймворк и компоненты рабочего стола KDE Plasma 6.
+- **[Qt Project](https://www.qt.io/)** (LGPL-3.0 / GPL-3.0) — за C++ фреймворк Qt Quick и QML.
+
+---
+
 ## Лицензия
 
 Проект распространяется под свободной лицензией **GNU General Public License v3.0** (GPLv3). Подробности в файле [LICENSE](LICENSE).
