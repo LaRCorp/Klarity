@@ -1,0 +1,34 @@
+# Build artifacts
+build/
+bin/
+lib/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Qt & QML generated files
+*.qmlc
+*.jsc
+.rcc/
+.qt/
+*.moc
+moc_*.cpp
+*.aotstats
+
+# IDE and Editor configurations
+.vscode/
+.idea/
+*.kdev4
+.kdev4/
+*.user
+*.user.*
+*.swp
+*.swo
+*~
+*.bak
+.directory
+
+# Testing & logs
+Testing/
+*.log
