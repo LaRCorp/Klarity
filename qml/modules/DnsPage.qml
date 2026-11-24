@@ -346,24 +346,33 @@ Kirigami.ScrollablePage {
 
                     ColumnLayout {
                         id: providerDetailsCol
-                        anchors.fill: parent
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        anchors.top: parent.top
                         anchors.margins: Kirigami.Units.mediumSpacing
                         spacing: Kirigami.Units.smallSpacing
 
                         RowLayout {
+                            Layout.fillWidth: true
                             spacing: Kirigami.Units.mediumSpacing
+
                             Kirigami.Icon {
                                 source: providerCombo.model[providerCombo.currentIndex].icon
                                 implicitWidth: 28
                                 implicitHeight: 28
                             }
+
                             ColumnLayout {
+                                Layout.fillWidth: true
                                 spacing: 2
+
                                 QQC2.Label {
                                     text: providerCombo.model[providerCombo.currentIndex].name
                                     font.bold: true
                                 }
+
                                 QQC2.Label {
+                                    Layout.fillWidth: true
                                     text: providerCombo.model[providerCombo.currentIndex].description
                                     font.pointSize: Kirigami.Theme.smallFont.pointSize
                                     opacity: 0.8
@@ -373,19 +382,24 @@ Kirigami.ScrollablePage {
                         }
 
                         RowLayout {
+                            Layout.fillWidth: true
                             visible: providerCombo.model[providerCombo.currentIndex].servers.length > 0
                             spacing: Kirigami.Units.smallSpacing
+
                             QQC2.Label {
                                 text: i18n("Server Addresses:")
                                 font.bold: true
                                 font.pointSize: Kirigami.Theme.smallFont.pointSize
                             }
+
                             QQC2.Label {
+                                Layout.fillWidth: true
                                 text: providerCombo.model[providerCombo.currentIndex].servers
                                 font.family: "monospace"
                                 font.bold: true
                                 color: "#3daee9"
                                 font.pointSize: Kirigami.Theme.smallFont.pointSize
+                                elide: Text.ElideRight
                             }
                         }
                     }

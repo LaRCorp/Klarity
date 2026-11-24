@@ -28,9 +28,8 @@ Kirigami.ApplicationWindow {
         id: navDrawer
         title: i18n("Klarity")
         titleIcon: "preferences-system"
-        isMenu: false
-        collapsed: root.width < Kirigami.Units.gridUnit * 52
-        modal: root.width < Kirigami.Units.gridUnit * 44
+        isMenu: true
+        modal: root.width < Kirigami.Units.gridUnit * 48
 
         actions: [
             Kirigami.PagePoolAction {

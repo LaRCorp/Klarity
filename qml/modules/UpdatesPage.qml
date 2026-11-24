@@ -84,37 +84,42 @@ Kirigami.ScrollablePage {
         Kirigami.Card {
             Layout.fillWidth: true
 
-            header: RowLayout {
-                spacing: Kirigami.Units.smallSpacing
+            contentItem: ColumnLayout {
+                spacing: Kirigami.Units.mediumSpacing
 
-                Kirigami.Icon {
-                    source: updateMgr.totalUpdatesCount > 0 ? "emblem-warning" : "emblem-checked"
-                    implicitWidth: Kirigami.Units.iconSizes.medium
-                    implicitHeight: Kirigami.Units.iconSizes.medium
+                RowLayout {
+                    Layout.fillWidth: true
+                    spacing: Kirigami.Units.smallSpacing
+
+                    Kirigami.Icon {
+                        source: updateMgr.totalUpdatesCount > 0 ? "emblem-warning" : "emblem-checked"
+                        implicitWidth: Kirigami.Units.iconSizes.medium
+                        implicitHeight: Kirigami.Units.iconSizes.medium
+                    }
+
+                    Kirigami.Heading {
+                        level: 3
+                        text: i18n("Update Status Overview")
+                        Layout.fillWidth: true
+                    }
+
+                    QQC2.Button {
+                        text: i18n("Arch News")
+                        icon.name: "internet-web-browser"
+                        onClicked: updateMgr.openArchNews()
+                    }
+
+                    QQC2.Button {
+                        text: i18n("Check Now")
+                        icon.name: "view-refresh"
+                        enabled: !updateMgr.isRunning && !updateMgr.isChecking
+                        onClicked: updateMgr.forceCheckUpdates()
+                    }
                 }
 
-                Kirigami.Heading {
-                    level: 3
-                    text: i18n("Update Status Overview")
+                Kirigami.Separator {
                     Layout.fillWidth: true
                 }
-
-                QQC2.Button {
-                    text: i18n("Arch News")
-                    icon.name: "internet-web-browser"
-                    onClicked: updateMgr.openArchNews()
-                }
-
-                QQC2.Button {
-                    text: i18n("Check Now")
-                    icon.name: "view-refresh"
-                    enabled: !updateMgr.isRunning && !updateMgr.isChecking
-                    onClicked: updateMgr.forceCheckUpdates()
-                }
-            }
-
-            contentItem: ColumnLayout {
-                spacing: Kirigami.Units.smallSpacing
 
                 RowLayout {
                     Layout.fillWidth: true

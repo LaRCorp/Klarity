@@ -70,6 +70,9 @@ Kirigami.Page {
                 text: searchMgr.isSearching ? i18n("Stop") : i18n("Search")
                 icon.name: searchMgr.isSearching ? "process-stop" : "system-search"
                 highlighted: !searchMgr.isSearching
+                display: root.width > Kirigami.Units.gridUnit * 45 ? QQC2.AbstractButton.TextBesideIcon : QQC2.AbstractButton.IconOnly
+                QQC2.ToolTip.text: text
+                QQC2.ToolTip.visible: hovered && display === QQC2.AbstractButton.IconOnly
                 onClicked: {
                     if (searchMgr.isSearching) {
                         searchMgr.cancelSearch()
@@ -84,6 +87,9 @@ Kirigami.Page {
                 icon.name: "edit-clear"
                 text: i18n("Clear")
                 enabled: searchField.text.length > 0 || searchMgr.results.length > 0
+                display: root.width > Kirigami.Units.gridUnit * 45 ? QQC2.AbstractButton.TextBesideIcon : QQC2.AbstractButton.IconOnly
+                QQC2.ToolTip.text: text
+                QQC2.ToolTip.visible: hovered && display === QQC2.AbstractButton.IconOnly
                 onClicked: {
                     searchField.text = ""
                     searchMgr.cancelSearch()
@@ -162,7 +168,7 @@ Kirigami.Page {
             }
         }
 
-        // Row 3: Filters (Scope, Type, Max Depth, Hidden, Content Search)
+        // Row 3: Scope, Type and Max Depth Filters
         RowLayout {
             Layout.fillWidth: true
             spacing: Kirigami.Units.mediumSpacing
@@ -178,7 +184,8 @@ Kirigami.Page {
                 textRole: "name"
                 model: root.scopeModel
                 currentIndex: 0
-                implicitWidth: Kirigami.Units.gridUnit * 13
+                Layout.fillWidth: true
+                Layout.minimumWidth: Kirigami.Units.gridUnit * 8
             }
 
             QQC2.Label {
@@ -192,7 +199,7 @@ Kirigami.Page {
                 textRole: "name"
                 model: root.typeFilterModel
                 currentIndex: 0
-                implicitWidth: Kirigami.Units.gridUnit * 9
+                implicitWidth: Kirigami.Units.gridUnit * 8
             }
 
             QQC2.Label {
@@ -214,6 +221,12 @@ Kirigami.Page {
                 currentIndex: 1
                 implicitWidth: Kirigami.Units.gridUnit * 8
             }
+        }
+
+        // Row 4: Flags & Real-time Status Bar
+        RowLayout {
+            Layout.fillWidth: true
+            spacing: Kirigami.Units.mediumSpacing
 
             QQC2.CheckBox {
                 id: hiddenFilesCheck
@@ -229,12 +242,10 @@ Kirigami.Page {
                 QQC2.ToolTip.visible: hovered && !searchMgr.hasRg
                 QQC2.ToolTip.text: i18n("ripgrep (rg) is required for content search")
             }
-        }
 
-        // Row 4: Status Indicator & Quick Stats Bar
-        RowLayout {
-            Layout.fillWidth: true
-            spacing: Kirigami.Units.mediumSpacing
+            Kirigami.Separator {
+                Layout.fillHeight: true
+            }
 
             QQC2.BusyIndicator {
                 running: searchMgr.isSearching

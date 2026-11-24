@@ -107,46 +107,51 @@ Kirigami.ScrollablePage {
             Kirigami.Card {
                 Layout.fillWidth: true
 
-                header: RowLayout {
-                    spacing: Kirigami.Units.smallSpacing
-
-                    Kirigami.Icon {
-                        source: powerMgr.isAutoCpuFreqRunning ? "dialog-ok" : "dialog-warning"
-                        implicitWidth: Kirigami.Units.iconSizes.medium
-                        implicitHeight: Kirigami.Units.iconSizes.medium
-                    }
-
-                    Kirigami.Heading {
-                        level: 3
-                        text: i18n("auto-cpufreq Service Status")
-                        Layout.fillWidth: true
-                    }
-
-                    Rectangle {
-                        implicitWidth: daemonStatusBadge.implicitWidth + 14
-                        implicitHeight: daemonStatusBadge.implicitHeight + 6
-                        radius: 4
-                        color: !powerMgr.isAutoCpuFreqInstalled
-                               ? "#452424"
-                               : (powerMgr.isAutoCpuFreqRunning ? "#203b29" : "#3b3420")
-
-                        QQC2.Label {
-                            id: daemonStatusBadge
-                            anchors.centerIn: parent
-                            font.bold: true
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.9
-                            text: !powerMgr.isAutoCpuFreqInstalled
-                                  ? i18n("Not Installed")
-                                  : (powerMgr.isAutoCpuFreqRunning ? i18n("Active & Optimizing") : i18n("Stopped / Inactive"))
-                            color: !powerMgr.isAutoCpuFreqInstalled
-                                   ? "#ff8585"
-                                   : (powerMgr.isAutoCpuFreqRunning ? "#5af78e" : "#ffcc00")
-                        }
-                    }
-                }
-
                 contentItem: ColumnLayout {
                     spacing: Kirigami.Units.mediumSpacing
+
+                    RowLayout {
+                        Layout.fillWidth: true
+                        spacing: Kirigami.Units.smallSpacing
+
+                        Kirigami.Icon {
+                            source: powerMgr.isAutoCpuFreqRunning ? "dialog-ok" : "dialog-warning"
+                            implicitWidth: Kirigami.Units.iconSizes.medium
+                            implicitHeight: Kirigami.Units.iconSizes.medium
+                        }
+
+                        Kirigami.Heading {
+                            level: 3
+                            text: i18n("auto-cpufreq Service Status")
+                            Layout.fillWidth: true
+                        }
+
+                        Rectangle {
+                            implicitWidth: daemonStatusBadge.implicitWidth + 14
+                            implicitHeight: daemonStatusBadge.implicitHeight + 6
+                            radius: 4
+                            color: !powerMgr.isAutoCpuFreqInstalled
+                                   ? "#452424"
+                                   : (powerMgr.isAutoCpuFreqRunning ? "#203b29" : "#3b3420")
+
+                            QQC2.Label {
+                                id: daemonStatusBadge
+                                anchors.centerIn: parent
+                                font.bold: true
+                                font.pointSize: Kirigami.Theme.smallFont.pointSize * 0.9
+                                text: !powerMgr.isAutoCpuFreqInstalled
+                                      ? i18n("Not Installed")
+                                      : (powerMgr.isAutoCpuFreqRunning ? i18n("Active & Optimizing") : i18n("Stopped / Inactive"))
+                                color: !powerMgr.isAutoCpuFreqInstalled
+                                       ? "#ff8585"
+                                       : (powerMgr.isAutoCpuFreqRunning ? "#5af78e" : "#ffcc00")
+                            }
+                        }
+                    }
+
+                    Kirigami.Separator {
+                        Layout.fillWidth: true
+                    }
 
                     QQC2.Label {
                         Layout.fillWidth: true
@@ -191,123 +196,139 @@ Kirigami.ScrollablePage {
             Kirigami.Card {
                 Layout.fillWidth: true
 
-                header: RowLayout {
-                    spacing: Kirigami.Units.smallSpacing
+                contentItem: ColumnLayout {
+                    spacing: Kirigami.Units.mediumSpacing
 
-                    Kirigami.Icon {
-                        source: "speedometer"
-                        implicitWidth: Kirigami.Units.iconSizes.medium
-                        implicitHeight: Kirigami.Units.iconSizes.medium
+                    RowLayout {
+                        Layout.fillWidth: true
+                        spacing: Kirigami.Units.smallSpacing
+
+                        Kirigami.Icon {
+                            source: "speedometer"
+                            implicitWidth: Kirigami.Units.iconSizes.medium
+                            implicitHeight: Kirigami.Units.iconSizes.medium
+                        }
+
+                        Kirigami.Heading {
+                            level: 3
+                            text: i18n("Active System Decisions & Metrics")
+                            Layout.fillWidth: true
+                        }
                     }
 
-                    Kirigami.Heading {
-                        level: 3
-                        text: i18n("Active System Decisions & Metrics")
+                    Kirigami.Separator {
                         Layout.fillWidth: true
                     }
-                }
 
-                contentItem: GridLayout {
-                    Layout.fillWidth: true
-                    columns: root.width > Kirigami.Units.gridUnit * 36 ? 3 : 1
-                    rowSpacing: Kirigami.Units.mediumSpacing
-                    columnSpacing: Kirigami.Units.mediumSpacing
+                    GridLayout {
+                        Layout.fillWidth: true
+                        Layout.minimumHeight: Kirigami.Units.gridUnit * 5
+                        columns: root.width > Kirigami.Units.gridUnit * 36 ? 3 : 1
+                        rowSpacing: Kirigami.Units.mediumSpacing
+                        columnSpacing: Kirigami.Units.mediumSpacing
 
-                    // Metric 1: Governor
-                    ColumnLayout {
-                        spacing: 2
-                        QQC2.Label {
-                            text: i18n("Active Governor")
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize
-                            opacity: 0.7
+                        // Metric 1: Governor
+                        ColumnLayout {
+                            Layout.fillWidth: true
+                            spacing: 2
+                            QQC2.Label {
+                                text: i18n("Active Governor")
+                                font.pointSize: Kirigami.Theme.smallFont.pointSize
+                                opacity: 0.7
+                            }
+                            QQC2.Label {
+                                text: powerMgr.currentGovernor.toUpperCase()
+                                font.bold: true
+                                font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
+                                color: powerMgr.currentGovernor === "performance" ? "#70b9ff" : "#5af78e"
+                            }
                         }
-                        QQC2.Label {
-                            text: powerMgr.currentGovernor.toUpperCase()
-                            font.bold: true
-                            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
-                            color: powerMgr.currentGovernor === "performance" ? "#70b9ff" : "#5af78e"
-                        }
-                    }
 
-                    // Metric 2: Turbo Boost
-                    ColumnLayout {
-                        spacing: 2
-                        QQC2.Label {
-                            text: i18n("Turbo Boost")
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize
-                            opacity: 0.7
+                        // Metric 2: Turbo Boost
+                        ColumnLayout {
+                            Layout.fillWidth: true
+                            spacing: 2
+                            QQC2.Label {
+                                text: i18n("Turbo Boost")
+                                font.pointSize: Kirigami.Theme.smallFont.pointSize
+                                opacity: 0.7
+                            }
+                            QQC2.Label {
+                                text: !powerMgr.turboSupported
+                                      ? i18n("Unsupported")
+                                      : (powerMgr.isTurboEnabled ? i18n("Enabled / Auto") : i18n("Disabled"))
+                                font.bold: true
+                                font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
+                                color: powerMgr.isTurboEnabled ? "#5af78e" : "#ffaa55"
+                            }
                         }
-                        QQC2.Label {
-                            text: !powerMgr.turboSupported
-                                  ? i18n("Unsupported")
-                                  : (powerMgr.isTurboEnabled ? i18n("Enabled / Auto") : i18n("Disabled"))
-                            font.bold: true
-                            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
-                            color: powerMgr.isTurboEnabled ? "#5af78e" : "#ffaa55"
-                        }
-                    }
 
-                    // Metric 3: Power Source
-                    ColumnLayout {
-                        spacing: 2
-                        QQC2.Label {
-                            text: i18n("Power Supply State")
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize
-                            opacity: 0.7
+                        // Metric 3: Power Source
+                        ColumnLayout {
+                            Layout.fillWidth: true
+                            spacing: 2
+                            QQC2.Label {
+                                text: i18n("Power Supply State")
+                                font.pointSize: Kirigami.Theme.smallFont.pointSize
+                                opacity: 0.7
+                            }
+                            QQC2.Label {
+                                text: powerMgr.onBattery
+                                      ? i18n("Battery (%1%)", powerMgr.batteryLevel)
+                                      : i18n("AC Mains (%1)", powerMgr.batteryStatus)
+                                font.bold: true
+                                font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
+                                color: powerMgr.onBattery ? "#ffaa55" : "#70b9ff"
+                            }
                         }
-                        QQC2.Label {
-                            text: powerMgr.onBattery
-                                  ? i18n("Battery (%1%)", powerMgr.batteryLevel)
-                                  : i18n("AC Mains (%1)", powerMgr.batteryStatus)
-                            font.bold: true
-                            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
-                            color: powerMgr.onBattery ? "#ffaa55" : "#70b9ff"
-                        }
-                    }
 
-                    // Metric 4: CPU Package Temperature
-                    ColumnLayout {
-                        spacing: 2
-                        QQC2.Label {
-                            text: i18n("CPU Package Temp")
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize
-                            opacity: 0.7
+                        // Metric 4: CPU Package Temperature
+                        ColumnLayout {
+                            Layout.fillWidth: true
+                            spacing: 2
+                            QQC2.Label {
+                                text: i18n("CPU Package Temp")
+                                font.pointSize: Kirigami.Theme.smallFont.pointSize
+                                opacity: 0.7
+                            }
+                            QQC2.Label {
+                                text: powerMgr.cpuTemperature > 0 ? (powerMgr.cpuTemperature.toFixed(1) + " °C") : i18n("N/A")
+                                font.bold: true
+                                font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
+                                color: powerMgr.cpuTemperature > 80 ? "#ff5555" : (powerMgr.cpuTemperature > 65 ? "#ffaa55" : "#5af78e")
+                            }
                         }
-                        QQC2.Label {
-                            text: powerMgr.cpuTemperature > 0 ? (powerMgr.cpuTemperature.toFixed(1) + " °C") : i18n("N/A")
-                            font.bold: true
-                            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
-                            color: powerMgr.cpuTemperature > 80 ? "#ff5555" : (powerMgr.cpuTemperature > 65 ? "#ffaa55" : "#5af78e")
-                        }
-                    }
 
-                    // Metric 5: Average Core Frequency
-                    ColumnLayout {
-                        spacing: 2
-                        QQC2.Label {
-                            text: i18n("Average Frequency")
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize
-                            opacity: 0.7
+                        // Metric 5: Average Core Frequency
+                        ColumnLayout {
+                            Layout.fillWidth: true
+                            spacing: 2
+                            QQC2.Label {
+                                text: i18n("Average Frequency")
+                                font.pointSize: Kirigami.Theme.smallFont.pointSize
+                                opacity: 0.7
+                            }
+                            QQC2.Label {
+                                text: Math.round(powerMgr.cpuAverageFrequencyMhz) + " MHz"
+                                font.bold: true
+                                font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
+                            }
                         }
-                        QQC2.Label {
-                            text: Math.round(powerMgr.cpuAverageFrequencyMhz) + " MHz"
-                            font.bold: true
-                            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
-                        }
-                    }
 
-                    // Metric 6: Scaling Driver
-                    ColumnLayout {
-                        spacing: 2
-                        QQC2.Label {
-                            text: i18n("Kernel Driver")
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize
-                            opacity: 0.7
-                        }
-                        QQC2.Label {
-                            text: powerMgr.cpuDriver
-                            font.bold: true
-                            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
+                        // Metric 6: Scaling Driver
+                        ColumnLayout {
+                            Layout.fillWidth: true
+                            spacing: 2
+                            QQC2.Label {
+                                text: i18n("Kernel Driver")
+                                font.pointSize: Kirigami.Theme.smallFont.pointSize
+                                opacity: 0.7
+                            }
+                            QQC2.Label {
+                                text: powerMgr.cpuDriver
+                                font.bold: true
+                                font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
+                            }
                         }
                     }
                 }
@@ -317,24 +338,29 @@ Kirigami.ScrollablePage {
             Kirigami.Card {
                 Layout.fillWidth: true
 
-                header: RowLayout {
-                    spacing: Kirigami.Units.smallSpacing
-
-                    Kirigami.Icon {
-                        source: "document-edit"
-                        implicitWidth: Kirigami.Units.iconSizes.medium
-                        implicitHeight: Kirigami.Units.iconSizes.medium
-                    }
-
-                    Kirigami.Heading {
-                        level: 3
-                        text: i18n("Daemon Profile Configuration (/etc/auto-cpufreq.conf)")
-                        Layout.fillWidth: true
-                    }
-                }
-
                 contentItem: ColumnLayout {
                     spacing: Kirigami.Units.largeSpacing
+
+                    RowLayout {
+                        Layout.fillWidth: true
+                        spacing: Kirigami.Units.smallSpacing
+
+                        Kirigami.Icon {
+                            source: "document-edit"
+                            implicitWidth: Kirigami.Units.iconSizes.medium
+                            implicitHeight: Kirigami.Units.iconSizes.medium
+                        }
+
+                        Kirigami.Heading {
+                            level: 3
+                            text: i18n("Daemon Profile Configuration (/etc/auto-cpufreq.conf)")
+                            Layout.fillWidth: true
+                        }
+                    }
+
+                    Kirigami.Separator {
+                        Layout.fillWidth: true
+                    }
 
                     GridLayout {
                         Layout.fillWidth: true
