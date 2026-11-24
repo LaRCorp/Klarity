@@ -4,7 +4,7 @@
   <p><strong>Единый нативный центр системного администрирования, безопасности и глубокой настройки для Arch Linux и KDE Plasma 6</strong></p>
 
   <p>
-    <a href="https://github.com/LaRCorp/Klarity/releases"><img src="https://img.shields.io/badge/version-1.0.0-6366f1?style=flat-square" alt="Version 1.0.0" /></a>
+    <a href="https://github.com/LaRCorp/Klarity/releases"><img src="https://img.shields.io/badge/version-1.0-6366f1?style=flat-square" alt="Version 1.0" /></a>
     <img src="https://img.shields.io/badge/Platform-Arch%20Linux%20%7C%20CachyOS-0ea5e9?style=flat-square" alt="Arch Linux | CachyOS" />
     <img src="https://img.shields.io/badge/Qt%206.12-KF6%20%7C%20C%2B%2B20-8b5cf6?style=flat-square" alt="Qt 6.12 + KF6 + C++20" />
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-10b981?style=flat-square" alt="GPLv3 License" /></a>
