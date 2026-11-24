@@ -128,8 +128,23 @@ target_link_libraries(klarity PRIVATE
     KF6::I18nQml
 )
 
-target_compile_definitions(klarity PRIVATE
-    KLARITY_LOCALE_DIR="${CMAKE_INSTALL_FULL_LOCALEDIR}"
+# Embedded translation catalog for standalone / portable execution
+set(KLARITY_EMBEDDED_MO "${CMAKE_CURRENT_BINARY_DIR}/embedded_locale/ru/LC_MESSAGES/klarity.mo")
+add_custom_command(
+    OUTPUT "${KLARITY_EMBEDDED_MO}"
+    COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_CURRENT_BINARY_DIR}/embedded_locale/ru/LC_MESSAGES"
+    COMMAND msgfmt -o "${KLARITY_EMBEDDED_MO}" "${CMAKE_CURRENT_SOURCE_DIR}/po/ru/klarity.po"
+    DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/po/ru/klarity.po"
+    COMMENT "Compiling embedded Russian translation catalog"
+)
+set_source_files_properties("${KLARITY_EMBEDDED_MO}" PROPERTIES
+    QT_RESOURCE_ALIAS "ru/LC_MESSAGES/klarity.mo"
+)
+
+qt_add_resources(klarity "klarity_translations"
+    PREFIX "/locale"
+    FILES
+        "${KLARITY_EMBEDDED_MO}"
 )
 
 ki18n_install(po)

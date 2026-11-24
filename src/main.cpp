@@ -1,6 +1,10 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QIcon>
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
+#include <QStandardPaths>
 
 #include <KAboutData>
 #include <KLocalizedString>
@@ -13,16 +17,53 @@
 #include "core/PkexecRunner.h"
 #include "core/LogModel.h"
 
+static void setupLocalization()
+{
+    KLocalizedString::setApplicationDomain("klarity");
+
+    // 1. Next to binary (e.g. build/locale or installed tree)
+    KLocalizedString::addDomainLocaleDir("klarity", QCoreApplication::applicationDirPath() + QStringLiteral("/locale"));
+    KLocalizedString::addDomainLocaleDir("klarity", QCoreApplication::applicationDirPath() + QStringLiteral("/../locale"));
+
+    // 2. User local data directory (~/.local/share/locale)
+    const QString userLocaleDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/locale");
+    KLocalizedString::addDomainLocaleDir("klarity", userLocaleDir);
+
+    // 3. System directories
+    KLocalizedString::addDomainLocaleDir("klarity", QStringLiteral("/usr/share/locale"));
+    KLocalizedString::addDomainLocaleDir("klarity", QStringLiteral("/usr/local/share/locale"));
+#ifdef KLARITY_LOCALE_DIR
+    KLocalizedString::addDomainLocaleDir("klarity", QStringLiteral(KLARITY_LOCALE_DIR));
+#endif
+
+    // 4. Standalone portability: unpack embedded translations if missing from disk
+    const QString embeddedResource = QStringLiteral(":/locale/ru/LC_MESSAGES/klarity.mo");
+    if (QFile::exists(embeddedResource)) {
+        const QString targetMo = userLocaleDir + QStringLiteral("/ru/LC_MESSAGES/klarity.mo");
+        QFileInfo targetInfo(targetMo);
+        QFile embeddedFile(embeddedResource);
+        if (!targetInfo.exists() || targetInfo.size() != embeddedFile.size()) {
+            QDir().mkpath(targetInfo.dir().path());
+            if (targetInfo.exists()) {
+                QFile::remove(targetMo);
+            }
+            if (embeddedFile.open(QIODevice::ReadOnly)) {
+                QFile outFile(targetMo);
+                if (outFile.open(QIODevice::WriteOnly)) {
+                    outFile.write(embeddedFile.readAll());
+                    outFile.close();
+                }
+                embeddedFile.close();
+            }
+        }
+    }
+}
+
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
-    KLocalizedString::setApplicationDomain("klarity");
-    KLocalizedString::addDomainLocaleDir("klarity", QCoreApplication::applicationDirPath() + QStringLiteral("/locale"));
-    KLocalizedString::addDomainLocaleDir("klarity", QCoreApplication::applicationDirPath() + QStringLiteral("/../locale"));
-#ifdef KLARITY_LOCALE_DIR
-    KLocalizedString::addDomainLocaleDir("klarity", QStringLiteral(KLARITY_LOCALE_DIR));
-#endif
+    setupLocalization();
 
     KAboutData aboutData(
         QStringLiteral("klarity"),
@@ -47,7 +88,10 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
 
     // Set up KI18n for QML (makes i18n() available in all QML files)
-    KLocalization::setupLocalizedContext(&engine);
+    auto localizedContext = KLocalization::setupLocalizedContext(&engine);
+    if (localizedContext) {
+        localizedContext->setTranslationDomain(QStringLiteral("klarity"));
+    }
 
     // Load Main.qml from the registered QML module
     const QUrl url(QStringLiteral("qrc:/org/klarity/qml/Main.qml"));
